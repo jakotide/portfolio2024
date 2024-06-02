@@ -1,5 +1,5 @@
-@use "../scss/globals.scss" as clr;
-@import "../scss/globals.scss";
+@use "../../scss/globals.scss" as clr;
+@import "../../scss/globals.scss";
 
 .hero__container {
   width: 100%;
@@ -7,6 +7,34 @@
   background-color: clr.$primary;
   display: grid;
   place-items: center;
+
+  .hero__block {
+    position: fixed;
+    width: 8rem;
+    height: 8rem;
+    background-color: clr.$green;
+    left: 0;
+    bottom: 0;
+  }
+
+  .deco__tag {
+    position: fixed;
+    transform: rotate(-90deg);
+    font-size: 0.9rem;
+    left: 8px;
+    color: #777777;
+  }
+
+  .bottom__links {
+    display: flex;
+    gap: 2.5rem;
+    font-family: "GeneralSans-Regular";
+    color: #808080;
+    position: fixed;
+    bottom: 2rem;
+    right: 4rem;
+    cursor: pointer;
+  }
 
   .pattern__container {
     position: fixed;
@@ -47,17 +75,37 @@
   .hero__content__container {
     width: 70%;
     height: 80%;
-    // position: relative;
-    // background-color: clr.$light-green;
     padding: 8rem 6rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-size: 0.9rem;
 
-    .hero__h1 {
-      font-size: 9rem;
+    .h1__container {
       color: clr.$black;
       font-family: "Brown-Sugar";
+      display: flex;
+      flex-direction: column;
+      .hero__subheader__small {
+        font-family: "GeneralSans-Regular";
+      }
+
+      .hidden__box {
+        overflow: hidden;
+        .hero__h1 {
+          // font-size: 9rem;
+          white-space: nowrap;
+          font-size: calc(10px + 7vw);
+          display: flex;
+          overflow: hidden;
+          span {
+            display: inline-block;
+          }
+        }
+      }
+      .hero__subheader {
+        font-size: 3rem;
+      }
     }
 
     .hero__info__container {
@@ -72,47 +120,6 @@
         text-wrap: balance;
         max-width: 200px;
       }
-    }
-
-    .top__corner {
-      background: linear-gradient(
-            to left,
-            rgba(184, 184, 184, 0.3) 2px,
-            transparent 1px
-          )
-          100% 100%,
-        linear-gradient(
-            to top,
-            rgba(184, 184, 184, 0.3) 2px,
-            2px,
-            transparent 1px
-          )
-          100% 100%;
-    }
-    .bottom__corner {
-      background: linear-gradient(
-            to right,
-            rgba(184, 184, 184, 0.3) 2px,
-            2px,
-            transparent 1px
-          )
-          0% 0%,
-        linear-gradient(
-            to bottom,
-            rgba(184, 184, 184, 0.3) 2px,
-            2px,
-            transparent 1px
-          )
-          0% 0%;
-    }
-    .top__corner,
-    .bottom__corner {
-      background-size: 70px 70px;
-      height: 100%;
-      width: 100%;
-      margin: auto;
-      position: absolute;
-      background-repeat: no-repeat;
     }
   }
 }

@@ -1,10 +1,26 @@
-import Hero from "./hero/page";
+"use client";
+import Hero from "./components/Hero/page";
+import React, { useState, useEffect, use } from "react";
+import { Preloader } from "./components";
+import { AnimatePresence } from "framer-motion";
 
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2800);
+  }, []);
+
   return (
-    <div>
+    <main>
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader />}
+      </AnimatePresence>
+
       <Hero />
-    </div>
+    </main>
   );
 };
 

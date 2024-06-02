@@ -1,0 +1,33 @@
+@use "../../scss/globals.scss" as clr;
+
+.preloader__container {
+  background-color: clr.$green;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  z-index: 100;
+  font-family: "GeneralSans-Regular";
+
+  .loader__hello {
+    font-size: 3rem;
+    margin-top: 10rem;
+  }
+
+  .counter {
+    font-size: 18rem;
+    align-self: flex-end;
+    font-family: "Brown-Sugar";
+    line-height: 1;
+    transition: opacity 0.4s ease;
+  }
+  .counter__hidden {
+    opacity: 0;
+  }
+}
