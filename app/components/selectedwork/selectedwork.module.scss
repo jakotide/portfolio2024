@@ -1,33 +1,29 @@
 @use "../../scss/globals.scss" as clr;
-@import "../../scss/globals.scss";
 
-.hero__container {
-  width: 100%;
+.selected__container {
   height: 100vh;
   height: 100dvh;
+  width: 100%;
   background-color: clr.$primary;
+  position: relative;
   display: grid;
   place-items: center;
-  position: relative;
 
-  .hero__block {
+  .selected__block,
+  .selected__block__red {
     position: absolute;
     width: 8rem;
     height: 8rem;
+  }
+  .selected__block {
     background-color: clr.$green;
     left: 0;
-    bottom: 0;
+    top: 0;
   }
-
-  .bottom__links {
-    display: flex;
-    gap: 2.5rem;
-    font-family: "GeneralSans-Regular";
-    color: #686868;
-    position: absolute;
-    bottom: 2rem;
-    right: 4rem;
-    cursor: pointer;
+  .selected__block__red {
+    background-color: clr.$red;
+    right: 0;
+    bottom: 0;
   }
 
   .pattern__container {
@@ -66,49 +62,30 @@
     }
   }
 
-  .hero__content__container {
+  .selected__content__container {
     width: 70%;
     height: 80%;
-    padding: 8rem 6rem;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-size: 0.9rem;
+    padding: 3rem 6rem;
 
-    .h1__container {
-      color: clr.$black;
-      font-family: "Brown-Sugar";
+    .selected__h1 {
       display: flex;
       flex-direction: column;
+      font-family: "Brown-Sugar";
 
-      .hero__subheader__small {
-        font-family: "GeneralSans-Regular";
+      span:first-child {
+        font-size: 2rem;
       }
 
-      .hero__h1 {
-        // font-size: 9rem;
-        white-space: nowrap;
-        line-height: 0.9;
-        font-size: calc(10px + 7vw);
-      }
-
-      .hero__subheader {
-        font-size: 3rem;
+      span:last-child {
+        font-size: 6rem;
       }
     }
 
-    .hero__info__container {
-      display: flex;
-      justify-content: space-between;
-      padding-top: 2rem;
-      font-family: "GeneralSans-Regular";
-      color: #777777;
-      //   color: clr.$dark-grey;
-
-      p {
-        text-wrap: balance;
-        max-width: 200px;
-      }
+    .selected__work__01 {
+      height: 400px;
+      width: 550px;
+      background-color: red;
     }
   }
 }

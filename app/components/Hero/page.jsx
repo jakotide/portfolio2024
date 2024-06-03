@@ -3,19 +3,18 @@ import { motion } from "framer-motion";
 import styles from "./hero.module.scss";
 import {
   textSlideUp,
-  letterAnimation,
-  containerAnimation,
   opacityReveal,
   opacityRevealTwo,
+  opacityRevealThree,
 } from "./anim";
 
-const splitText = (text) => {
-  return text.split("").map((char, index) => (
-    <motion.span key={index} variants={letterAnimation}>
-      {char}
-    </motion.span>
-  ));
-};
+// const splitText = (text) => {
+//   return text.split("").map((char, index) => (
+//     <motion.span key={index} variants={letterAnimation}>
+//       {char}
+//     </motion.span>
+//   ));
+// };
 
 const Hero = () => {
   return (
@@ -96,16 +95,15 @@ const Hero = () => {
           <p>Frontend developer with a passion for design</p>
         </motion.div>
         <div className={styles.h1__container}>
-          <div className={styles.hidden__box}>
-            <motion.div
-              variants={containerAnimation}
-              initial="initial"
-              animate="animate"
-              className={styles.hero__h1}
-            >
-              {splitText("Jakob Tidemand")}
-            </motion.div>
-          </div>
+          <motion.div
+            variants={opacityRevealThree}
+            initial="initial"
+            animate="animate"
+            className={styles.hero__h1}
+          >
+            Jakob Tidemand
+          </motion.div>
+
           <motion.div
             variants={opacityRevealTwo}
             initial="initial"

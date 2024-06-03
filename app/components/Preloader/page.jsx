@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./Preloader.module.scss";
+import styles from "./preloader.module.scss";
 import { motion } from "framer-motion";
 import { counterReveal, slide, textReveal } from "./anim";
 

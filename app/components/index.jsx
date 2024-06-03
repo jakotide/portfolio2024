@@ -1,1 +1,2 @@
-export { Preloader } from "../components/Preloader/page";
+export { Preloader } from "./preloader/page";
+export { SelectedWork } from "./selectedwork/page.tsx";

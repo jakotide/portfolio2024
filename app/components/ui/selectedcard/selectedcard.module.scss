@@ -1,0 +1,9 @@
+.selected__card__container {
+  border: 1px solid black;
+  height: 500px;
+  width: 500px;
+
+  .selected__image {
+    object-fit: cover;
+  }
+}
