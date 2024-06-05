@@ -10,6 +10,52 @@
   place-items: center;
   position: relative;
 
+  .mid__container {
+    position: relative;
+    width: 70%;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    // border: 1px solid red;
+
+    .pattern__container {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      opacity: 0.15;
+      max-height: 0;
+      max-height: 100vh;
+      pointer-events: none;
+
+      .line__container {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        width: 1rem;
+
+        // &:first-child,
+        // &:last-child {
+        //   opacity: 0;
+        //   visibility: hidden;
+        // }
+
+        .line,
+        .linetwo {
+          width: 1px;
+          display: block;
+          background: linear-gradient(to bottom, transparent 60%, #808080 50%);
+          background-size: 100% 18px;
+        }
+      }
+    }
+  }
+
   .hero__block {
     position: absolute;
     width: 8rem;
@@ -29,47 +75,16 @@
     right: 4rem;
     cursor: pointer;
   }
-
-  .pattern__container {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+  .flex__container {
     display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    opacity: 0.15;
-    max-height: 0;
-    max-height: 100vh;
-    pointer-events: none;
-
-    .line__container {
-      flex-shrink: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: stretch;
-      width: 1rem;
-
-      &:first-child,
-      &:last-child {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .line {
-        width: 1px;
-        display: block;
-        background: linear-gradient(to bottom, transparent 60%, #808080 50%);
-        background-size: 100% 18px;
-      }
-    }
+    align-items: center;
+    margin: auto;
   }
 
   .hero__content__container {
-    width: 70%;
+    width: 100%;
     height: 80%;
-    padding: 8rem 6rem;
+    padding: 8rem 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -89,7 +104,7 @@
         // font-size: 9rem;
         white-space: nowrap;
         line-height: 0.9;
-        font-size: calc(10px + 7vw);
+        font-size: calc(2.4rem + 7vw);
       }
 
       .hero__subheader {
@@ -106,7 +121,7 @@
       //   color: clr.$dark-grey;
 
       p {
-        text-wrap: balance;
+        // text-wrap: balance;
         max-width: 200px;
       }
     }

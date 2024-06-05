@@ -9,6 +9,8 @@ interface selectedCardProps {
   title: string;
   description: string;
   className?: string;
+  width?: number;
+  height?: number;
 }
 
 export const SelectedCard: React.FC<selectedCardProps> = ({
@@ -18,15 +20,18 @@ export const SelectedCard: React.FC<selectedCardProps> = ({
   title,
   description,
   className,
+  width = 300,
+  height = 500,
 }) => {
   return (
     <div className={`${styles.selected__card__container} ${className}`}>
       <Image
         src={imageSrc}
         alt={title}
-        width={500}
-        height={500}
+        width={width}
+        height={height}
         className={styles.selected__image}
+        layout="responsive"
       />
       <div>
         <div>{number}</div>

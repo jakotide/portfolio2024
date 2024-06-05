@@ -1,3 +1,5 @@
+import { easeOut } from "framer-motion";
+
 export const slide = {
   initial: {
     x: "0",
@@ -6,7 +8,7 @@ export const slide = {
   exit: {
     y: "88vh",
     x: "-95vw",
-    transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
+    transition: { duration: 1.2, ease: [0.37, 0.84, 0.39, 0.99] },
   },
 };
 
