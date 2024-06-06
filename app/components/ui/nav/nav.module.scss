@@ -1,3 +1,5 @@
+@use "../../../scss/globals.scss" as clr;
+
 .nav {
   position: fixed;
   top: 0;
@@ -8,6 +10,7 @@
   justify-content: space-between;
   font-family: "GeneralSans-Regular";
   overflow: hidden;
+  color: clr.$black;
   filter: blur(20px);
 
   .nav__menu {

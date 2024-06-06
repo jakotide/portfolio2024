@@ -12,7 +12,7 @@ import {
 const Hero = () => {
   return (
     <div className={styles.hero__container}>
-      <div className={styles.hero__block}></div>
+      {/* <div className={styles.hero__block}></div> */}
       <div className={styles.mid__container}>
         <div className={styles.pattern__container}>
           <div className={styles.line__container}>
