@@ -31,17 +31,17 @@ export const SelectedCard = () => {
 
   return (
     <div className={styles.selected__card}>
+      <div className={styles.card__img}>
+        {clipPathValues.map((_, index) => (
+          <div key={index} className={styles.mask}></div>
+        ))}
+      </div>
       <h1>
         FSE<span>001</span>
       </h1>
       <div>description</div>
       <div>lang</div>
       <div>visit site</div>
-      <div className={styles.card__img}>
-        {clipPathValues.map((_, index) => (
-          <div key={index} className={styles.mask}></div>
-        ))}
-      </div>
     </div>
   );
 };

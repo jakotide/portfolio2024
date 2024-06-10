@@ -7,7 +7,7 @@
   position: relative;
   display: grid;
   place-items: center;
-  padding: 0 4rem;
+  // padding: 0 4rem;
 
   .selected__block,
   .selected__block__red {
@@ -28,7 +28,7 @@
 
   .mid__container {
     position: relative;
-    width: 100%;
+    width: 70%;
     display: grid;
     place-items: center;
     height: 100%;

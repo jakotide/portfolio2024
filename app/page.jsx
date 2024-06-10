@@ -1,7 +1,8 @@
 "use client";
 import Hero from "./components/hero/page";
+
 import React, { useState, useEffect, use } from "react";
-import { Preloader, SelectedWork } from "./components";
+import { Preloader, SelectedWork, PatternContainer } from "./components";
 import { AnimatePresence } from "framer-motion";
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
 
   return (
     <main>
+      <PatternContainer />
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>
