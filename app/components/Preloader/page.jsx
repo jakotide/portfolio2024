@@ -49,14 +49,10 @@ export const Preloader = () => {
     initial: {
       d: initialPath,
       transition: { duration: 1.1, ease: [0.76, 0, 0.24, 1] },
-      // opacity: 1,
-      filter: "blur(20px)",
     },
     exit: {
       d: targetPath,
       transition: { duration: 1.1, ease: [0.76, 0, 0.24, 1], delay: 0.2 },
-      // opacity: 0,
-      filter: "blur(0)",
     },
   };
 
