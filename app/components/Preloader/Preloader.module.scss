@@ -1,7 +1,8 @@
 @use "../../scss/globals.scss" as clr;
 
 .preloader__container {
-  background-color: clr.$green;
+  background-color: clr.$black;
+  color: clr.$white;
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -16,8 +17,13 @@
   font-family: "GeneralSans-Regular";
 
   .loader__hello {
-    font-size: 3rem;
-    margin-top: 10rem;
+    font-size: 4rem;
+    color: clr.$white;
+    z-index: 5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .counter {
@@ -26,8 +32,23 @@
     font-family: "Brown-Sugar";
     line-height: 1;
     transition: opacity 0.4s ease;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    z-index: 5;
   }
   .counter__hidden {
     opacity: 0;
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: calc(100% + 300px);
+
+    path {
+      fill: #141516;
+    }
   }
 }

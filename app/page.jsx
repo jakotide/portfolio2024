@@ -11,12 +11,13 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
+      window.scrollTo(0, 0);
     }, 2800);
   }, []);
 
   return (
     <main>
-      <PatternContainer />
+      {/* <PatternContainer /> */}
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
       </AnimatePresence>

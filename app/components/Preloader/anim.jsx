@@ -6,9 +6,8 @@ export const slide = {
     y: "0",
   },
   exit: {
-    y: "88vh",
-    x: "-95vw",
-    transition: { duration: 1.2, ease: [0.37, 0.84, 0.39, 0.99] },
+    y: "-100%",
+    transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
   },
 };
 

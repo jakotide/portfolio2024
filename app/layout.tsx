@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./scss/reset.scss";
 import { Navigation } from "../app/components/ui/nav/page";
 import { BlurOverlay } from "../app/components/ui/blur/page";
-import { PatternContainer } from "./components/";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +19,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* <PatternContainer></PatternContainer> */}
         <Navigation />
         <BlurOverlay></BlurOverlay>
         {children}
