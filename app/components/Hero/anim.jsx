@@ -16,31 +16,6 @@ export const textSlideUp = {
   },
 };
 
-// export const letterAnimation = {
-//   initial: {
-//     y: "100%",
-//     opacity: 0,
-//   },
-//   animate: {
-//     y: "0",
-//     opacity: 1,
-//     transition: {
-//       duration: 0.2,
-//       ease: [0.76, 0, 0.24, 1],
-//     },
-//   },
-// };
-
-// export const containerAnimation = {
-//   initial: {},
-//   animate: {
-//     transition: {
-//       delayChildren: 3,
-//       staggerChildren: 0.05,
-//     },
-//   },
-// };
-
 export const opacityReveal = {
   initial: {
     opacity: 0,

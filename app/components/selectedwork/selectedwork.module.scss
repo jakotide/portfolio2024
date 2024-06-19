@@ -23,7 +23,8 @@
       flex-direction: column;
       font-family: "Brown-Sugar";
       padding: 0 0 3rem;
-      margin-top: 8rem;
+      margin: 8rem 0 2rem;
+      gap: 0.3rem;
       filter: blur(20px);
       span {
         font-size: 3rem;
@@ -31,21 +32,25 @@
 
       .selected__work {
         font-size: 8rem;
+        line-height: 0.8;
       }
       .selected__amount {
         font-size: 1.5rem;
       }
     }
 
-    .selected__card__container {
+    .selected__projects__container {
       display: flex;
-      justify-content: space-between;
-    }
+      width: 100%;
+      gap: 16rem;
 
-    .selected__image__1 {
-      width: 800px;
-      height: 700px;
-      object-fit: cover;
+      .selected__card__2 {
+        margin-top: 25rem;
+      }
     }
   }
+}
+
+.spacer {
+  height: 100vh;
 }

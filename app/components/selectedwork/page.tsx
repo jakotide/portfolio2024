@@ -1,17 +1,14 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import styles from "./selectedwork.module.scss";
-import { SelectedCard } from "../ui/selectedcard/page";
-// import { cardData } from "../ui/selectedcard/data";
 import { useInView, motion } from "framer-motion";
 import { revealh1 } from "./anim";
-import ferdImage from "../../../public/images/ferdsss.jpg";
-import Image from "next/image";
+import { SelectedCard } from "../ui/";
+import { cardData1, cardData2 } from "../ui/selectedcard/cardData";
 
 export const SelectedWork: React.FC = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
-    // margin: "0px 0px 50% 0px",
   });
 
   return (
@@ -30,19 +27,24 @@ export const SelectedWork: React.FC = () => {
             <span className={styles.selected__amount}>(02)</span>
           </div>
         </motion.h1>
-
-        {/* <div className={styles.selected__card__container}>
-          <SelectedCard />
-        </div> */}
-
-        <div>
-          <div></div>
-          <Image
-            src={ferdImage}
-            alt="Ferd image"
-            className={styles.selected__image__1}
+        <div className={styles.selected__projects__container}>
+          <SelectedCard
+            className={styles.selected__card__1}
+            videoSrc={cardData1.videoSrc}
+            projectTitle={cardData1.projectTitle}
+            projectNumber={cardData1.projectNumber}
+            projectType={cardData1.projectType}
+          />
+          <SelectedCard
+            className={styles.selected__card__2}
+            videoSrc={cardData2.videoSrc}
+            projectTitle={cardData2.projectTitle}
+            projectNumber={cardData2.projectNumber}
+            projectType={cardData2.projectType}
           />
         </div>
+
+        <div className={styles.spacer}></div>
       </div>
     </section>
   );

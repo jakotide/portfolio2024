@@ -1,6 +1,7 @@
-/** @type {import('next').NextConfig} */
+// next.config.mjs
 import path from "path";
 import { fileURLToPath } from "url";
+import withVideos from "next-videos";
 
 // Convert import.meta.url to a file path
 const __filename = fileURLToPath(import.meta.url);
@@ -13,4 +14,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withVideos(nextConfig);
