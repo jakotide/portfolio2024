@@ -20,3 +20,8 @@ $grey: #5f5f5f;
 .flex {
   display: flex;
 }
+
+.hidden {
+  visibility: none;
+  pointer-events: none;
+}

@@ -1,8 +1,8 @@
 "use client";
 import Hero from "./components/hero/page";
-
-import React, { useState, useEffect, use } from "react";
-import { Preloader, SelectedWork, PatternContainer } from "./components";
+import { ReactLenis } from "lenis/react";
+import React, { useState, useEffect } from "react";
+import { Preloader, SelectedWork, MoreWork } from "./components";
 import { AnimatePresence } from "framer-motion";
 
 const Home = () => {
@@ -16,15 +16,17 @@ const Home = () => {
   }, []);
 
   return (
-    <main>
-      {/* <PatternContainer /> */}
-      <AnimatePresence mode="wait">
-        {isLoading && <Preloader />}
-      </AnimatePresence>
+    <ReactLenis root>
+      <main>
+        <AnimatePresence mode="wait">
+          {isLoading && <Preloader />}
+        </AnimatePresence>
 
-      <Hero />
-      <SelectedWork />
-    </main>
+        <Hero />
+        <SelectedWork />
+        <MoreWork />
+      </main>
+    </ReactLenis>
   );
 };
 

@@ -1,3 +1,3 @@
 export { Preloader } from "./preloader/page";
-export { SelectedWork } from "./selectedwork/page.tsx";
-export { PatternContainer } from "./pattern/page";
+export { SelectedWork } from "./selectedwork/page";
+export { MoreWork } from "./morework/page";
