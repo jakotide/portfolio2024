@@ -7,6 +7,7 @@ import { AnimatePresence } from "framer-motion";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isCircleInView, setIsCircleInView] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -23,8 +24,8 @@ const Home = () => {
         </AnimatePresence>
 
         <Hero />
-        <SelectedWork />
-        <MoreWork />
+        <SelectedWork isCircleInView={isCircleInView} />
+        <MoreWork setIsCircleInView={setIsCircleInView} />
       </main>
     </ReactLenis>
   );

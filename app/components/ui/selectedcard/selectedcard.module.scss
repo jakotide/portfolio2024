@@ -27,6 +27,7 @@
     width: 100%;
     text-transform: uppercase;
     margin-top: 0.5rem;
+    transition: all 0.8s ease-in;
 
     .selected__number__container {
       display: flex;
@@ -34,10 +35,18 @@
       font-size: 0.8rem;
       justify-content: space-between;
     }
+    .moreColorNumb {
+      color: clr.$white;
+    }
 
     .selected__project__title {
       font-size: 1.5rem;
       margin-top: 1rem;
+      z-index: 3000;
     }
   }
+}
+
+.moreColor {
+  color: clr.$white;
 }
