@@ -55,8 +55,6 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
             isCircleInView={isCircleInView}
           />
         </div>
-
-        <div className={styles.spacer}></div>
       </div>
     </section>
   );

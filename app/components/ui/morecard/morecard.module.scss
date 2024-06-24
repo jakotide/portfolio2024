@@ -7,7 +7,7 @@
 
   &:hover {
     .number__container {
-      .card__number span {
+      .card__number {
         color: clr.$red;
       }
     }
@@ -21,10 +21,10 @@
       font-size: 4rem;
       font-family: "Brown-Sugar";
       padding-bottom: 2rem;
-
-      span {
-        transition: color 0.3s;
-      }
+      transition: color 0.3s;
+    }
+    .card__number.active {
+      color: clr.$red !important;
     }
   }
 
@@ -63,4 +63,7 @@
       }
     }
   }
+}
+.card__number.active {
+  color: clr.$red !important;
 }

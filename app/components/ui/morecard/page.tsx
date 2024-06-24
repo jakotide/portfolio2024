@@ -11,31 +11,43 @@ interface MoreCardProps {
   projectType: string;
   setModal: (modalState: { active: boolean; index: number }) => void;
   index: number;
+  isActive: boolean;
 }
 
 export const MoreCard: React.FC<MoreCardProps> = ({
-  imageSrc,
-  imageAlt,
   cardNumber,
   projectTitle,
   description,
-  projectType,
   setModal,
   index,
+  isActive,
 }) => {
+  const handleMouseEnter = () => {
+    setModal({ active: true, index: index });
+  };
+  // const handleMouseLeave = () => {
+  //   // setModal((prevState) => {
+  //   //   if(prevState.index !== index) {
+  //   //     return prevState;
+  //   //   }
+  //   //   return { active: true, index: index };
+  //   // })
+  // };
   return (
     <div
       className={styles.morecard__container}
-      onMouseEnter={() => {
-        setModal({ active: true, index: index });
-      }}
-      onMouseLeave={() => {
-        setModal({ active: false, index: index });
-      }}
+      onMouseEnter={handleMouseEnter}
+      // onMouseLeave={handleMouseLeave}
     >
       <div className={styles.number__container}>
-        <div className={styles.card__number}>
-          0<span>{cardNumber}</span>
+        <div
+          className={
+            isActive
+              ? `${styles.card__number} ${styles.active}`
+              : styles.card__number
+          }
+        >
+          {cardNumber}
         </div>
       </div>
 

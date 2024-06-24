@@ -1,13 +1,7 @@
 import styles from "./morework.module.scss";
-import {
-  useScroll,
-  useTransform,
-  motion,
-  useAnimation,
-  LayoutGroup,
-} from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useRef, useEffect, useState } from "react";
-import { MoreCardData, moreCard } from "../ui/morecard/cardData";
+import { moreCard } from "../ui/morecard/cardData";
 import { MoreCard } from "../ui";
 import { ModalHover } from "../effects/modalHover/page";
 import { LineTransition } from "../effects/linesTransition/page";
@@ -19,7 +13,7 @@ interface MoreWorkProps {
 export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
   const container = useRef(null);
   const circleRef = useRef(null);
-  const [modal, setModal] = useState({ active: false, index: 0 });
+  const [modal, setModal] = useState({ active: true, index: 0 });
 
   const { scrollYProgress } = useScroll({
     target: container,
@@ -73,6 +67,7 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
                   cardNumber={card.cardNumber}
                   setModal={setModal}
                   index={i}
+                  isActive={modal.active && modal.index === i}
                 />
               ))}
             </div>

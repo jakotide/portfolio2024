@@ -2,7 +2,6 @@
 
 .more__outer {
   position: relative;
-  // overflow: hidden;
 
   .circle__cont {
     position: relative;
@@ -11,14 +10,14 @@
     height: 0;
     background-color: clr.$black;
     .circle {
-      height: 800%;
+      height: 950%;
       width: 150%;
       left: -25%;
       border-radius: 50% 50% 0% 0%;
       background-color: clr.$black;
       position: absolute;
       pointer-events: none;
-      bottom: -280%;
+      bottom: -320%;
       filter: blur(43px);
     }
   }
