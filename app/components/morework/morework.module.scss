@@ -8,15 +8,16 @@
     top: 0;
     left: 0;
     height: 0;
+    background-color: clr.$black;
     .circle {
       height: 800%;
-      width: 120%;
-      left: -10%;
+      width: 150%;
+      left: -25%;
       border-radius: 50% 50% 0% 0%;
       background-color: clr.$black;
       position: absolute;
       pointer-events: none;
-      bottom: -330%;
+      bottom: -280%;
       filter: blur(43px);
     }
   }
@@ -28,7 +29,7 @@
     position: relative;
 
     .more__content {
-      padding: 8rem 0 2rem;
+      padding: 8rem 7rem 14rem;
       color: clr.$white;
       transition: opacity 0.5s ease, filter 0.5s ease;
       background-color: clr.$black;
@@ -37,7 +38,7 @@
       .more__h1 {
         font-family: "Brown-Sugar";
         font-size: 4rem;
-        padding-left: 7rem;
+        margin-bottom: 4rem;
       }
 
       .more__flex__container {
@@ -46,7 +47,7 @@
 
         .hover__container {
           width: 50%;
-          background-color: red;
+          align-self: center;
         }
         .more__card__container {
           width: 50%;

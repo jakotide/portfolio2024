@@ -1,8 +1,17 @@
 @use "../../../scss/globals.scss" as clr;
 .morecard__container {
-  border-top: 0.5px solid clr.$red;
+  border-top: 0.5px solid clr.$grey;
   display: flex;
   height: 300px;
+  cursor: pointer;
+
+  &:hover {
+    .number__container {
+      .card__number span {
+        color: clr.$red;
+      }
+    }
+  }
 
   .number__container {
     width: 30%;
@@ -12,6 +21,10 @@
       font-size: 4rem;
       font-family: "Brown-Sugar";
       padding-bottom: 2rem;
+
+      span {
+        transition: color 0.3s;
+      }
     }
   }
 
@@ -19,10 +32,12 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+
     .more__image {
       width: 100%;
-      height: 4rem;
+      height: 2rem;
       object-fit: cover;
+      background-color: clr.$grey;
     }
     .card__text {
       display: flex;

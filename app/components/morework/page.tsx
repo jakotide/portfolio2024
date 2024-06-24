@@ -3,6 +3,7 @@ import { useScroll, useTransform, motion, useAnimation } from "framer-motion";
 import React, { useRef, useEffect, useState } from "react";
 import { MoreCardData, moreCard } from "../ui/morecard/cardData";
 import { MoreCard } from "../ui";
+import { ModalHover } from "../effects/modalHover/page";
 
 interface MoreWorkProps {
   setIsCircleInView: (isInView: boolean) => void;
@@ -11,6 +12,7 @@ interface MoreWorkProps {
 export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
   const container = useRef(null);
   const circleRef = useRef(null);
+  const [modal, setModal] = useState({ active: false, index: 0 });
 
   const { scrollYProgress } = useScroll({
     target: container,
@@ -25,15 +27,19 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
   }).scrollYProgress;
 
   useEffect(() => {
-    const unsubscribe = circleYProgress.onChange((latest) => {
+    const handleChange = (latest: number) => {
       if (latest > 0.5) {
         setIsCircleInView(true);
       } else {
         setIsCircleInView(false);
       }
-    });
+    };
 
-    return () => unsubscribe();
+    const unsubscribe = circleYProgress.on("change", handleChange);
+
+    return () => {
+      unsubscribe();
+    };
   }, [circleYProgress, setIsCircleInView]);
 
   return (
@@ -45,7 +51,9 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
         <motion.div className={styles.more__content}>
           <h1 className={styles.more__h1}>More Projects</h1>
           <div className={styles.more__flex__container}>
-            <div className={styles.hover__container}></div>
+            <div className={styles.hover__container}>
+              <ModalHover modal={modal}></ModalHover>
+            </div>
             <div className={styles.more__card__container}>
               {moreCard.map((card, i) => (
                 <MoreCard
@@ -56,6 +64,8 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
                   projectType={card.projectType}
                   description={card.description}
                   cardNumber={card.cardNumber}
+                  setModal={setModal}
+                  index={i}
                 />
               ))}
             </div>

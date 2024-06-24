@@ -43,7 +43,6 @@
           font-size: 9rem;
           white-space: nowrap;
           line-height: 0.9;
-          // font-size: calc(2.4rem + 7vw);
         }
 
         .hero__subheader {
@@ -56,11 +55,9 @@
         justify-content: space-between;
         padding-top: 2rem;
         font-family: "GeneralSans-Regular";
-        color: #777777;
-        //   color: clr.$dark-grey;
+        color: clr.$grey;
 
         p {
-          // text-wrap: balance;
           max-width: 200px;
         }
       }

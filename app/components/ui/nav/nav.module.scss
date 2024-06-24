@@ -13,12 +13,22 @@
   color: clr.$black;
   filter: blur(20px);
 
+  .circleInView {
+    color: clr.$white !important;
+  }
+
   .nav__menu {
     display: flex;
     gap: 2rem;
 
     li {
       list-style: none;
+      .circleInView {
+        color: clr.$white !important;
+      }
     }
   }
+}
+.circleInView {
+  color: clr.$white !important;
 }
