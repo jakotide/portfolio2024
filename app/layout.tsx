@@ -1,13 +1,10 @@
 "use client";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./scss/reset.scss";
-import { Navigation } from "../app/components/ui/nav/page";
-import { BlurOverlay } from "../app/components/ui/blur/page";
-import { useState } from "react";
+// import { Navigation } from "../app/components/ui/nav/page";
+// import { BlurOverlay } from "../app/components/ui/blur/page";
+import { Navigation, BlurOverlay } from "./components/ui";
 import React from "react";
-
-const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata: Metadata = {
 //   title: "Home | Jakob Tidemand - Frontend developer",
@@ -21,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <Navigation />
         <BlurOverlay></BlurOverlay>
         {children}

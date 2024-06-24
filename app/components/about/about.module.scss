@@ -1,0 +1,59 @@
+@use "../../scss/globals.scss" as clr;
+
+.about__container {
+  background-color: clr.$red;
+  height: 100vh;
+  width: 100%;
+  padding: 10rem 7rem;
+  color: clr.$white;
+  .about__content {
+    // border-left: 1px solid clr.$black;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .about__left {
+      width: 50%;
+      .about__h1 {
+        font-family: "Brown-Sugar";
+        margin-bottom: 4rem;
+
+        .a__little {
+          font-size: 3rem;
+        }
+
+        .about__me {
+          font-size: 8rem;
+          line-height: 0.9;
+        }
+      }
+
+      .about__image {
+        height: 450px;
+        width: 550px;
+        object-fit: cover;
+        border-radius: 0.25em;
+      }
+    }
+    .about__right {
+      width: 50%;
+      font-family: "GeneralSans-Regular";
+
+      .about__intro {
+        font-size: 2rem;
+        text-wrap: balance;
+        margin-bottom: 3rem;
+        max-width: 80%;
+        line-height: 1.4;
+      }
+
+      .about__p1,
+      .about__p2 {
+        text-wrap: balance;
+        max-width: 87%;
+        margin-bottom: 2rem;
+        font-size: 1rem;
+      }
+    }
+  }
+}

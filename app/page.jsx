@@ -1,8 +1,7 @@
 "use client";
-import Hero from "./components/hero/page";
 import { ReactLenis } from "lenis/react";
 import React, { useState, useEffect } from "react";
-import { Preloader, SelectedWork, MoreWork } from "./components";
+import { Preloader, SelectedWork, MoreWork, Hero, About } from "./components";
 import { AnimatePresence } from "framer-motion";
 
 const Home = () => {
@@ -18,14 +17,14 @@ const Home = () => {
 
   return (
     <ReactLenis root>
-      <main>
+      <main style={{ overflow: "hidden" }}>
         <AnimatePresence mode="wait">
           {isLoading && <Preloader />}
         </AnimatePresence>
-
         <Hero />
         <SelectedWork isCircleInView={isCircleInView} />
         <MoreWork setIsCircleInView={setIsCircleInView} />
+        <About />
       </main>
     </ReactLenis>
   );

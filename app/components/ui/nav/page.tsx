@@ -18,7 +18,7 @@ export const Navigation: React.FC<NavProps> = () => {
     >
       <div>tidemand_folio2024</div>
 
-      <menu className={`${styles.nav}`}>
+      <menu className={styles.nav__menu}>
         <li>works</li>
         <li>about</li>
         <li>contact</li>

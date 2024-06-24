@@ -1,0 +1,45 @@
+@use "../../../scss/globals.scss" as clr;
+
+.red__line__container {
+  display: flex;
+  flex-direction: column;
+  background-color: clr.$black;
+  width: 100%;
+
+  .red__line {
+    background-color: clr.$red;
+    width: 100%;
+  }
+  .line__1 {
+    height: 0.5px;
+    background-color: clr.$red;
+    margin-bottom: 2.5rem;
+    width: 100%;
+  }
+  .line__2 {
+    height: 1px;
+    background-color: clr.$red;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  .line__3 {
+    height: 2px;
+    margin-bottom: 1.5rem;
+  }
+  .line__4 {
+    height: 4px;
+    margin-bottom: 1rem;
+  }
+  .line__5 {
+    height: 8px;
+    margin-bottom: 0.5rem;
+  }
+  .line__6 {
+    height: 16px;
+    margin-bottom: 0.25rem;
+  }
+  .line__7 {
+    height: 32px;
+    margin-bottom: 2px;
+  }
+}

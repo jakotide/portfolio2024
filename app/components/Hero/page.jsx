@@ -10,7 +10,7 @@ import {
   opacityRevealThree,
 } from "./anim";
 
-const Hero = () => {
+export const Hero = () => {
   return (
     <div className={`${styles.hero__container} ${styles.noise}`}>
       <div className={styles.hero__content__container}>
@@ -64,4 +64,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+// export default Hero;

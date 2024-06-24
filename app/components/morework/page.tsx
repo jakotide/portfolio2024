@@ -1,9 +1,16 @@
 import styles from "./morework.module.scss";
-import { useScroll, useTransform, motion, useAnimation } from "framer-motion";
+import {
+  useScroll,
+  useTransform,
+  motion,
+  useAnimation,
+  LayoutGroup,
+} from "framer-motion";
 import React, { useRef, useEffect, useState } from "react";
 import { MoreCardData, moreCard } from "../ui/morecard/cardData";
 import { MoreCard } from "../ui";
 import { ModalHover } from "../effects/modalHover/page";
+import { LineTransition } from "../effects/linesTransition/page";
 
 interface MoreWorkProps {
   setIsCircleInView: (isInView: boolean) => void;
@@ -71,6 +78,7 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
             </div>
           </div>
         </motion.div>
+        <LineTransition />
       </motion.section>
     </div>
   );
