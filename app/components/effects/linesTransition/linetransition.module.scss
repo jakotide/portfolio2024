@@ -5,41 +5,92 @@
   flex-direction: column;
   background-color: clr.$black;
   width: 100%;
+  // max-height: 75px;
 
   .red__line {
     background-color: clr.$red;
     width: 100%;
+    height: 100%;
   }
-  .line__1 {
-    height: 0.5px;
-    background-color: clr.$red;
-    margin-bottom: 2.5rem;
-    width: 100%;
+  .line__0__container {
+    height: 5rem;
+    background-color: clr.$black;
+    .line__1 {
+      background-color: clr.$red;
+    }
   }
-  .line__2 {
-    height: 1px;
-    background-color: clr.$red;
-    margin-bottom: 2rem;
-    width: 100%;
+  .line__1__container {
+    height: 4rem;
+    background-color: clr.$black;
+    .line__1 {
+      background-color: clr.$red;
+    }
   }
-  .line__3 {
-    height: 2px;
-    margin-bottom: 1.5rem;
+  .line__2__container {
+    height: 3rem;
+    background-color: clr.$black;
+
+    .line__2 {
+      background-color: clr.$red;
+    }
   }
-  .line__4 {
-    height: 4px;
-    margin-bottom: 1rem;
+  .line__3__container {
+    height: 2rem;
+    background-color: clr.$black;
+
+    .line__3 {
+      background-color: clr.$red;
+    }
   }
-  .line__5 {
-    height: 8px;
-    margin-bottom: 0.5rem;
+  .line__4__container {
+    height: 1rem;
+    background-color: clr.$black;
+
+    .line__4 {
+      background-color: clr.$red;
+    }
   }
-  .line__6 {
-    height: 16px;
-    margin-bottom: 0.25rem;
+  .line__5__container {
+    height: 0.5rem;
+    background-color: clr.$black;
+
+    .line__4 {
+      background-color: clr.$red;
+    }
   }
-  .line__7 {
-    height: 32px;
-    margin-bottom: 2px;
+  .line__6__container {
+    height: 0.25rem;
+    background-color: clr.$black;
+
+    .line__4 {
+      background-color: clr.$red;
+    }
   }
+
+  // .line__2 {
+  //   height: 1px;
+  //   background-color: clr.$red;
+  //   margin-bottom: 2rem;
+  //   width: 100%;
+  // }
+  // .line__3 {
+  //   height: 2px;
+  //   margin-bottom: 1.5rem;
+  // }
+  // .line__4 {
+  //   height: 4px;
+  //   margin-bottom: 1rem;
+  // }
+  // .line__5 {
+  //   height: 8px;
+  //   margin-bottom: 0.5rem;
+  // }
+  // .line__6 {
+  //   height: 16px;
+  //   margin-bottom: 0.25rem;
+  // }
+  // .line__7 {
+  //   height: 32px;
+  //   // margin-bottom: 2px;
+  // }
 }

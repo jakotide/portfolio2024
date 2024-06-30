@@ -1,7 +1,14 @@
 "use client";
 import { ReactLenis } from "lenis/react";
 import React, { useState, useEffect } from "react";
-import { Preloader, SelectedWork, MoreWork, Hero, About } from "./components";
+import {
+  Preloader,
+  SelectedWork,
+  MoreWork,
+  Hero,
+  About,
+  Skills,
+} from "./components";
 import { AnimatePresence } from "framer-motion";
 
 const Home = () => {
@@ -25,6 +32,7 @@ const Home = () => {
         <SelectedWork isCircleInView={isCircleInView} />
         <MoreWork setIsCircleInView={setIsCircleInView} />
         <About />
+        <Skills />
       </main>
     </ReactLenis>
   );
