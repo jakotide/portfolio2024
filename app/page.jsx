@@ -16,10 +16,12 @@ const Home = () => {
   const [isCircleInView, setIsCircleInView] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       setIsLoading(false);
       window.scrollTo(0, 0);
     }, 2800);
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return (

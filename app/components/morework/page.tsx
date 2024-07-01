@@ -73,7 +73,7 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
             </div>
           </div>
         </motion.div>
-        <LineTransition />
+        {/* <LineTransition /> */}
       </motion.section>
     </div>
   );
