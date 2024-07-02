@@ -1,8 +1,6 @@
 "use client";
 import type { Metadata } from "next";
 import "./scss/reset.scss";
-// import { Navigation } from "../app/components/ui/nav/page";
-// import { BlurOverlay } from "../app/components/ui/blur/page";
 import { Navigation, BlurOverlay } from "./components/ui";
 import React from "react";
 

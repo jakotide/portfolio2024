@@ -1,11 +1,11 @@
 @use "../../scss/globals.scss" as clr;
 
 .skills__section {
-  height: 100vh;
+  height: 100%;
   background-color: clr.$black;
   position: relative;
-  overflow: hidden;
-
+  // overflow: hidden;
+  padding-bottom: 44rem;
   .hidden {
     display: none;
     pointer-events: none;
@@ -51,20 +51,15 @@
   }
   .marquee__container,
   .readable__container {
-    // Ensuring containers are not causing layout shifts
     position: absolute;
     top: 60;
     left: 0;
     width: 100%;
     height: 100%;
-    will-change: transform; // Hint to browsers for optimization
-    // transform: translateZ(0); // Trigger hardware acceleration
+    will-change: transform;
   }
 
   .marquee__container {
-    // width: 100%;
-    // height: 500px;
-
     .hidden {
       display: none;
     }

@@ -4,3 +4,4 @@ export { MoreWork } from "./morework/page.tsx";
 export { Hero } from "./hero/page";
 export { About } from "./about/page";
 export { Skills } from "./skills/page";
+export { Contact } from "./contact/page";

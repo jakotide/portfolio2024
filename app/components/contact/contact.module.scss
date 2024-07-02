@@ -1,0 +1,97 @@
+@use "../../scss/globals.scss" as clr;
+
+.contact__section {
+  height: 100vh;
+  width: 100%;
+  background-color: clr.$light-green;
+  color: clr.$black;
+  font-family: "GeneralSans-Regular";
+
+  //   .contact__content {
+  //     margin-left: 7rem;
+  //     border-left: 1px solid clr.$black;
+  //     border-bottom: 1px solid clr.$black;
+  //     height: 60%;
+
+  //   }
+  .contact__grid {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    grid-template-rows: 8% 2% 40% 50%;
+    grid-template-areas:
+      "header-side header"
+      "line-side line"
+      "h1-side h1"
+      "form-side form";
+    height: 100%;
+
+    .box {
+      width: 100%;
+      height: 100%;
+    }
+
+    .box__line__side {
+      grid-area: line-side;
+      border-right: 1px solid clr.$black;
+      border-bottom: 1px solid clr.$black;
+    }
+    .box__line {
+      grid-area: line;
+      border-bottom: 1px solid clr.$black;
+    }
+
+    .box__1 {
+      grid-area: header-side;
+      border-right: 1px solid clr.$black;
+      border-bottom: 1px solid clr.$black;
+    }
+    .box__2 {
+      grid-area: header;
+      border-bottom: 1px solid clr.$black;
+    }
+    .box__3 {
+      grid-area: h1-side;
+      border-right: 1px solid clr.$black;
+      border-bottom: 1px solid clr.$black;
+    }
+    .box__4 {
+      grid-area: h1;
+      border-bottom: 1px solid clr.$black;
+
+      .contact__h1 {
+        font-size: 7rem;
+        font-family: "Brown-Sugar";
+        padding: 4rem 0 4rem 4rem;
+      }
+    }
+    .box__5 {
+      grid-area: form-side;
+      border-right: 1px solid clr.$black;
+    }
+    .box__6 {
+      grid-area: form;
+
+      .contact__form {
+        display: flex;
+        flex-direction: column;
+        padding: 4rem 0 4rem 4rem;
+        width: 70%;
+
+        label {
+          text-transform: uppercase;
+          font-size: 2rem;
+          margin-bottom: 1rem;
+        }
+
+        input {
+          border: none;
+          border-bottom: 2px solid clr.$black;
+          background-color: transparent;
+          margin-bottom: 2rem;
+          height: 2rem;
+          padding: 0.3rem;
+        }
+      }
+    }
+  }
+}

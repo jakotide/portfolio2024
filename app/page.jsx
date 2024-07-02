@@ -1,6 +1,6 @@
 "use client";
 import { ReactLenis } from "lenis/react";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Preloader,
   SelectedWork,
@@ -8,6 +8,7 @@ import {
   Hero,
   About,
   Skills,
+  Contact,
 } from "./components";
 import { AnimatePresence } from "framer-motion";
 
@@ -24,19 +25,27 @@ const Home = () => {
     return () => clearTimeout(timeoutId);
   }, []);
 
+  // useEffect(() => {
+  //   (async () => {
+  //     const LocomotiveScroll = (await import("locomotive-scroll")).default;
+  //     const locomotiveScroll = new LocomotiveScroll();
+  //   })();
+  // }, []);
+
   return (
-    <ReactLenis root>
-      <main style={{ overflow: "hidden" }}>
-        <AnimatePresence mode="wait">
-          {isLoading && <Preloader />}
-        </AnimatePresence>
-        <Hero />
-        <SelectedWork isCircleInView={isCircleInView} />
-        <MoreWork setIsCircleInView={setIsCircleInView} />
-        <About />
-        <Skills />
-      </main>
-    </ReactLenis>
+    // <ReactLenis root>
+    <main style={{ overflow: "hidden" }}>
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader />}
+      </AnimatePresence>
+      <Hero />
+      <SelectedWork isCircleInView={isCircleInView} />
+      <MoreWork setIsCircleInView={setIsCircleInView} />
+      <About />
+      <Skills />
+      <Contact />
+    </main>
+    // </ReactLenis>
   );
 };
 

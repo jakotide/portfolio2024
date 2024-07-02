@@ -1,8 +1,10 @@
 "use client";
 import styles from "./skills.module.scss";
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { rowData } from "./data";
+import { motion } from "framer-motion";
+import { containerReveal } from "./data";
 
 export const Skills = () => {
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -13,40 +15,6 @@ export const Skills = () => {
     setActiveButton(button);
   };
 
-  // const animate = useCallback(() => {
-  //   rowRefs.current.forEach((ref, index) => {
-  //     if (ref) {
-  //       const row = rowData[Math.floor(index / 2)];
-  //       let xPercent = gsap.getProperty(ref, "xPercent") as number | string;
-  //       xPercent =
-  //         typeof xPercent === "string" ? parseFloat(xPercent) : xPercent;
-  //       xPercent += 0.1 * row.direction;
-  //       if (xPercent <= -100) xPercent = 0;
-  //       if (xPercent >= 100) xPercent = 0;
-  //       gsap.set(ref, { xPercent });
-  //     }
-  //   });
-  //   animationFrameId.current = requestAnimationFrame(animate);
-  // }, []);
-
-  // useEffect(() => {
-  //   if (activeButton === "chaos") {
-  //     animationFrameId.current = requestAnimationFrame(animate);
-  //   } else {
-  //     if (animationFrameId.current !== null) {
-  //       cancelAnimationFrame(animationFrameId.current);
-  //       animationFrameId.current = null;
-  //     }
-  //   }
-
-  //   return () => {
-  //     if (animationFrameId.current !== null) {
-  //       cancelAnimationFrame(animationFrameId.current);
-  //       animationFrameId.current = null;
-  //     }
-  //   };
-  // }, [activeButton, animate]);
-
   const animate = () => {
     rowRefs.current.forEach((ref, index) => {
       if (ref) {
@@ -54,7 +22,7 @@ export const Skills = () => {
         let xPercent = gsap.getProperty(ref, "xPercent") as number | string;
         xPercent =
           typeof xPercent === "string" ? parseFloat(xPercent) : xPercent;
-        xPercent += 0.1 * row.direction;
+        xPercent += 0.05 * row.direction;
         if (xPercent <= -100) xPercent = 0;
         if (xPercent >= 100) xPercent = 0;
         gsap.set(ref, { xPercent });
@@ -97,10 +65,14 @@ export const Skills = () => {
           onClick={() => handleActiveBtn("readable")}
         ></button>
       </div>
-      <div
-        className={`${styles.marquee__container} ${
-          activeButton === "chaos" ? "" : styles.hidden
-        }`}
+      <motion.div
+        // className={`${styles.marquee__container} ${
+        //   activeButton === "chaos" ? "" : styles.hidden
+        // }`}
+        className={styles.marquee__container}
+        initial="initial"
+        animate={activeButton === "chaos" ? "animate" : "initial"}
+        variants={containerReveal}
       >
         {rowData.map((row, rowIndex) => (
           <div key={rowIndex} className={styles.rowWrapper}>
@@ -142,17 +114,21 @@ export const Skills = () => {
             ))}
           </div>
         ))}
-      </div>
-      <div
-        className={`${styles.readable__container} ${
-          activeButton === "readable" ? "" : styles.hidden
-        }`}
+      </motion.div>
+      <motion.div
+        // className={`${styles.readable__container} ${
+        //   activeButton === "readable" ? "" : styles.hidden
+        // }`}
+        className={styles.readable__container}
+        initial="initial"
+        animate={activeButton === "readable" ? "animate" : "initial"}
+        variants={containerReveal}
       >
         <div>Skills:</div>
         <div>HTML</div>
         <div>CSS</div>
         <div>Javascript</div>
-      </div>
+      </motion.div>
     </section>
   );
 };
