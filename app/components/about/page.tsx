@@ -13,7 +13,7 @@ export const About = () => {
           </h1>
           <Image
             src="/images/cvbilde.jpg"
-            width={400}
+            width={500}
             height={450}
             alt="Of me"
             className={styles.about__image}

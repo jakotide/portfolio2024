@@ -1,6 +1,5 @@
 "use client";
-import { ReactLenis } from "lenis/react";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Preloader,
   SelectedWork,
@@ -25,15 +24,7 @@ const Home = () => {
     return () => clearTimeout(timeoutId);
   }, []);
 
-  // useEffect(() => {
-  //   (async () => {
-  //     const LocomotiveScroll = (await import("locomotive-scroll")).default;
-  //     const locomotiveScroll = new LocomotiveScroll();
-  //   })();
-  // }, []);
-
   return (
-    // <ReactLenis root>
     <main style={{ overflow: "hidden" }}>
       <AnimatePresence mode="wait">
         {isLoading && <Preloader />}
@@ -45,7 +36,6 @@ const Home = () => {
       <Skills />
       <Contact />
     </main>
-    // </ReactLenis>
   );
 };
 

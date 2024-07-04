@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { navReveal } from "./anim.jsx";
 import React from "react";
 
-interface NavProps {
-  isCircleInView: boolean;
-}
+// interface NavProps {
+//   isCircleInView: boolean;
+// }
 
-export const Navigation: React.FC<NavProps> = () => {
+export const Navigation: React.FC = () => {
   return (
     <motion.nav
       variants={navReveal}

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./scss/reset.scss";
 import { Navigation, BlurOverlay } from "./components/ui";
 import React from "react";
+import { LenisSmoothScroll } from "./components/effects/LenisSmoothScroll/page";
 
 // export const metadata: Metadata = {
 //   title: "Home | Jakob Tidemand - Frontend developer",
@@ -17,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navigation />
-        <BlurOverlay></BlurOverlay>
-        {children}
+        {/* <Navigation />
+        <BlurOverlay></BlurOverlay> */}
+        <LenisSmoothScroll>{children}</LenisSmoothScroll>
       </body>
     </html>
   );

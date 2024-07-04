@@ -8,6 +8,7 @@ html {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+  scroll-behavior: initial;
 }
 
 html:focus-within {
@@ -19,8 +20,6 @@ body {
   line-height: 1.5;
   position: relative;
   background-color: #f9f7e8;
-  // overflow: hidden;
-  scroll-behavior: smooth;
 }
 
 * {

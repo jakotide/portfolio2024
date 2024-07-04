@@ -25,20 +25,9 @@ export const MoreCard: React.FC<MoreCardProps> = ({
   const handleMouseEnter = () => {
     setModal({ active: true, index: index });
   };
-  // const handleMouseLeave = () => {
-  //   // setModal((prevState) => {
-  //   //   if(prevState.index !== index) {
-  //   //     return prevState;
-  //   //   }
-  //   //   return { active: true, index: index };
-  //   // })
-  // };
+
   return (
-    <div
-      className={styles.morecard__container}
-      onMouseEnter={handleMouseEnter}
-      // onMouseLeave={handleMouseLeave}
-    >
+    <div className={styles.morecard__container} onMouseEnter={handleMouseEnter}>
       <div className={styles.number__container}>
         <div
           className={
