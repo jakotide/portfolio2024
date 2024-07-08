@@ -1,10 +1,11 @@
 @use "../../scss/globals.scss" as clr;
 
 .about__container {
-  background-color: clr.$red;
-  height: 100vh;
+  // background-color: clr.$red;
+  background-color: clr.$black;
+  height: 100%;
   width: 100%;
-  padding: 10rem 7rem;
+  padding: 10rem 7rem 12rem;
   color: clr.$white;
   .about__content {
     height: 100%;

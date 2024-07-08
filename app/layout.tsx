@@ -18,8 +18,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* <Navigation />
-        <BlurOverlay></BlurOverlay> */}
+        <Navigation />
+        <BlurOverlay></BlurOverlay>
         <LenisSmoothScroll>{children}</LenisSmoothScroll>
       </body>
     </html>

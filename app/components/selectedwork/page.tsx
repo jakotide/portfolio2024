@@ -4,6 +4,7 @@ import { useInView, motion } from "framer-motion";
 import { revealh1 } from "./anim";
 import { SelectedCard } from "../ui/";
 import { cardData1, cardData2 } from "../ui/selectedcard/cardData";
+import { BlurReveal } from "../effects/index";
 
 interface SelectedWorkProps {
   isCircleInView: boolean;
@@ -24,19 +25,15 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
       }`}
     >
       <div className={styles.selected__content__container}>
-        <motion.h1
-          className={styles.selected__h1}
-          ref={ref}
-          variants={revealh1}
-          initial="initial"
-          animate={isInView ? "animate" : ""}
-        >
-          <span>Selected</span>
-          <div className={styles.flex}>
-            <span className={styles.selected__work}>Work</span>
-            <span className={styles.selected__amount}>(02)</span>
-          </div>
-        </motion.h1>
+        <BlurReveal isInView={isInView}>
+          <motion.h1 className={styles.selected__h1} ref={ref}>
+            <span>Selected</span>
+            <div className={styles.flex}>
+              <span className={styles.selected__work}>Work</span>
+              <span className={styles.selected__amount}>(02)</span>
+            </div>
+          </motion.h1>
+        </BlurReveal>
         <div className={styles.selected__projects__container}>
           <SelectedCard
             className={styles.selected__card__1}

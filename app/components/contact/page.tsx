@@ -22,7 +22,10 @@ export const Contact = () => {
             <label htmlFor="name">Email*</label>
             <input type="text" id="email" />
             <label htmlFor="name">Your Message*</label>
-            <input type="text" id="message" />
+            <textarea name="message" id="message"></textarea>
+            <div typeof="submit" className={styles.send__btn}>
+              Send
+            </div>
           </form>
         </div>
       </div>
