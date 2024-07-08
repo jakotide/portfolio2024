@@ -1,16 +1,25 @@
 import styles from "./about.module.scss";
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
+import { BlurReveal } from "../effects";
+import { useInView, motion } from "framer-motion";
+import { spanWidthReveal } from "./anim";
 
 export const About = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
   return (
     <section className={styles.about__container}>
       <div className={styles.about__content}>
         <div className={styles.about__left}>
-          <h1 className={styles.about__h1}>
-            <span className={styles.a__little}>A Little</span>
-            <div className={styles.about__me}>About Me</div>
-          </h1>
+          <BlurReveal isInView={isInView}>
+            <h1 className={styles.about__h1} ref={ref}>
+              <span className={styles.a__little}>A Little</span>
+              <div className={styles.about__me}>About Me</div>
+            </h1>
+          </BlurReveal>
+
           <Image
             src="/images/cvbilde.jpg"
             width={500}
@@ -20,37 +29,30 @@ export const About = () => {
           />
         </div>
         <div className={styles.about__right}>
-          <p className={styles.about__intro}>
-            Hello! I'm Jakob. A front-end development student at Noroff and a
-            generally geeky dude who loves creativity and design.
-          </p>
-          <p className={styles.about__p1}>
-            After five years of working in a kindergarten for children with
-            special needs and initially aspiring to become a nurse, I had a
-            change of heart and decided to study front-end development. The
-            journey with code and design has been both fun and challenging, but
-            I can confidently say I took the right descision. Other than coding
-            and design, I enjoy cooking, playing the guitar, produce music and
-            play video games.
-          </p>
-          <p className={styles.about__p2}>
-            After five years of working in a kindergarten for children with
-            special needs and initially aspiring to become a nurse, I had a
-            change of heart and decided to study front-end development. The
-            journey with code and design has been both fun and challenging, but
-            I can confidently say I took the right descision. Other than coding
-            and design, I enjoy cooking, playing the guitar, produce music and
-            play video games.
-          </p>
-          <p className={styles.about__p2}>
-            After five years of working in a kindergarten for children with
-            special needs and initially aspiring to become a nurse, I had a
-            change of heart and decided to study front-end development. The
-            journey with code and design has been both fun and challenging, but
-            I can confidently say I took the right descision. Other than coding
-            and design, I enjoy cooking, playing the guitar, produce music and
-            play video games.
-          </p>
+          <div>
+            Hello! I'm Jakob. A front-end developer and a generally geeky dude
+            who loves{" "}
+            <motion.span className={styles.bg__orangeIsh}>
+              creativity
+            </motion.span>{" "}
+            and design.
+          </div>
+          <div>
+            I am currently working as a freelance web developer. I love
+            designing websites with a beautiful and solid{" "}
+            <motion.span className={styles.bg__blue}>
+              user experience.
+            </motion.span>
+          </div>
+          <div>
+            Whether you're looking for a sleek and modern design, a vibrant and
+            dynamic interface, or a classic and timeless look, I am dedicated to
+            bringing your{" "}
+            <motion.span className={styles.bg__green}>vision</motion.span> to
+            life. Let's work together to create something exceptional that
+            resonates with your audience and stands out in the digital
+            landscape.
+          </div>
         </div>
       </div>
     </section>

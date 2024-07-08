@@ -8,6 +8,7 @@ import {
   About,
   Skills,
   Contact,
+  Footer,
 } from "./components";
 import { AnimatePresence } from "framer-motion";
 
@@ -35,6 +36,7 @@ const Home = () => {
       <About />
       <Skills />
       <Contact />
+      <Footer />
     </main>
   );
 };

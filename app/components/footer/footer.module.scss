@@ -1,0 +1,9 @@
+@use "../../scss/globals.scss" as clr;
+
+.footer__container {
+  background-color: #28292b;
+  color: clr.$white;
+  font-family: "GeneralSans-Regular";
+  text-transform: uppercase;
+  padding: 15rem 7rem 2rem;
+}

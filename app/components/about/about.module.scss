@@ -39,20 +39,26 @@
       width: 50%;
       font-family: "GeneralSans-Regular";
 
-      .about__intro {
+      div {
         font-size: 2rem;
-        text-wrap: balance;
+        // text-wrap: balance;
         margin-bottom: 3rem;
         max-width: 80%;
-        line-height: 1.4;
-      }
+        // line-height: 1.4;
 
-      .about__p1,
-      .about__p2 {
-        text-wrap: balance;
-        max-width: 87%;
-        margin-bottom: 2rem;
-        font-size: 1rem;
+        .bg__orangeIsh {
+          background-color: clr.$orange-ish;
+          padding: 0.1rem 0.3rem;
+        }
+
+        .bg__blue {
+          background-color: clr.$green;
+          padding: 0.1rem 0.3rem;
+        }
+        .bg__green {
+          background-color: clr.$pink;
+          padding: 0.1rem 0.3rem;
+        }
       }
     }
   }
