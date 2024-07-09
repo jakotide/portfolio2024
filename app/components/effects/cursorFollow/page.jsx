@@ -9,7 +9,7 @@ export const Cursor = () => {
   const delayedMouse = useRef({ x: 0, y: 0 });
   const rafId = useRef(null);
   const circle = useRef();
-  const { cursorSize } = useCursor();
+  const { cursorSize, cursorText } = useCursor();
 
   const lerp = (x, y, a) => x * (1 - a) + y * a;
 
@@ -46,7 +46,7 @@ export const Cursor = () => {
       window.removeEventListener("mousemove", manageMouseMove);
       window.cancelAnimationFrame(rafId.current);
     };
-  });
+  }, []);
 
   return (
     <div
@@ -58,6 +58,8 @@ export const Cursor = () => {
       }}
       className={styles.cursor}
       ref={circle}
-    />
+    >
+      {cursorText && <div className={styles.cursorText}>{cursorText}</div>}
+    </div>
   );
 };

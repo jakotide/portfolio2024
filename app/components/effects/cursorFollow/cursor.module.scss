@@ -5,4 +5,17 @@
   left: 0;
   z-index: 1000;
   mix-blend-mode: difference;
+  align-content: center;
+  border-radius: 50%;
+
+  .cursorText {
+    color: black;
+    font-size: 0.8rem;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "GeneralSans-Regular";
+    text-transform: uppercase;
+  }
 }
