@@ -3,7 +3,6 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import { BlurReveal } from "../effects";
 import { useInView, motion } from "framer-motion";
-import { spanWidthReveal } from "./anim";
 
 export const About = () => {
   const ref = useRef(null);
@@ -31,24 +30,18 @@ export const About = () => {
         <div className={styles.about__right}>
           <div>
             Hello! I'm Jakob. A front-end developer and a generally geeky dude
-            who loves{" "}
-            <motion.span className={styles.bg__orangeIsh}>
-              creativity
-            </motion.span>{" "}
+            who loves <span className={styles.bg__orangeIsh}>creativity</span>{" "}
             and design.
           </div>
           <div>
             I am currently working as a freelance web developer. I love
             designing websites with a beautiful and solid{" "}
-            <motion.span className={styles.bg__blue}>
-              user experience.
-            </motion.span>
+            <span className={styles.bg__blue}>user experience.</span>
           </div>
           <div>
             Whether you're looking for a sleek and modern design, a vibrant and
             dynamic interface, or a classic and timeless look, I am dedicated to
-            bringing your{" "}
-            <motion.span className={styles.bg__green}>vision</motion.span> to
+            bringing your <span className={styles.bg__green}>vision</span> to
             life. Let's work together to create something exceptional that
             resonates with your audience and stands out in the digital
             landscape.

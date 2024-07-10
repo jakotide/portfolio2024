@@ -9,7 +9,14 @@ export const Cursor = () => {
   const delayedMouse = useRef({ x: 0, y: 0 });
   const rafId = useRef(null);
   const circle = useRef();
-  const { cursorSize, cursorText } = useCursor();
+  const {
+    cursorSize,
+    cursorText,
+    cursorColor,
+    cursorTextColor,
+    isBlending,
+    showIcon,
+  } = useCursor();
 
   const lerp = (x, y, a) => x * (1 - a) + y * a;
 
@@ -51,10 +58,12 @@ export const Cursor = () => {
   return (
     <div
       style={{
-        backgroundColor: "white",
+        backgroundColor: cursorColor,
+        color: cursorTextColor,
         width: cursorSize,
         height: cursorSize,
         transition: `height 0.2s ease-out, width 0.2s ease-out`,
+        mixBlendMode: isBlending ? "difference" : "normal",
       }}
       className={styles.cursor}
       ref={circle}

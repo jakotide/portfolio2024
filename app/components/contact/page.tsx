@@ -1,8 +1,9 @@
 import styles from "./contact.module.scss";
-
+import { useCursor } from "../context/cursorContext/page";
 import React from "react";
 
 export const Contact = () => {
+  const { handleHoverStart, handleHoverEnd } = useCursor();
   return (
     <section className={styles.contact__section}>
       <div className={styles.contact__grid}>
@@ -23,7 +24,12 @@ export const Contact = () => {
             <input type="text" id="email" />
             <label htmlFor="name">Your Message*</label>
             <textarea name="message" id="message"></textarea>
-            <div typeof="submit" className={styles.send__btn}>
+            <div
+              typeof="submit"
+              className={styles.send__btn}
+              onMouseEnter={handleHoverStart}
+              onMouseLeave={handleHoverEnd}
+            >
               Send
             </div>
           </form>

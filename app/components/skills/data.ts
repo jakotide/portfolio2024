@@ -25,7 +25,7 @@ export const rowData: RowData[] = [
     direction: -1,
   },
   {
-    colors: ["red", "cream", "black", "grey"],
+    colors: ["pink", "cream", "black", "grey"],
     widths: [30, 40, 30, 40],
     skills: ["Node.js", "", "GSAP", ""],
     direction: 1,
