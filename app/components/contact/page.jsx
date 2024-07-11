@@ -1,9 +1,23 @@
 import styles from "./contact.module.scss";
 import { useCursor } from "../context/cursorContext/page";
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import { useInView } from "framer-motion";
+import { useScrollProvider } from "../context";
 
 export const Contact = () => {
   const { handleHoverStart, handleHoverEnd } = useCursor();
+  const ref = useRef(null);
+  const contactInView = useInView(ref, { threshold: 0.1 });
+  const { updateNavStyle, resetNavStyle } = useScrollProvider();
+
+  useEffect(() => {
+    if (contactInView) {
+      resetNavStyle();
+    } else {
+      updateNavStyle();
+    }
+  }, [contactInView, updateNavStyle, resetNavStyle]);
+
   return (
     <section className={styles.contact__section}>
       <div className={styles.contact__grid}>
@@ -29,6 +43,7 @@ export const Contact = () => {
               className={styles.send__btn}
               onMouseEnter={handleHoverStart}
               onMouseLeave={handleHoverEnd}
+              ref={ref}
             >
               Send
             </div>

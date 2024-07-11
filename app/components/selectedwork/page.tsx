@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import styles from "./selectedwork.module.scss";
 import { useInView, motion } from "framer-motion";
-import { revealh1 } from "./anim";
 import { SelectedCard } from "../ui/";
 import { cardData1, cardData2 } from "../ui/selectedcard/cardData";
 import { BlurReveal } from "../effects/index";

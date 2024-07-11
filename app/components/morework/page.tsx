@@ -4,16 +4,18 @@ import React, { useRef, useEffect, useState } from "react";
 import { moreCard } from "../ui/morecard/cardData";
 import { MoreCard } from "../ui";
 import { ModalHover } from "../effects/modalHover/page";
-import { LineTransition } from "../effects/linesTransition/page";
+import { useScrollProvider } from "../context/scrollContext/page";
 
 interface MoreWorkProps {
   setIsCircleInView: (isInView: boolean) => void;
+  updateNavStyle: boolean;
 }
 
 export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
   const container = useRef(null);
   const circleRef = useRef(null);
   const [modal, setModal] = useState({ active: true, index: 0 });
+  const { updateNavStyle, resetNavStyle } = useScrollProvider();
 
   const { scrollYProgress } = useScroll({
     target: container,
@@ -31,8 +33,10 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
     const handleChange = (latest: number) => {
       if (latest > 0.5) {
         setIsCircleInView(true);
+        updateNavStyle(true);
       } else {
         setIsCircleInView(false);
+        resetNavStyle(false);
       }
     };
 

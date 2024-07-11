@@ -31,11 +31,11 @@ import styles from "./nav.module.scss";
 import { motion } from "framer-motion";
 import { navReveal } from "./anim.jsx";
 import React from "react";
-import { useCursor } from "../../context/cursorContext/page";
+import { useCursor, useScrollProvider } from "../../context/";
 
 export const Navigation = () => {
   const { handleHoverStart, handleHoverEnd } = useCursor();
-
+  const { navStyle } = useScrollProvider();
   return (
     <motion.nav
       variants={navReveal}
@@ -43,8 +43,13 @@ export const Navigation = () => {
       animate="animate"
       className={styles.nav}
     >
-      <div>tidemand_folio2024</div>
-      <menu className={styles.nav__menu}>
+      <div style={navStyle ? { color: "white" } : { color: "black" }}>
+        tidemand_folio2024
+      </div>
+      <menu
+        className={styles.nav__menu}
+        style={navStyle ? { color: "white" } : { color: "black" }}
+      >
         <li onMouseEnter={handleHoverStart} onMouseLeave={handleHoverEnd}>
           works
         </li>
