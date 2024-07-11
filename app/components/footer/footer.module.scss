@@ -1,9 +1,18 @@
 @use "../../scss/globals.scss" as clr;
 
 .footer__container {
-  background-color: #28292b;
+  background-color: clr.$black;
   color: clr.$white;
   font-family: "GeneralSans-Regular";
-  text-transform: uppercase;
-  padding: 15rem 7rem 2rem;
+  // text-transform: uppercase;
+  padding: 14rem 7rem 2rem;
+
+  .footer__content {
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      max-width: 300px;
+    }
+  }
 }

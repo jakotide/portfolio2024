@@ -7,16 +7,15 @@ import { useScrollProvider } from "../context";
 export const Contact = () => {
   const { handleHoverStart, handleHoverEnd } = useCursor();
   const ref = useRef(null);
-  const contactInView = useInView(ref, { threshold: 0.1 });
-  const { updateNavStyle, resetNavStyle } = useScrollProvider();
+  const contactInView = useInView(ref, { threshold: 1 });
+  const { resetNavStyle } = useScrollProvider();
 
   useEffect(() => {
     if (contactInView) {
       resetNavStyle();
-    } else {
-      updateNavStyle();
+      console.log("COntact black");
     }
-  }, [contactInView, updateNavStyle, resetNavStyle]);
+  }, [contactInView, resetNavStyle]);
 
   return (
     <section className={styles.contact__section}>

@@ -43,7 +43,10 @@ export const Navigation = () => {
       animate="animate"
       className={styles.nav}
     >
-      <div style={navStyle ? { color: "white" } : { color: "black" }}>
+      <div
+        style={navStyle ? { color: "white" } : { color: "black" }}
+        className={styles.nav__left}
+      >
         tidemand_folio2024
       </div>
       <menu
