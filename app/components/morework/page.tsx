@@ -5,6 +5,7 @@ import { moreCard } from "../ui/morecard/cardData";
 import { MoreCard } from "../ui";
 import { ModalHover } from "../effects/modalHover/page";
 import { useScrollProvider } from "../context/scrollContext/page";
+import Link from "next/link";
 
 interface MoreWorkProps {
   setIsCircleInView: (isInView: boolean) => void;
@@ -61,18 +62,20 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
             </div>
             <div className={styles.more__card__container}>
               {moreCard.map((card, i) => (
-                <MoreCard
-                  key={i}
-                  imageSrc={card.imageSrc}
-                  imageAlt={card.imageAlt}
-                  projectTitle={card.projectTitle}
-                  projectType={card.projectType}
-                  description={card.description}
-                  cardNumber={card.cardNumber}
-                  setModal={setModal}
-                  index={i}
-                  isActive={modal.active && modal.index === i}
-                />
+                <Link href={`/project/${card.id}`} key={card.cardNumber}>
+                  <MoreCard
+                    key={i}
+                    imageSrc={card.imageSrc}
+                    imageAlt={card.imageAlt}
+                    projectTitle={card.projectTitle}
+                    projectType={card.projectType}
+                    description={card.description}
+                    cardNumber={card.cardNumber}
+                    setModal={setModal}
+                    index={i}
+                    isActive={modal.active && modal.index === i}
+                  />
+                </Link>
               ))}
             </div>
           </div>

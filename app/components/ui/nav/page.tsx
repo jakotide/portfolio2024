@@ -46,6 +46,8 @@ export const Navigation = () => {
       <div
         style={navStyle ? { color: "white" } : { color: "black" }}
         className={styles.nav__left}
+        onMouseEnter={handleHoverStart}
+        onMouseLeave={handleHoverEnd}
       >
         tidemand_folio2024
       </div>

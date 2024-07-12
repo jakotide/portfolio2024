@@ -5,10 +5,12 @@ export interface MoreCardData {
   projectTitle: string;
   description: string;
   projectType: string;
+  id: string;
 }
 
 export const moreCard: MoreCardData[] = [
   {
+    id: "sot",
     imageSrc: "/images/sotscreen.png",
     imageAlt: "Project cover of Sot",
     cardNumber: "03",
@@ -18,6 +20,7 @@ export const moreCard: MoreCardData[] = [
     projectType: "Personal Project",
   },
   {
+    id: "b-diddy",
     imageSrc: "/images/bdiddy-screen.png",
     imageAlt: "Project cover of B-Diddy",
     cardNumber: "04",
@@ -27,6 +30,7 @@ export const moreCard: MoreCardData[] = [
     projectType: "Semester Project",
   },
   {
+    id: "goose",
     imageSrc: "/images/goosescreen.png",
     imageAlt: "Project cover of B-Diddy",
     cardNumber: "05",

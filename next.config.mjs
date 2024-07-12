@@ -12,6 +12,14 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/project/:id", // Custom URL
+        destination: "/components/project/:id", // Actual file path
+      },
+    ];
+  },
 };
 
 export default withVideos(nextConfig);
