@@ -24,7 +24,7 @@
       transition: color 0.3s;
     }
     .card__number.active {
-      color: clr.$red !important;
+      color: clr.$red;
     }
   }
 
@@ -63,7 +63,4 @@
       }
     }
   }
-}
-.card__number.active {
-  color: clr.$red !important;
 }

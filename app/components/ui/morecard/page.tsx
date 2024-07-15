@@ -34,6 +34,7 @@ export const MoreCard: React.FC<MoreCardProps> = ({
       className={styles.morecard__container}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleHoverEnd}
+      onClick={handleHoverEnd}
     >
       <div className={styles.number__container}>
         <div

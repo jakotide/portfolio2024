@@ -62,7 +62,11 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
             </div>
             <div className={styles.more__card__container}>
               {moreCard.map((card, i) => (
-                <Link href={`/project/${card.id}`} key={card.cardNumber}>
+                <Link
+                  href={`/project/${card.id}`}
+                  key={card.cardNumber}
+                  className={styles.more__card__link}
+                >
                   <MoreCard
                     key={i}
                     imageSrc={card.imageSrc}

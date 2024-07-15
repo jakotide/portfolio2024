@@ -51,6 +51,10 @@
         }
         .more__card__container {
           width: 50%;
+          .more__card__link {
+            text-decoration: none;
+            color: inherit;
+          }
         }
       }
     }

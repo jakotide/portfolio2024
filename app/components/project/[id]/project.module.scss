@@ -1,0 +1,80 @@
+@use "../../../scss/globals.scss" as clr;
+
+.project__container {
+  width: 100%;
+  min-height: 100dvh;
+  padding: 14rem 7rem 2rem;
+  font-family: "GeneralSans-Regular";
+
+  .project__content {
+    display: flex;
+    flex-direction: column;
+
+    .project__h1 {
+      color: clr.$black;
+      font-family: "GrandSlang";
+      font-size: 8rem;
+      margin: auto;
+    }
+
+    .project__desc__1 {
+      font-family: "GrandSlang";
+      font-size: 2.5rem;
+      align-self: center;
+      margin-top: 6rem;
+      width: 60%;
+    }
+
+    .project__details {
+      display: flex;
+      align-self: center;
+      width: 60%;
+      justify-content: space-between;
+      margin: 6rem 0;
+
+      .details__header {
+        text-transform: uppercase;
+        font-weight: 600;
+        padding-bottom: 1rem;
+      }
+    }
+
+    .image__grid {
+      display: grid;
+      grid-template-columns: repeat(3, min-max(400px, 1fr));
+      grid-template-rows: 4;
+      gap: 2rem;
+
+      .project__img1,
+      .project__img2 {
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .project__desc2,
+      .project__desc3 {
+        display: grid;
+        place-items: center;
+        padding: 0 4rem;
+        text-wrap: balance;
+      }
+
+      .project__img1 {
+        grid-column: 1 / 2;
+        grid-row: 1 /2;
+      }
+      .project__desc2 {
+        grid-column: 2 / 3;
+        grid-row: 1 /2;
+      }
+      .project__img2 {
+        grid-column: 2 / 3;
+        grid-row: 3 /4;
+      }
+      .project__desc3 {
+        grid-column: 1 / 2;
+        grid-row: 3 /4;
+      }
+    }
+  }
+}

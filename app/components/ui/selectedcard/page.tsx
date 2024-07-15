@@ -25,6 +25,7 @@ export const SelectedCard: React.FC<SelectedCardProps> = ({
       className={`${styles.selected__card} ${className}`}
       onMouseEnter={handleSelectedHoverCard}
       onMouseLeave={handleHoverEnd}
+      onClick={handleHoverEnd}
     >
       <div className={styles.selected__image}>
         <video
