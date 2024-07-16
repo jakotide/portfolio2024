@@ -1,8 +1,7 @@
-// components/project/[id]/page.tsx
 "use client";
 import styles from "./project.module.scss";
 import { notFound } from "next/navigation";
-import { projects, ProjectData } from "../projectData"; // Adjust the path if needed
+import { projects, ProjectData } from "../projectData";
 import { useParams } from "next/navigation";
 
 const getProjectById = (id: string): ProjectData | undefined => {

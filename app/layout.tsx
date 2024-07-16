@@ -1,7 +1,8 @@
 "use client";
 // import type { Metadata } from "next";
 import "./scss/reset.scss";
-import { Navigation, BlurOverlay } from "./components/ui";
+import { usePathname } from "next/navigation";
+import { Navigation, BlurOverlay, ProjectNav } from "./components/ui";
 import React from "react";
 import { LenisSmoothScroll, Cursor } from "./components/effects/";
 import { CursorProvider, ScrollProvider } from "./components/context/";
@@ -15,13 +16,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  const isProjectPage = pathname.startsWith("/project");
+
   return (
     <html lang="en">
       <body>
         <CursorProvider>
           <ScrollProvider>
             <Cursor />
-            <Navigation />
+            {isProjectPage ? <ProjectNav /> : <Navigation />}
             <BlurOverlay />
             <LenisSmoothScroll>{children}</LenisSmoothScroll>
           </ScrollProvider>
