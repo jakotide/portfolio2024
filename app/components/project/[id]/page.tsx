@@ -19,24 +19,27 @@ const Project = () => {
   const project = getProjectById(id as string);
 
   if (!project) {
-    notFound(); // This will render the 404 page
+    notFound();
   }
 
   return (
     <main className={styles.project__container}>
       <div className={styles.project__content}>
-        <h1 className={styles.project__h1}>{project.projectTitle}</h1>
-        <div className={styles.project__desc__1}>{project.description}</div>
-        <div className={styles.project__details}>
-          <div className={styles.details__header}>{project.projectType}</div>
-          <div>
-            <div className={styles.details__header}>Languages Used</div>
-            {project.languages.map((lang, i) => (
-              <div key={i}>{lang}</div>
-            ))}
+        <div className={styles.project__landing}>
+          <h1 className={styles.project__h1}>{project.projectTitle}</h1>
+          <div className={styles.project__desc__1}>{project.description}</div>
+          <div className={styles.project__details}>
+            <div className={styles.details__header}>{project.projectType}</div>
+            <div>
+              <div className={styles.details__header}>Languages Used</div>
+              {project.languages.map((lang, i) => (
+                <div key={i}>{lang}</div>
+              ))}
+            </div>
+            <div className={styles.details__header}>2023</div>
           </div>
-          <div className={styles.details__header}>2023</div>
         </div>
+
         <div className={styles.image__grid}>
           <img
             src={project.imageSrc}

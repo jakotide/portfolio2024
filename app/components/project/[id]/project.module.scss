@@ -3,26 +3,34 @@
 .project__container {
   width: 100%;
   min-height: 100dvh;
-  padding: 14rem 7rem 2rem;
+  padding: 0rem 7rem 2rem;
   font-family: "GeneralSans-Regular";
 
   .project__content {
     display: flex;
     flex-direction: column;
 
-    .project__h1 {
-      color: clr.$black;
-      font-family: "GrandSlang";
-      font-size: 8rem;
-      margin: auto;
-    }
+    .project__landing {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5rem;
+      margin-top: 2rem;
+      .project__h1 {
+        color: clr.$black;
+        font-family: "GrandSlang";
+        font-size: 6rem;
+        text-transform: uppercase;
+      }
 
-    .project__desc__1 {
-      font-family: "GrandSlang";
-      font-size: 2.5rem;
-      align-self: center;
-      margin-top: 6rem;
-      width: 60%;
+      .project__desc__1 {
+        font-family: "GeneralSans-Regular";
+        // font-family: "GrandSlang";
+        font-size: 2.5rem;
+        width: 60%;
+      }
     }
 
     .project__details {
@@ -30,7 +38,7 @@
       align-self: center;
       width: 60%;
       justify-content: space-between;
-      margin: 6rem 0;
+      margin-top: 1rem;
 
       .details__header {
         text-transform: uppercase;
@@ -43,20 +51,23 @@
       display: grid;
       grid-template-columns: repeat(3, min-max(400px, 1fr));
       grid-template-rows: 4;
-      gap: 2rem;
+      gap: 5rem;
+      margin-top: 5rem;
 
       .project__img1,
       .project__img2 {
         width: 100%;
         object-fit: cover;
+        height: 600px;
       }
 
       .project__desc2,
       .project__desc3 {
-        display: grid;
-        place-items: center;
-        padding: 0 4rem;
-        text-wrap: balance;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 8rem;
+        // text-wrap: balance;
       }
 
       .project__img1 {

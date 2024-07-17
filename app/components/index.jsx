@@ -1,4 +1,4 @@
-export { Preloader } from "./preloader/page";
+// export { Preloader } from "./effects/preloader/page";
 export { SelectedWork } from "./selectedwork/page";
 export { MoreWork } from "./morework/page.tsx";
 export { Hero } from "./hero/page";

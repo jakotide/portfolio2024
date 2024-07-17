@@ -1,7 +1,6 @@
 @use "../../scss/globals.scss" as clr;
 
 .about__container {
-  // background-color: clr.$red;
   background-color: clr.$black;
   height: 100%;
   width: 100%;
@@ -41,10 +40,8 @@
 
       div {
         font-size: 2rem;
-        // text-wrap: balance;
         margin-bottom: 3rem;
         max-width: 80%;
-        // line-height: 1.4;
 
         .bg__orangeIsh {
           background-color: clr.$orange-ish;
