@@ -6,7 +6,7 @@ import { useInView, motion } from "framer-motion";
 
 export const About = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
 
   return (
     <section className={styles.about__container}>

@@ -4,7 +4,7 @@ import { useInView, motion } from "framer-motion";
 import { SelectedCard } from "../ui/";
 import { cardData1, cardData2 } from "../ui/selectedcard/cardData";
 import { projects } from "../project/projectData";
-import { BlurReveal } from "../effects/index";
+import { BlurReveal, TransitionLink } from "../effects/index";
 import Link from "next/link";
 
 interface SelectedWorkProps {
@@ -39,10 +39,15 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
         </BlurReveal>
         <div className={styles.selected__projects__container}>
           {projects.slice(0, 2).map((project, index) => (
-            <Link
+            // <Link
+            //   key={project.id}
+            //   href={`/project/${project.id}`}
+            //   // className={styles.selected__links}
+            //   className={styles[`selected__card__${index + 1}`]}
+            // >
+            <TransitionLink
               key={project.id}
               href={`/project/${project.id}`}
-              // className={styles.selected__links}
               className={styles[`selected__card__${index + 1}`]}
             >
               <SelectedCard
@@ -61,7 +66,9 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
                 }
                 isCircleInView={isCircleInView}
               />
-            </Link>
+            </TransitionLink>
+
+            // {/* </Link> */}
           ))}
         </div>
       </div>
