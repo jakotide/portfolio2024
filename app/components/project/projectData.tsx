@@ -1,4 +1,3 @@
-// projectData.ts
 export interface ProjectData {
   id: string;
   imageSrc: string;
