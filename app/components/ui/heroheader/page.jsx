@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./heroheader.module.scss";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { opacityRevealThree } from "./anim";
 
 export const HeroHeader = () => {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start("animate");
+  }, [controls]);
+
   return (
     <motion.h1
       className={styles.hero__header}
       variants={opacityRevealThree}
       initial="initial"
-      animate="animate"
+      animate={controls}
     >
       <svg
         width="1400"

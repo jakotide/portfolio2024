@@ -1,69 +1,5 @@
 @use "../../../scss/globals.scss" as clr;
 
-// .transition__container {
-//   background-color: clr.$black;
-//   color: clr.$white;
-//   width: 100vw;
-//   height: 100vh;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: space-between;
-//   padding: 2rem;
-//   z-index: 103;
-//   opacity: 1;
-
-//   .transition__boxes {
-//     display: flex;
-//     height: 2rem;
-//     width: 5rem;
-//     z-index: 1001;
-
-//     .blue__box {
-//       background-color: clr.$blue;
-//       width: 100%;
-//       height: 100%;
-//     }
-//     .pink__box {
-//       background-color: clr.$orange;
-//       width: 100%;
-//       height: 100%;
-//     }
-//     .green__box {
-//       background-color: clr.$green;
-//       width: 100%;
-//       height: 100%;
-//     }
-//   }
-
-//   .transition__text {
-//     font-size: 3rem;
-//     color: white;
-//     z-index: 1001;
-//     font-family: "GeneralSans-Regular";
-//   }
-//   svg {
-//     position: absolute;
-//     top: 0;
-//     width: 100%;
-//     // height: 0;
-//     height: calc(100% + 300px);
-//     z-index: 99;
-
-//     &.animate svg {
-//       height: calc(
-//         100% + 300px
-//       ); // During the animation, set the height to the desired value.
-//     }
-
-//     path {
-//       fill: #141516;
-//     }
-//   }
-// }
 .transition__container {
   background-color: clr.$black;
   color: clr.$white;
@@ -81,9 +17,15 @@
   opacity: 1;
 
   .transition__boxes {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
+    justify-self: center;
+    align-self: center;
     height: 2rem;
-    width: 5rem;
+    width: 8rem;
     z-index: 1001;
 
     .blue__box {
@@ -92,7 +34,7 @@
       height: 100%;
     }
     .pink__box {
-      background-color: clr.$orange;
+      background-color: clr.$orange-ish;
       width: 100%;
       height: 100%;
     }
@@ -113,19 +55,11 @@
     position: absolute;
     top: 0;
     width: 100%;
-    height: 0; // Initial height is 0
+    height: calc(100% + 300px);
     z-index: 99;
-    overflow: hidden; // Prevent overflow
-    transition: height 1.1 ease; // Ensure smooth height transition
 
     path {
-      fill: #141516;
+      fill: clr.$black;
     }
-  }
-
-  &.animate svg {
-    height: calc(
-      100% + 300px
-    ); // During the animation, set the height to the desired value.
   }
 }

@@ -9,6 +9,11 @@
   place-items: center;
   transition: all 0.8s;
 
+  a {
+    text-decoration: none;
+    color: inherit; /* Optional, in case you want the links to inherit color from their parent */
+  }
+
   .selected__content__container {
     width: 100%;
     display: flex;
@@ -42,6 +47,10 @@
       width: 100%;
       justify-content: space-between;
 
+      .transition__link {
+        text-decoration: none;
+      }
+
       .selected__card__1,
       .selected__card__2 {
         text-decoration: none;
@@ -49,7 +58,7 @@
       }
 
       .selected__card__1 {
-        width: 50%;
+        // width: 50%;
         height: 650px;
       }
 

@@ -12,3 +12,33 @@ export const pageTransitionSlider = {
     transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
   },
 };
+
+export const boxAnimation = {
+  initial: {
+    // opacity: 0,
+  },
+  animate: {
+    // opacity: 1,
+    transition: {
+      delayChildren: 0.6,
+      staggerChildren: 0.2,
+    },
+  },
+  exit: {
+    // opacity: 0,
+  },
+};
+
+export const boxFadeIn = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+  },
+};

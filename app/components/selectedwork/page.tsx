@@ -48,10 +48,11 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
             <TransitionLink
               key={project.id}
               href={`/project/${project.id}`}
-              className={styles[`selected__card__${index + 1}`]}
+              // className={styles[`selected__card__${index + 1}`]}
+              className={styles.transition__link}
             >
               <SelectedCard
-                // className={styles[`selected__card__${index + 1}`]}
+                className={styles[`selected__card__${index + 1}`]}
                 videoSrc={index === 0 ? cardData1.videoSrc : cardData2.videoSrc}
                 projectTitle={
                   index === 0 ? cardData1.projectTitle : cardData2.projectTitle
