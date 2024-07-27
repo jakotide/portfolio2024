@@ -1,9 +1,9 @@
 import styles from "./morework.module.scss";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform, motion, useInView } from "framer-motion";
 import React, { useRef, useEffect, useState } from "react";
 import { moreCard } from "../ui/morecard/cardData";
 import { MoreCard } from "../ui";
-import { ModalHover } from "../effects/modalHover/page";
+import { ModalHover, BlurReveal } from "../effects/";
 import { useScrollProvider } from "../context/scrollContext/page";
 import Link from "next/link";
 
@@ -17,6 +17,8 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
   const circleRef = useRef(null);
   const [modal, setModal] = useState({ active: true, index: 0 });
   const { updateNavStyle, resetNavStyle } = useScrollProvider();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   const { scrollYProgress } = useScroll({
     target: container,
@@ -55,7 +57,12 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
       </motion.div>
       <motion.section className={styles.more__section}>
         <motion.div className={styles.more__content}>
-          <h1 className={styles.more__h1}>More Projects</h1>
+          <BlurReveal isInView={isInView} duration={1.2} delay={0}>
+            <h1 ref={ref} className={styles.more__h1}>
+              More Projects
+            </h1>
+          </BlurReveal>
+
           <div className={styles.more__flex__container}>
             <div className={styles.hover__container}>
               <ModalHover modal={modal}></ModalHover>

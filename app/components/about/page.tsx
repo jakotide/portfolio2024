@@ -12,7 +12,7 @@ export const About = () => {
     <section className={styles.about__container}>
       <div className={styles.about__content}>
         <div className={styles.about__left}>
-          <BlurReveal isInView={isInView}>
+          <BlurReveal isInView={isInView} delay={0} duration={1.2}>
             <h1 className={styles.about__h1} ref={ref}>
               <span className={styles.a__little}>A Little</span>
               <div className={styles.about__me}>About Me</div>

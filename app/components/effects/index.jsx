@@ -4,3 +4,4 @@ export { LenisSmoothScroll } from "./lenisSmoothScroll/page";
 export { Preloader } from "./preloader/page";
 export { TransitionLink } from "./transitionlink/page";
 export { PageTransition } from "./pagetransition/page";
+export { ModalHover } from "./modalHover/page";

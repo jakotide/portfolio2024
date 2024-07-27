@@ -24,7 +24,7 @@ export const projects: ProjectData[] = [
   },
   {
     id: "topo",
-    imageSrc: "/images/topo-image.png",
+    imageSrc: "/images/toposhowcase1.png",
     imageAlt: "Project cover of Topo",
     cardNumber: "02",
     projectTitle: "Topo",
