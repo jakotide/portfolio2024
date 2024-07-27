@@ -1,10 +1,18 @@
 import styles from "./contact.module.scss";
 import { useCursor } from "../context/cursorContext/page";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useInView } from "framer-motion";
 import { useScrollProvider } from "../context";
 
 export const Contact = () => {
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+
   const { handleHoverStart, handleHoverEnd } = useCursor();
   const ref = useRef(null);
   const contactInView = useInView(ref, { threshold: 1 });
@@ -13,9 +21,39 @@ export const Contact = () => {
   useEffect(() => {
     if (contactInView) {
       resetNavStyle();
-      console.log("COntact black");
     }
   }, [contactInView, resetNavStyle]);
+
+  const handleChange = (e) => {
+    setFormState({
+      ...formState,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      console.log("Submitting form data:", formState);
+      const response = await fetch("/api/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formState),
+      });
+      console.log("Response status:", response.status);
+      const data = await response.json();
+      console.log("Response from server:", data);
+      setSubmitMessage(data.message);
+      setFormState({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitMessage("An error occurred. Please try again.");
+    }
+    setIsSubmitting(false);
+  };
 
   return (
     <section className={styles.contact__section}>
@@ -30,22 +68,42 @@ export const Contact = () => {
         </div>
         <div className={`${styles.box} ${styles.box__5}`}></div>
         <div className={`${styles.box} ${styles.box__6}`}>
-          <form action="" className={styles.contact__form}>
+          <form onSubmit={handleSubmit} className={styles.contact__form}>
             <label htmlFor="name">Name*</label>
-            <input type="text" id="name" />
-            <label htmlFor="name">Email*</label>
-            <input type="text" id="email" />
-            <label htmlFor="name">Your Message*</label>
-            <textarea name="message" id="message"></textarea>
-            <div
-              typeof="submit"
+            <input
+              type="text"
+              id="name"
+              value={formState.name}
+              onChange={handleChange}
+              required
+            />
+            <label htmlFor="email">Email*</label>
+            <input
+              type="email"
+              id="email"
+              value={formState.email}
+              onChange={handleChange}
+              required
+            />
+            <label htmlFor="message">Your Message*</label>
+            <textarea
+              name="message"
+              id="message"
+              value={formState.message}
+              onChange={handleChange}
+              required
+            ></textarea>
+            <button
+              type="submit"
               className={styles.send__btn}
               onMouseEnter={handleHoverStart}
               onMouseLeave={handleHoverEnd}
               ref={ref}
+              disabled={isSubmitting}
             >
-              Send
-            </div>
+              {isSubmitting ? "Sending..." : "Send"}
+            </button>
+            {submitMessage && <p>{submitMessage}</p>}
           </form>
         </div>
       </div>
