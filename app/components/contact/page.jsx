@@ -1,8 +1,25 @@
 import styles from "./contact.module.scss";
 import { useCursor } from "../context/cursorContext/page";
 import React, { useRef, useEffect, useState } from "react";
-import { useInView } from "framer-motion";
+import { useInView, motion, AnimatePresence } from "framer-motion";
 import { useScrollProvider } from "../context";
+
+const notificationAnimation = {
+  initial: {
+    opacity: 0,
+    y: "20px",
+  },
+  animate: {
+    opacity: 1,
+    y: "0",
+    transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+  },
+  exit: {
+    opacity: 0,
+    y: "20px",
+    transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] },
+  },
+};
 
 export const Contact = () => {
   const [formState, setFormState] = useState({
@@ -12,7 +29,7 @@ export const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
-
+  const [showNotification, setShowNotification] = useState(false);
   const { handleHoverStart, handleHoverEnd } = useCursor();
   const ref = useRef(null);
   const contactInView = useInView(ref, { threshold: 1 });
@@ -34,8 +51,8 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitMessage("");
     try {
-      console.log("Submitting form data:", formState);
       const response = await fetch("/api/email", {
         method: "POST",
         headers: {
@@ -43,16 +60,32 @@ export const Contact = () => {
         },
         body: JSON.stringify(formState),
       });
-      console.log("Response status:", response.status);
+
       const data = await response.json();
-      console.log("Response from server:", data);
-      setSubmitMessage(data.message);
-      setFormState({ name: "", email: "", message: "" });
+
+      if (response.ok) {
+        setSubmitMessage(data.message);
+        setFormState({ name: "", email: "", message: "" });
+      } else if (response.status === 429) {
+        setSubmitMessage("Too many requests. Please try again later.");
+      } else {
+        setSubmitMessage(
+          data.message || "An error occurred. Please try again."
+        );
+      }
+
+      setShowNotification(true);
     } catch (error) {
       console.error("Error submitting form:", error);
       setSubmitMessage("An error occurred. Please try again.");
     }
     setIsSubmitting(false);
+  };
+
+  const handleNotificationComplete = () => {
+    if (showNotification) {
+      setTimeout(() => setShowNotification(false), 4000);
+    }
   };
 
   return (
@@ -101,9 +134,23 @@ export const Contact = () => {
               ref={ref}
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Sending..." : "Send"}
+              {isSubmitting ? <span className={styles.spinner}></span> : "Send"}
             </button>
-            {submitMessage && <p>{submitMessage}</p>}
+            <AnimatePresence>
+              {showNotification && (
+                <motion.div
+                  key="notification"
+                  variants={notificationAnimation}
+                  initial="initial"
+                  animate="animate"
+                  exit="exit"
+                  onAnimationComplete={handleNotificationComplete}
+                  className={styles.notification}
+                >
+                  {submitMessage}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </form>
         </div>
       </div>

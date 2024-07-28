@@ -1,11 +1,71 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { sanitize } from "isomorphic-dompurify";
+
+// Simple in-memory store for rate limiting
+const rateLimitStore = {
+  emails: 0,
+  resetTime: Date.now(),
+};
+
+const RATE_LIMIT = 50;
+const RATE_LIMIT_WINDOW = 15 * 60 * 1000; // 15 minutes in milliseconds
 
 export async function POST(request) {
   console.log("API route hit");
   try {
+    // Check rate limit
+    if (Date.now() > rateLimitStore.resetTime + RATE_LIMIT_WINDOW) {
+      rateLimitStore.emails = 0;
+      rateLimitStore.resetTime = Date.now();
+    }
+
+    if (rateLimitStore.emails >= RATE_LIMIT) {
+      return NextResponse.json(
+        { message: "Rate limit exceeded. Please try again later." },
+        { status: 429 }
+      );
+    }
+
+    rateLimitStore.emails++;
+
     const { name, email, message } = await request.json();
-    console.log("Received data:", { name, email, message });
+
+    // Basic input validation
+    if (!name || name.trim().length === 0) {
+      return NextResponse.json(
+        { message: "Name is required" },
+        { status: 400 }
+      );
+    }
+
+    // Simple email format check
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      return NextResponse.json(
+        { message: "Invalid email format" },
+        { status: 400 }
+      );
+    }
+
+    // Message length check
+    if (!message || message.trim().length === 0 || message.length > 1000) {
+      return NextResponse.json(
+        { message: "Message must be between 1 and 1000 characters" },
+        { status: 400 }
+      );
+    }
+
+    // Sanitize inputs
+    const sanitizedName = sanitize(name);
+    const sanitizedEmail = sanitize(email);
+    const sanitizedMessage = sanitize(message);
+
+    console.log("Received data:", {
+      sanitizedName,
+      sanitizedEmail,
+      sanitizedMessage,
+    });
 
     // Check if the API key is available
     if (!process.env.SENDGRID_API_KEY) {
@@ -36,11 +96,11 @@ export async function POST(request) {
       const info = await transporter.sendMail({
         from: "tidemand.dev@gmail.com",
         to: "tidemand.dev@gmail.com",
-        subject: `New message from ${name}`,
+        subject: `New message from ${sanitizedName}`,
         text: `
-          Name: ${name}
-          Email: ${email}
-          Message: ${message}
+          Name: ${sanitizedName}
+          Email: ${sanitizedEmail}
+          Message: ${sanitizedMessage}
         `,
       });
       console.log("Email sent successfully:", info);
