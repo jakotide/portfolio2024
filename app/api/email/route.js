@@ -61,12 +61,6 @@ export async function POST(request) {
     const sanitizedEmail = sanitize(email);
     const sanitizedMessage = sanitize(message);
 
-    console.log("Received data:", {
-      sanitizedName,
-      sanitizedEmail,
-      sanitizedMessage,
-    });
-
     // Check if the API key is available
     if (!process.env.SENDGRID_API_KEY) {
       console.error("SendGrid API key is not defined");
@@ -89,8 +83,6 @@ export async function POST(request) {
       },
     });
 
-    console.log("Transporter created");
-
     try {
       console.log("Attempting to send email");
       const info = await transporter.sendMail({
@@ -102,6 +94,12 @@ export async function POST(request) {
           Email: ${sanitizedEmail}
           Message: ${sanitizedMessage}
         `,
+        headers: {
+          "X-Priority": "3",
+          "X-MSMail-Priority": "Normal",
+          Importance: "Normal",
+          "X-Mailer": "Your Website Contact Form",
+        },
       });
       console.log("Email sent successfully:", info);
 
