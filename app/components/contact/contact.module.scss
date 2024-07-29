@@ -91,6 +91,10 @@
           outline: none;
         }
 
+        input:enabled {
+          background-color: clr.$light-green;
+        }
+
         textarea {
           resize: none;
           height: 80px;

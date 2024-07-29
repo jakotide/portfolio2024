@@ -5,9 +5,13 @@ import gsap from "gsap";
 import { rowData } from "./data";
 import { motion, useInView } from "framer-motion";
 import { containerReveal } from "./data";
-import { ScrollProvider, useScrollProvider } from "../context";
+import { useScrollProvider } from "../context";
 
-export const Skills = () => {
+interface SkillsProps {
+  id: string;
+}
+
+export const Skills: React.FC<SkillsProps> = ({ id }) => {
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
   const animationFrameId = useRef<number | null>(null);
   const [activeButton, setActiveButton] = useState("chaos");
@@ -18,7 +22,6 @@ export const Skills = () => {
   useEffect(() => {
     if (skillInView) {
       updateNavStyle();
-      console.log("Skill go white");
     }
   }, [skillInView]);
 
@@ -61,7 +64,7 @@ export const Skills = () => {
 
   return (
     <>
-      <section className={styles.skills__section}>
+      <section className={styles.skills__section} id={id}>
         <h1 className={styles.skills__h1}>Skills</h1>
         <div className={styles.skills__btn__container}>
           <div className={styles.view}>View</div>

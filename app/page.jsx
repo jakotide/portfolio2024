@@ -15,12 +15,12 @@ const Home = () => {
 
   return (
     <main style={{ overflow: "hidden" }}>
-      <Hero />
-      <SelectedWork isCircleInView={isCircleInView} />
+      <Hero id="hero" />
+      <SelectedWork isCircleInView={isCircleInView} id="works" />
       <MoreWork setIsCircleInView={setIsCircleInView} />
-      <About />
-      <Skills />
-      <Contact />
+      <About id="about" />
+      <Skills id="skills" />
+      <Contact id="contact" />
       <Footer />
     </main>
   );

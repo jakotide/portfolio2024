@@ -4,12 +4,16 @@ import React, { useRef } from "react";
 import { BlurReveal } from "../effects";
 import { useInView, motion } from "framer-motion";
 
-export const About = () => {
+interface AboutProps {
+  id?: string;
+}
+
+export const About: React.FC<AboutProps> = ({ id }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section className={styles.about__container}>
+    <section className={styles.about__container} id={id}>
       <div className={styles.about__content}>
         <div className={styles.about__left}>
           <BlurReveal isInView={isInView} delay={0} duration={1.2}>

@@ -10,9 +10,9 @@ import {
   opacityRevealThree,
 } from "./anim";
 
-export const Hero = () => {
+export const Hero = ({ id }) => {
   return (
-    <div className={`${styles.hero__container} ${styles.noise}`}>
+    <div className={`${styles.hero__container} ${styles.noise}`} id={id}>
       <div className={styles.hero__content__container}>
         <div className={styles.hero__mid}>
           <motion.div

@@ -5,11 +5,11 @@ import { SelectedCard } from "../ui/";
 import { cardData1, cardData2 } from "../ui/selectedcard/cardData";
 import { projects } from "../project/projectData";
 import { BlurReveal, TransitionLink } from "../effects/index";
-import Link from "next/link";
 
 interface SelectedWorkProps {
   isCircleInView: boolean;
   id: string;
+  isInView: boolean;
 }
 
 export const SelectedWork: React.FC<SelectedWorkProps> = ({
@@ -23,12 +23,13 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
 
   return (
     <section
+      id={id}
       className={`${styles.selected__container} ${
         isCircleInView ? styles.moreBg : ""
       }`}
     >
       <div className={styles.selected__content__container}>
-        <BlurReveal isInView={isInView}>
+        <BlurReveal isInView={isInView} duration={1} delay={0}>
           <motion.h1 className={styles.selected__h1} ref={ref}>
             <span>Selected</span>
             <div className={styles.flex}>

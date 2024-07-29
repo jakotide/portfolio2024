@@ -21,7 +21,7 @@ const notificationAnimation = {
   },
 };
 
-export const Contact = () => {
+export const Contact = ({ id }) => {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -89,7 +89,7 @@ export const Contact = () => {
   };
 
   return (
-    <section className={styles.contact__section}>
+    <section className={styles.contact__section} id={id}>
       <div className={styles.contact__grid}>
         <div className={`${styles.box} ${styles.box__line__side}`}></div>
         <div className={`${styles.box} ${styles.box__line}`}></div>

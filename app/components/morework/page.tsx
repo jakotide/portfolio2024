@@ -3,7 +3,7 @@ import { useScroll, useTransform, motion, useInView } from "framer-motion";
 import React, { useRef, useEffect, useState } from "react";
 import { moreCard } from "../ui/morecard/cardData";
 import { MoreCard } from "../ui";
-import { ModalHover, BlurReveal } from "../effects/";
+import { ModalHover, BlurReveal, TransitionLink } from "../effects/";
 import { useScrollProvider } from "../context/scrollContext/page";
 import Link from "next/link";
 
@@ -69,7 +69,7 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
             </div>
             <div className={styles.more__card__container}>
               {moreCard.map((card, i) => (
-                <Link
+                <TransitionLink
                   href={`/project/${card.id}`}
                   key={card.cardNumber}
                   className={styles.more__card__link}
@@ -86,7 +86,7 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
                     index={i}
                     isActive={modal.active && modal.index === i}
                   />
-                </Link>
+                </TransitionLink>
               ))}
             </div>
           </div>

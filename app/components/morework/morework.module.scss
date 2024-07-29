@@ -51,8 +51,11 @@
         }
         .more__card__container {
           width: 50%;
-          .more__card__link {
+
+          a {
             text-decoration: none;
+          }
+          .more__card__link {
             color: inherit;
           }
         }
