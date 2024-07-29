@@ -2,15 +2,13 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import styles from "./hero.module.scss";
 import { HeroHeader } from "../ui/heroheader/page";
+import { useOsloTime } from "../hooks/useOsloTime";
 
-import {
-  textSlideUp,
-  opacityReveal,
-  opacityRevealTwo,
-  opacityRevealThree,
-} from "./anim";
+import { textSlideUp, opacityReveal, opacityRevealTwo } from "./anim";
 
 export const Hero = ({ id }) => {
+  const osloTime = useOsloTime();
+
   return (
     <div className={`${styles.hero__container} ${styles.noise}`} id={id}>
       <div className={styles.hero__content__container}>
@@ -24,7 +22,7 @@ export const Hero = ({ id }) => {
             <div>Freelance</div>
             <div>
               <div>Based in Oslo</div>
-              <div>5:43pm</div>
+              <div>{osloTime}</div>
             </div>
             <p>Frontend developer with a passion for design</p>
           </motion.div>
@@ -63,5 +61,3 @@ export const Hero = ({ id }) => {
     </div>
   );
 };
-
-// export default Hero;
