@@ -9,11 +9,9 @@ export const navReveal = {
 
     opacity: 1,
     transition: {
-      duration: 1.4,
-      delay: 3.4,
+      duration: 1.2,
+      delay: 1.6,
       ease: [0.76, 0, 0.24, 1],
-
-      //   delayChildren: 3.9,
     },
   },
 };

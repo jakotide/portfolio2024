@@ -2,7 +2,7 @@
 import Link, { LinkProps } from "next/link";
 import React from "react";
 import { useRouter } from "next/navigation";
-import { useTransitionProvider } from "../../context";
+import { useTransitionProvider, useScrollProvider } from "../../context";
 
 interface TransitionLinkProps extends LinkProps {
   children: React.ReactNode;
@@ -23,6 +23,7 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
   const router = useRouter();
   const { startAnimation, endAnimation, completeAnimation } =
     useTransitionProvider();
+  const { resetNavStyle } = useScrollProvider();
 
   const handleTransition = async (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
@@ -31,7 +32,8 @@ export const TransitionLink: React.FC<TransitionLinkProps> = ({
     startAnimation();
     await sleep(1000);
     router.push(href);
-    await sleep(1000);
+    resetNavStyle();
+    await sleep(1100);
     endAnimation();
     await sleep(1000);
     completeAnimation();

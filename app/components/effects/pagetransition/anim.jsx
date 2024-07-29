@@ -9,7 +9,7 @@ export const pageTransitionSlider = {
   },
   exit: {
     y: "-100%",
-    transition: { duration: 1, ease: [0.76, 0, 0.24, 1] },
+    transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] },
   },
 };
 

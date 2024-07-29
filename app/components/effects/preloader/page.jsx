@@ -13,28 +13,28 @@ export const Preloader = () => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });
   }, []);
 
-  useEffect(() => {
-    let currentValue = 0;
+  // useEffect(() => {
+  //   let currentValue = 0;
 
-    const interval = setInterval(() => {
-      currentValue += Math.floor(Math.random() * 10) + 1;
+  //   const interval = setInterval(() => {
+  //     currentValue += Math.floor(Math.random() * 10) + 1;
 
-      if (currentValue > 100) {
-        currentValue = 100;
-      }
+  //     if (currentValue > 100) {
+  //       currentValue = 100;
+  //     }
 
-      setCounter(currentValue);
+  //     setCounter(currentValue);
 
-      if (currentValue === 100) {
-        clearInterval(interval);
-        setTimeout(() => {
-          setExit(true);
-        }, 600);
-      }
-    }, 80);
+  //     if (currentValue === 100) {
+  //       clearInterval(interval);
+  //       setTimeout(() => {
+  //         setExit(true);
+  //       }, 600);
+  //     }
+  //   }, 80);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
     dimension.height
@@ -74,13 +74,13 @@ export const Preloader = () => {
           >
             Hello!
           </motion.div>
-          <motion.div
+          {/* <motion.div
             className={`${styles.counter} ${
               exit ? styles.counter__hidden : ""
             }`}
           >
             {counter}
-          </motion.div>
+          </motion.div> */}
           <svg>
             <motion.path
               variants={curve}

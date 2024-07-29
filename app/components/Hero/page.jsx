@@ -19,7 +19,7 @@ export const Hero = ({ id }) => {
             animate="animate"
             className={styles.hero__info__container}
           >
-            <div>Freelance</div>
+            <p>Available for employment and freelance opportunities</p>
             <div>
               <div>Based in Oslo</div>
               <div>{osloTime}</div>

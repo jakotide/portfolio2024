@@ -35,7 +35,7 @@ export default function RootLayout({
     const timeoutId = setTimeout(() => {
       setIsLoading(false);
       window.scrollTo(0, 0);
-    }, 2800);
+    }, 1300);
 
     return () => clearTimeout(timeoutId);
   }, []);

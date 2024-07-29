@@ -6,11 +6,11 @@ export const textSlideUp = {
   animate: {
     y: "0",
     transition: {
-      duration: 1.4,
-      delay: 3,
+      duration: 1.1,
+      delay: 1.4,
       ease: [0.76, 0, 0.24, 1],
       staggerChildren: 0.1,
-      delayChildren: 3.6,
+      delayChildren: 1.8,
     },
     opacity: 1,
   },
@@ -22,7 +22,7 @@ export const opacityReveal = {
   },
   animate: {
     opacity: 1,
-    transition: { duration: 0.7, delay: 3.8 },
+    transition: { duration: 0.6, delay: 2 },
   },
 };
 
@@ -34,7 +34,7 @@ export const opacityRevealTwo = {
   animate: {
     opacity: 1,
     filter: "0",
-    transition: { duration: 0.5, delay: 3.4 },
+    transition: { duration: 0.5, delay: 2.2 },
   },
 };
 
@@ -46,6 +46,6 @@ export const opacityRevealThree = {
   animate: {
     opacity: 1,
     filter: "0",
-    transition: { duration: 0.8, delay: 3 },
+    transition: { duration: 0.8, delay: 2.2 },
   },
 };

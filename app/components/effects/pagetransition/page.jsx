@@ -75,7 +75,7 @@ export const PageTransition = () => {
           variants={boxFadeIn}
         ></motion.div>
         <motion.div
-          className={styles.blue__box}
+          className={styles.yellow__box}
           variants={boxFadeIn}
         ></motion.div>
       </motion.div>
