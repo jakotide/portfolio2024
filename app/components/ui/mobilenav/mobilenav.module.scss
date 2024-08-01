@@ -1,0 +1,27 @@
+@use "../../../scss/globals.scss" as clr;
+
+.nav__menu__mobile__container {
+  position: relative;
+  .nav__menu__mobile {
+    height: 600px;
+    width: 500px;
+    background-color: clr.$black;
+    border-radius: 2em;
+    padding: 1rem;
+    li {
+      list-style: none;
+      color: clr.$white;
+      font-size: 2rem;
+    }
+  }
+
+  .mobile__menu__btn {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2rem;
+    color: whitesmoke;
+  }
+}

@@ -1,5 +1,5 @@
 @use "../../scss/globals.scss" as clr;
-// @import "../../scss/globals.scss";
+@use "../../scss/globals.scss" as mq;
 
 .noise {
   background-image: url(../../assets/images/noise-light.png);
@@ -21,6 +21,13 @@
     display: grid;
     place-items: center;
 
+    @include mq.desktopXL {
+      padding: 8rem 5rem;
+    }
+    @include mq.desktopL {
+      padding: 9rem 3rem;
+    }
+
     .hero__mid {
       display: flex;
       flex-direction: column;
@@ -28,6 +35,13 @@
       font-size: 0.9rem;
       height: 80%;
       width: 79%;
+
+      @include mq.desktop {
+        height: 75%;
+      }
+      @include mq.tabletL {
+        width: 100%;
+      }
 
       .h1__container {
         color: clr.$black;
@@ -39,14 +53,12 @@
           font-family: "GeneralSans-Regular";
         }
 
-        .hero__h1 {
-          font-size: 9rem;
-          white-space: nowrap;
-          line-height: 0.9;
-        }
-
         .hero__subheader {
           font-size: 3rem;
+
+          @include mq.desktop {
+            font-size: clamp(2rem, 3.5vw, 2.5rem);
+          }
         }
       }
 
@@ -74,6 +86,10 @@
   bottom: 2rem;
   right: 7rem;
   cursor: pointer;
+
+  @include mq.tabletL {
+    right: 3rem;
+  }
 }
 .flex__container {
   display: flex;
@@ -88,4 +104,8 @@
   bottom: 2rem;
   left: 7rem;
   cursor: pointer;
+
+  @include mq.tabletL {
+    left: 3rem;
+  }
 }

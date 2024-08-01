@@ -10,7 +10,7 @@ export const navReveal = {
     opacity: 1,
     transition: {
       duration: 1.2,
-      delay: 1.6,
+      delay: 1.7,
       ease: [0.76, 0, 0.24, 1],
     },
   },

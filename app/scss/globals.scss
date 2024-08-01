@@ -17,6 +17,82 @@ $brown: #501718;
 $teal: #b3e0e0;
 $grey-blue: #8aa9c6;
 
+$desktopXL: 97.5em; // 1560px
+$desktopL: 91.25em; // 1460px
+$desktopM: 81.25em; // 1300px
+$desktop: 80em; //1280px
+$desktopS: 75em; //1200px
+$tabletL: 60em; // 960px
+$tablet: 48em; // 768px
+$tabletS: 40.625em; // 650px
+$mobileL: 35em; // 560px
+$mobileS: 26.25em; // 420px
+$mobileXS: 370px;
+
+@mixin desktopXL {
+  @media (max-width: $desktopXL) {
+    @content;
+  }
+}
+
+@mixin desktopL {
+  @media (max-width: $desktopL) {
+    @content;
+  }
+}
+
+@mixin desktopM {
+  @media (max-width: $desktopM) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin desktopS {
+  @media (max-width: $desktopS) {
+    @content;
+  }
+}
+
+@mixin tabletL {
+  @media (max-width: $tabletL) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin tabletS {
+  @media (max-width: $tabletS) {
+    @content;
+  }
+}
+@mixin mobileL {
+  @media (max-width: $mobileL) {
+    @content;
+  }
+}
+
+@mixin mobileS {
+  @media (max-width: $mobileS) {
+    @content;
+  }
+}
+@mixin mobileXS {
+  @media (max-width: $mobileXS) {
+    @content;
+  }
+}
+
 @font-face {
   font-family: "Brown-Sugar";
   src: url(../assets/fonts/brownsugar.woff2), format("woff2");
