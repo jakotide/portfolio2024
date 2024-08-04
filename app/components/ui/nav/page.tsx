@@ -38,7 +38,7 @@ export const Navigation = () => {
       >
         tidemand_folio2024
       </div>
-      {isTablet ? (
+      {/* {isTablet ? (
         <MobileNav />
       ) : (
         <menu
@@ -74,7 +74,40 @@ export const Navigation = () => {
             contact
           </li>
         </menu>
-      )}
+      )} */}
+      <menu
+        className={styles.nav__menu}
+        style={navStyle ? { color: "white" } : { color: "black" }}
+      >
+        <li
+          onMouseEnter={handleHoverStart}
+          onMouseLeave={handleHoverEnd}
+          onClick={() => scrollToSection("works")}
+        >
+          works
+        </li>
+        <li
+          onMouseEnter={handleHoverStart}
+          onMouseLeave={handleHoverEnd}
+          onClick={() => scrollToSection("about")}
+        >
+          about
+        </li>
+        <li
+          onMouseEnter={handleHoverStart}
+          onMouseLeave={handleHoverEnd}
+          onClick={() => scrollToSection("skills")}
+        >
+          skills
+        </li>
+        <li
+          onMouseEnter={handleHoverStart}
+          onMouseLeave={handleHoverEnd}
+          onClick={() => scrollToSection("contact")}
+        >
+          contact
+        </li>
+      </menu>
     </motion.nav>
   );
 };

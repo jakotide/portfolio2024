@@ -1,13 +1,29 @@
 @use "../../../scss/globals.scss" as clr;
+@use "../../../scss/globals.scss" as mq;
 
 .nav__menu__mobile__container {
-  position: relative;
+  position: fixed;
+
+  z-index: 102;
+  padding: 1rem 7rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-family: "GeneralSans-Regular";
+  overflow: hidden;
+
+  @include mq.tabletL {
+    padding: 1rem 3rem;
+  }
+  @include mq.mobileL {
+    padding: 1rem 1.5rem;
+  }
+
   .nav__menu__mobile {
-    height: 600px;
-    width: 500px;
+    position: fixed;
     background-color: clr.$black;
     border-radius: 2em;
-    padding: 1rem;
+
     li {
       list-style: none;
       color: clr.$white;
@@ -18,10 +34,14 @@
   .mobile__menu__btn {
     border: none;
     background-color: transparent;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 2rem;
-    color: whitesmoke;
+    position: relative;
+    z-index: 200;
+    color: black;
+
+    .mobile__close__btn {
+      position: absolute;
+      top: 25px;
+      right: 20px;
+    }
   }
 }

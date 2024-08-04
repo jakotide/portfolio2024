@@ -44,8 +44,8 @@ export const Hero = ({ id }) => {
                 initial="initial"
                 animate="animate"
               >
-                <div>Jakob</div>
-                <h1>Tidemand</h1>
+                <div className={styles.h1__jakob}>Jakob</div>
+                <h1 className={styles.h1__tidemand}>Tidemand</h1>
               </motion.div>
             ) : (
               <HeroHeader />

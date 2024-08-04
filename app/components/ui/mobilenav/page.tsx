@@ -2,8 +2,8 @@ import styles from "./mobilenav.module.scss";
 import { useLenis } from "@studio-freight/react-lenis";
 import React, { useState } from "react";
 import { useScrollProvider } from "../../context/";
-import { motion } from "framer-motion";
-import { showMobileNav } from "./anim";
+import { motion, AnimatePresence } from "framer-motion";
+import { showMobileNav, buttonTextVariants } from "./anim";
 
 export const MobileNav = () => {
   const lenis = useLenis();
@@ -20,24 +20,59 @@ export const MobileNav = () => {
 
   return (
     <div className={styles.nav__menu__mobile__container}>
-      <motion.menu
-        variants={showMobileNav}
-        initial="closed"
-        animate={isClicked ? "open" : "closed"}
-        className={styles.nav__menu__mobile}
-        style={navStyle ? { color: "white" } : { color: "black" }}
-      >
-        <li onClick={() => scrollToSection("works")}>works</li>
-        <li onClick={() => scrollToSection("about")}>about</li>
-        <li onClick={() => scrollToSection("skills")}>skills</li>
-        <li onClick={() => scrollToSection("contact")}>contact</li>
-      </motion.menu>
-      <button
+      <div onClick={() => scrollToSection("hero")}>folio2024</div>
+      <AnimatePresence>
+        <motion.menu
+          key="mobile-menu"
+          variants={showMobileNav}
+          initial="closed"
+          animate={isClicked ? "open" : "closed"}
+          exit="closed"
+          className={styles.nav__menu__mobile}
+          style={navStyle ? { color: "white" } : { color: "black" }}
+        >
+          {isClicked && (
+            <>
+              <li onClick={() => scrollToSection("works")}>works</li>
+              <li onClick={() => scrollToSection("about")}>about</li>
+              <li onClick={() => scrollToSection("skills")}>skills</li>
+              <li onClick={() => scrollToSection("contact")}>contact</li>
+            </>
+          )}
+        </motion.menu>
+      </AnimatePresence>
+      <motion.button
         className={styles.mobile__menu__btn}
-        onClick={() => setIsClicked(true)}
+        onClick={() => setIsClicked(!isClicked)}
+        style={isClicked ? { color: "White" } : { color: "black" }}
       >
-        Menu
-      </button>
+        <AnimatePresence mode="wait">
+          {isClicked ? (
+            <motion.div
+              key="close"
+              variants={buttonTextVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.3 }}
+              className={styles.mobile__close__btn}
+            >
+              close
+            </motion.div>
+          ) : (
+            <motion.div
+              key="menu"
+              variants={buttonTextVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              transition={{ duration: 0.3 }}
+            >
+              menu
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.button>
     </div>
   );
 };

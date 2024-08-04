@@ -27,6 +27,9 @@
     @include mq.desktopL {
       padding: 9rem 3rem;
     }
+    @include mq.mobileL {
+      padding: 9rem 1.5rem;
+    }
 
     .hero__mid {
       display: flex;
@@ -60,6 +63,23 @@
             font-size: clamp(2rem, 3.5vw, 2.5rem);
           }
         }
+
+        .h1__jakob,
+        .h1__tidemand {
+          font-size: clamp(4.3rem, 14vw, 8rem);
+          line-height: 1;
+
+          @include mq.mobileXS {
+            font-size: 18vw;
+          }
+        }
+
+        .hero__subheader__mobile {
+          font-family: "GeneralSans-Regular";
+          margin-top: 1rem;
+          max-width: 200px;
+          font-weight: 700;
+        }
       }
 
       .hero__info__container {
@@ -90,6 +110,11 @@
   @include mq.tabletL {
     right: 3rem;
   }
+  @include mq.mobileL {
+    left: 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 .flex__container {
   display: flex;
@@ -104,8 +129,14 @@
   bottom: 2rem;
   left: 7rem;
   cursor: pointer;
+  width: fit-content;
 
   @include mq.tabletL {
-    left: 3rem;
+    left: 1.5rem;
+  }
+  @include mq.mobileL {
+    margin-left: auto;
+    font-size: 0.9rem;
+    right: 1.5rem;
   }
 }
