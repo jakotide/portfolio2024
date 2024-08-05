@@ -22,6 +22,7 @@ $desktopL: 91.25em; // 1460px
 $desktopM: 81.25em; // 1300px
 $desktop: 80em; //1280px
 $desktopS: 75em; //1200px
+$desktopXS: 1150px;
 $tabletL: 60em; // 960px
 $tablet: 48em; // 768px
 $tabletS: 40.625em; // 650px
@@ -55,6 +56,12 @@ $mobileXS: 370px;
 
 @mixin desktopS {
   @media (max-width: $desktopS) {
+    @content;
+  }
+}
+
+@mixin desktopXS {
+  @media (max-width: $desktopXS) {
     @content;
   }
 }

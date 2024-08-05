@@ -107,7 +107,7 @@
   right: 7rem;
   cursor: pointer;
 
-  @include mq.tabletL {
+  @include mq.desktopXL {
     right: 3rem;
   }
   @include mq.mobileL {
@@ -131,8 +131,8 @@
   cursor: pointer;
   width: fit-content;
 
-  @include mq.tabletL {
-    left: 1.5rem;
+  @include mq.desktopXL {
+    left: 3rem;
   }
   @include mq.mobileL {
     margin-left: auto;

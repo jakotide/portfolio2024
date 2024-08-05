@@ -40,16 +40,9 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
         </BlurReveal>
         <div className={styles.selected__projects__container}>
           {projects.slice(0, 2).map((project, index) => (
-            // <Link
-            //   key={project.id}
-            //   href={`/project/${project.id}`}
-            //   // className={styles.selected__links}
-            //   className={styles[`selected__card__${index + 1}`]}
-            // >
             <TransitionLink
               key={project.id}
               href={`/project/${project.id}`}
-              // className={styles[`selected__card__${index + 1}`]}
               className={styles.transition__link}
             >
               <SelectedCard
@@ -69,8 +62,6 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
                 isCircleInView={isCircleInView}
               />
             </TransitionLink>
-
-            // {/* </Link> */}
           ))}
         </div>
       </div>

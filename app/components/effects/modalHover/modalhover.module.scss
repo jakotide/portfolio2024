@@ -1,3 +1,5 @@
+@use "../../../scss/globals.scss" as mq;
+
 .modal__container {
   height: 650px;
   width: 500px;
@@ -8,6 +10,15 @@
   justify-content: center;
   position: relative;
   border-radius: 0.25em;
+
+  @include mq.desktop {
+    height: 550px;
+    width: 400px;
+  }
+  @include mq.desktopXS {
+    height: 500px;
+    width: 350px;
+  }
 
   .modal__slider {
     height: 100%;

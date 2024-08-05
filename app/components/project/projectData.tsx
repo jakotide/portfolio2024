@@ -42,7 +42,7 @@ export const projects: ProjectData[] = [
     cardNumber: "03",
     projectTitle: "Sot",
     description:
-      "This is a site I made to showcase some of the music I've created over the past couple of years...",
+      "This is a site I made to showcase some of the music I've created over the past couple of years. I used GSAP to incorporate animations, hover effects, and parallax images. Additionally, I used Lenis scroll library for smoother scrolling and animations.",
     projectType: "Personal Project",
     languages: ["React", "SCSS", "Framer Motion"],
   },

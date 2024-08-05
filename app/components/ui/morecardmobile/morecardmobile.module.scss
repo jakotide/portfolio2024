@@ -1,0 +1,44 @@
+@use "../../../scss/globals.scss" as clr;
+
+.mobile__card {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: "GeneralSans-Regular";
+  margin-bottom: 4rem;
+  .mobile__card__image {
+    max-height: 200px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .mobile__card__info {
+    display: flex;
+    justify-content: space-between;
+
+    .mobile__card__number {
+      font-family: "Brown-Sugar";
+      font-size: 2rem;
+    }
+    .mobile__card__title {
+      text-transform: uppercase;
+      font-size: 2rem;
+    }
+  }
+
+  .mobile__card__type {
+    align-self: flex-end;
+  }
+  .mobile__card__desc {
+    text-wrap: balance;
+    width: 70%;
+    margin-bottom: 2rem;
+  }
+  .mobile__card__border {
+    border: 1px solid clr.$red;
+    width: 50%;
+    align-self: flex-end;
+  }
+}

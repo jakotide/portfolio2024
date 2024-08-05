@@ -1,4 +1,5 @@
 @use "../../scss/globals.scss" as clr;
+@use "../../scss/globals.scss" as mq;
 
 .selected__container {
   width: 100%;
@@ -11,7 +12,7 @@
 
   a {
     text-decoration: none;
-    color: inherit; /* Optional, in case you want the links to inherit color from their parent */
+    color: inherit;
   }
 
   .selected__content__container {
@@ -19,9 +20,15 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    // flex-grow: 1;
     padding: 8rem 7rem 2rem;
     margin-bottom: 10rem;
+
+    @include mq.desktopXL {
+      padding: 8rem 3rem 2rem;
+    }
+    @include mq.mobileL {
+      padding: 8rem 1.5rem 2rem;
+    }
     .selected__h1 {
       display: flex;
       flex-direction: column;
@@ -29,16 +36,37 @@
       padding: 0 0 3rem;
       margin: 8rem 0 2rem;
       gap: 0.3rem;
+
+      @include mq.tabletS {
+        margin: 8rem 0 1rem;
+      }
+
       span {
         font-size: 3rem;
+        @include mq.desktopXS {
+          font-size: 2rem;
+        }
+        @include mq.tabletS {
+          font-size: 1.5rem;
+        }
       }
 
       .selected__work {
         font-size: 8rem;
         line-height: 0.8;
+
+        @include mq.desktopXS {
+          font-size: 6rem;
+        }
+        @include mq.tabletS {
+          font-size: 4rem;
+        }
       }
       .selected__amount {
         font-size: 1.5rem;
+        @include mq.tabletS {
+          font-size: 1rem;
+        }
       }
     }
 
@@ -46,6 +74,14 @@
       display: flex;
       width: 100%;
       justify-content: space-between;
+
+      @include mq.desktopXS {
+        flex-direction: column;
+        gap: 10rem;
+      }
+      @include mq.tabletS {
+        gap: 5rem;
+      }
 
       .transition__link {
         text-decoration: none;
@@ -58,13 +94,35 @@
       }
 
       .selected__card__1 {
-        // width: 50%;
-        height: 650px;
+        height: 550px;
+        width: 500px;
+
+        @include mq.desktopL {
+          width: 450px;
+        }
+        @include mq.desktop {
+          width: 400px;
+        }
+        @include mq.desktopXS {
+          width: 100%;
+        }
       }
 
       .selected__card__2 {
-        margin-top: 25rem;
-        // width: 100%;
+        margin-top: 28rem;
+        width: 650px;
+
+        @include mq.desktopL {
+          width: 600px;
+          height: 470px;
+        }
+        @include mq.desktop {
+          width: 470px;
+        }
+        @include mq.desktopXS {
+          width: 100%;
+          margin-top: 2rem;
+        }
       }
     }
   }

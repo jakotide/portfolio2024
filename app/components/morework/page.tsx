@@ -2,10 +2,10 @@ import styles from "./morework.module.scss";
 import { useScroll, useTransform, motion, useInView } from "framer-motion";
 import React, { useRef, useEffect, useState } from "react";
 import { moreCard } from "../ui/morecard/cardData";
-import { MoreCard } from "../ui";
+import { MoreCard, MoreCardMobile } from "../ui";
 import { ModalHover, BlurReveal, TransitionLink } from "../effects/";
 import { useScrollProvider } from "../context/scrollContext/page";
-import Link from "next/link";
+import { useMediaQuery } from "../hooks";
 
 interface MoreWorkProps {
   setIsCircleInView: (isInView: boolean) => void;
@@ -19,6 +19,7 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
   const { updateNavStyle, resetNavStyle } = useScrollProvider();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const isTabletL = useMediaQuery("(max-width: 960px)");
 
   const { scrollYProgress } = useScroll({
     target: container,
@@ -63,35 +64,50 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
             </h1>
           </BlurReveal>
 
-          <div className={styles.more__flex__container}>
-            <div className={styles.hover__container}>
-              <ModalHover modal={modal}></ModalHover>
-            </div>
-            <div className={styles.more__card__container}>
+          {isTabletL ? (
+            <div className={styles.mobile__card__container}>
               {moreCard.map((card, i) => (
-                <TransitionLink
-                  href={`/project/${card.id}`}
-                  key={card.cardNumber}
-                  className={styles.more__card__link}
-                >
-                  <MoreCard
-                    key={i}
-                    imageSrc={card.imageSrc}
-                    imageAlt={card.imageAlt}
-                    projectTitle={card.projectTitle}
-                    projectType={card.projectType}
-                    description={card.description}
-                    cardNumber={card.cardNumber}
-                    setModal={setModal}
-                    index={i}
-                    isActive={modal.active && modal.index === i}
-                  />
-                </TransitionLink>
+                <MoreCardMobile
+                  key={i}
+                  imageSrc={card.imageSrc}
+                  imageAlt={card.imageAlt}
+                  projectTitle={card.projectTitle}
+                  projectType={card.projectType}
+                  description={card.description}
+                  cardNumber={card.cardNumber}
+                />
               ))}
             </div>
-          </div>
+          ) : (
+            <div className={styles.more__flex__container}>
+              <div className={styles.hover__container}>
+                <ModalHover modal={modal}></ModalHover>
+              </div>
+              <div className={styles.more__card__container}>
+                {moreCard.map((card, i) => (
+                  <TransitionLink
+                    href={`/project/${card.id}`}
+                    key={card.cardNumber}
+                    className={styles.more__card__link}
+                  >
+                    <MoreCard
+                      key={i}
+                      imageSrc={card.imageSrc}
+                      imageAlt={card.imageAlt}
+                      projectTitle={card.projectTitle}
+                      projectType={card.projectType}
+                      description={card.description}
+                      cardNumber={card.cardNumber}
+                      setModal={setModal}
+                      index={i}
+                      isActive={modal.active && modal.index === i}
+                    />
+                  </TransitionLink>
+                ))}
+              </div>
+            </div>
+          )}
         </motion.div>
-        {/* <LineTransition /> */}
       </motion.section>
     </div>
   );

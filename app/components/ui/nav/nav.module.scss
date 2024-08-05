@@ -13,10 +13,9 @@
   overflow: hidden;
   filter: blur(20px);
 
-  @include mq.tabletL {
+  @include mq.desktopXL {
     padding: 1rem 3rem;
   }
-
   .nav__left {
     transition: all 0.3s ease-out;
     cursor: pointer;
