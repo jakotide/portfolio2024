@@ -1,10 +1,10 @@
 @use "../../scss/globals.scss" as clr;
+@use "../../scss/globals.scss" as mq;
 
 .skills__section {
   height: 100%;
   background-color: clr.$black;
   position: relative;
-  // overflow: hidden;
   padding-bottom: 44rem;
   width: 100%;
   .hidden {
@@ -18,6 +18,23 @@
     padding: 10rem 7rem 4rem;
     font-size: 7rem;
     line-height: 1;
+
+    @include mq.desktopXL {
+      font-size: 5rem;
+      padding: 10rem 3rem 4rem;
+    }
+
+    @include mq.desktopXS {
+      font-size: 5rem;
+      padding: 8rem 3rem 3rem;
+    }
+    @include mq.mobileL {
+      padding: 8rem 1.5rem 3rem;
+      font-size: 15vw;
+    }
+    @include mq.mobileS {
+      font-size: 18vw;
+    }
   }
 
   .skills__btn__container {
@@ -28,6 +45,13 @@
     color: clr.$white;
     text-transform: uppercase;
     font-family: "GeneralSans-Regular";
+
+    @include mq.desktopXL {
+      padding: 0rem 3rem 4rem;
+    }
+    @include mq.mobileL {
+      padding: 0rem 1.5rem 4rem;
+    }
 
     .view {
       color: clr.$grey-blue;
@@ -77,6 +101,13 @@
       display: flex;
       width: 100%;
       height: 4rem;
+
+      @include mq.desktopXS {
+        height: 3rem;
+      }
+      @include mq.mobileL {
+        height: 2.8rem;
+      }
 
       &:nth-child(2) {
         position: absolute;
@@ -150,6 +181,16 @@
       height: 100%;
       font-family: "GeneralSans-Regular";
       text-transform: uppercase;
+
+      @include mq.tabletL {
+        font-size: 0.9rem;
+      }
+      @include mq.mobileL {
+        font-size: 0.8rem;
+      }
+      @include mq.mobileS {
+        font-size: 0.7rem;
+      }
     }
   }
 
@@ -162,13 +203,34 @@
     text-transform: uppercase;
     font-family: "GeneralSans-Regular";
 
+    @include mq.desktopXL {
+      padding: 0 3rem;
+    }
+    @include mq.mobileL {
+      padding: 0 1.5rem;
+    }
+
     .readable__flex {
       display: flex;
+      flex-wrap: wrap;
       gap: 8rem;
+
+      @include mq.tabletS {
+        gap: 5rem;
+      }
 
       .readable__category {
         font-size: 1.2rem;
         margin-bottom: 1rem;
+        @include mq.mobileL {
+          font-size: 1rem;
+        }
+      }
+
+      .list__skills {
+        @include mq.tabletS {
+          font-size: 0.9rem;
+        }
       }
     }
   }

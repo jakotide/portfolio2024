@@ -141,25 +141,31 @@ export const Skills: React.FC<SkillsProps> = ({ id }) => {
           <div className={styles.readable__flex}>
             <div>
               <div className={styles.readable__category}>Skills:</div>
-              <div>HTML</div>
-              <div>CSS/SCSS</div>
-              <div>Javascript</div>
-              <div>React</div>
-              <div>Tailwind</div>
-              <div>Next.js</div>
-              <div>Typescript</div>
+              <div className={styles.list__skills}>
+                <div>HTML</div>
+                <div>CSS/SCSS</div>
+                <div>Javascript</div>
+                <div>React</div>
+                <div>Tailwind</div>
+                <div>Next.js</div>
+                <div>Typescript</div>
+              </div>
             </div>
             <div>
               <div className={styles.readable__category}>Tools:</div>
-              <div>Figma</div>
-              <div>Git</div>
-              <div>Github</div>
-              <div>Trello</div>
+              <div className={styles.list__skills}>
+                <div>Figma</div>
+                <div>Git</div>
+                <div>Github</div>
+                <div>Trello</div>
+              </div>
             </div>
             <div>
               <div className={styles.readable__category}>Animation:</div>
-              <div>Framer Motion</div>
-              <div>GSAP</div>
+              <div className={styles.list__skills}>
+                <div>Framer Motion</div>
+                <div>GSAP</div>
+              </div>
             </div>
           </div>
         </motion.div>

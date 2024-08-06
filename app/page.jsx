@@ -19,8 +19,8 @@ const Home = () => {
       <SelectedWork isCircleInView={isCircleInView} id="works" />
       <MoreWork setIsCircleInView={setIsCircleInView} />
       <About id="about" />
-      {/* <Skills id="skills" />
-      <Contact id="contact" />
+      <Skills id="skills" />
+      {/* <Contact id="contact" />
       <Footer />  */}
     </main>
   );

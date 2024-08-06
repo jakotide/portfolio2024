@@ -37,8 +37,8 @@ export const rowData: RowData[] = [
     direction: -1,
   },
   {
-    colors: ["light-green", "cream", "light-green", "pink"],
-    widths: [30, 30, 20, 20],
+    colors: ["green", "cream", "light-green", "pink"],
+    widths: [20, 30, 20, 30],
     skills: ["", "Next.js", "", "Typescript"],
     direction: 1,
   },
