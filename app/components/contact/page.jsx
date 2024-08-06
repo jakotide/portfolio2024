@@ -152,6 +152,11 @@ export const Contact = ({ id }) => {
               )}
             </AnimatePresence>
           </form>
+          <div className={styles.contact__info}>
+            <div>Or send me an email at:</div>
+            <div>tidemand.dev@gmail.com</div>
+            <div>+47 47864047</div>
+          </div>
         </div>
       </div>
     </section>

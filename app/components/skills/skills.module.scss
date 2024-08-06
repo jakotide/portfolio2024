@@ -218,6 +218,9 @@
       @include mq.tabletS {
         gap: 5rem;
       }
+      @include mq.mobileS {
+        gap: 3rem;
+      }
 
       .readable__category {
         font-size: 1.2rem;

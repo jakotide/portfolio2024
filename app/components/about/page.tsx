@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import { BlurReveal } from "../effects";
 import { useInView, motion } from "framer-motion";
+import { useMediaQuery } from "../hooks";
 
 interface AboutProps {
   id?: string;
@@ -11,16 +12,22 @@ interface AboutProps {
 export const About: React.FC<AboutProps> = ({ id }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const isMobileL = useMediaQuery("(max-width: 560px)");
 
   return (
     <section className={styles.about__container} id={id}>
       <div className={styles.about__content}>
         <div className={styles.about__left}>
           {/* <BlurReveal isInView={isInView} delay={0} duration={1.2}> */}
-          <h1 className={styles.about__h1} ref={ref}>
-            <span className={styles.a__little}>A Little</span>
-            <div className={styles.about__me}>About Me</div>
-          </h1>
+          {isMobileL ? (
+            <h1 className={styles.about__h1__mobile}>About</h1>
+          ) : (
+            <h1 className={styles.about__h1} ref={ref}>
+              <span className={styles.a__little}>A Little</span>
+              <div className={styles.about__me}>About Me</div>
+            </h1>
+          )}
+
           {/* </BlurReveal> */}
 
           <Image
@@ -32,7 +39,7 @@ export const About: React.FC<AboutProps> = ({ id }) => {
           />
         </div>
         <div className={styles.about__right}>
-          <div>
+          <div className={styles.quote}>
             Hello! I'm Jakob. A front-end developer and a generally geeky dude
             who loves <span className={styles.bg__orangeIsh}>creativity</span>{" "}
             and design.

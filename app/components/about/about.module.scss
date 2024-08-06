@@ -13,6 +13,9 @@
   @include mq.tabletS {
     padding: 7rem 3rem 12rem;
   }
+  @include mq.mobileL {
+    padding: 7rem 1.5rem 12rem;
+  }
   .about__content {
     height: 100%;
     display: flex;
@@ -35,6 +38,16 @@
       @include mq.tabletL {
         width: 100%;
       }
+
+      .about__h1__mobile {
+        font-size: 17vw;
+        margin-bottom: 4rem;
+        font-family: "Brown-Sugar";
+        @include mq.tablet {
+          margin-bottom: 2rem;
+        }
+      }
+
       .about__h1 {
         font-family: "Brown-Sugar";
         margin-bottom: 4rem;
@@ -122,6 +135,7 @@
         }
         @include mq.mobileS {
           height: 150px;
+          width: 37%;
         }
       }
     }
@@ -131,6 +145,14 @@
 
       @include mq.tabletL {
         width: 100%;
+      }
+
+      .quote {
+        font-size: 1.5rem;
+
+        @include mq.mobileL {
+          font-size: 1.25rem;
+        }
       }
 
       div {

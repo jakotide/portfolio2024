@@ -20,8 +20,8 @@ const Home = () => {
       <MoreWork setIsCircleInView={setIsCircleInView} />
       <About id="about" />
       <Skills id="skills" />
-      {/* <Contact id="contact" />
-      <Footer />  */}
+      <Contact id="contact" />
+      <Footer />
     </main>
   );
 };
