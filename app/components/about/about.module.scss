@@ -1,4 +1,5 @@
 @use "../../scss/globals.scss" as clr;
+@use "../../scss/globals.scss" as mq;
 
 .about__container {
   background-color: clr.$black;
@@ -6,24 +7,91 @@
   width: 100%;
   padding: 10rem 7rem 12rem;
   color: clr.$white;
+  @include mq.desktopXL {
+    padding: 10rem 3rem 12rem;
+  }
+  @include mq.tabletS {
+    padding: 7rem 3rem 12rem;
+  }
   .about__content {
     height: 100%;
     display: flex;
     justify-content: space-between;
 
+    @include mq.desktopXL {
+      gap: 2rem;
+    }
+    @include mq.desktopL {
+      gap: 6rem;
+    }
+    @include mq.tabletL {
+      flex-direction: column;
+      gap: 0rem;
+    }
+
     .about__left {
       width: 50%;
+      position: relative;
+      @include mq.tabletL {
+        width: 100%;
+      }
       .about__h1 {
         font-family: "Brown-Sugar";
         margin-bottom: 4rem;
 
+        @include mq.tabletL {
+          margin-bottom: 3rem;
+        }
+
         .a__little {
           font-size: 3rem;
+          @include mq.desktopL {
+            font-size: 2.5rem;
+          }
+
+          @include mq.desktopS {
+            font-size: 2rem;
+          }
+          @include mq.tabletL {
+            font-size: 3rem;
+          }
+          @include mq.mobileL {
+            font-size: 2rem;
+          }
+          @include mq.mobileS {
+            font-size: 1.5rem;
+          }
         }
 
         .about__me {
           font-size: 8rem;
           line-height: 0.9;
+
+          @include mq.desktopL {
+            font-size: 6rem;
+          }
+          @include mq.desktop {
+            font-size: 5rem;
+          }
+          @include mq.desktopS {
+            font-size: 4rem;
+          }
+          @include mq.tabletL {
+            font-size: 5.5rem;
+            top: 0;
+            z-index: 50;
+            position: relative;
+            mix-blend-mode: difference;
+          }
+          @include mq.tablet {
+            font-size: 4.5rem;
+          }
+          @include mq.mobileL {
+            font-size: 3.5rem;
+          }
+          @include mq.mobileS {
+            font-size: 2.6rem;
+          }
         }
       }
 
@@ -32,16 +100,58 @@
         width: 550px;
         object-fit: cover;
         border-radius: 0.25em;
+        z-index: 5;
+        background-image: url("../../../public/images/cvbilde.jpg");
+        background-color: red;
+
+        @include mq.desktopL {
+          height: 400px;
+          width: 500px;
+        }
+        @include mq.tabletL {
+          height: auto;
+          width: 35%;
+          position: absolute;
+          display: block;
+          right: 0;
+          top: -40px;
+          z-index: 0;
+        }
+        @include mq.tablet {
+          top: -60px;
+        }
+        @include mq.mobileS {
+          // top: -40px;
+          height: 150px;
+        }
       }
     }
     .about__right {
       width: 50%;
       font-family: "GeneralSans-Regular";
 
+      @include mq.tabletL {
+        width: 100%;
+      }
+
       div {
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin-bottom: 3rem;
         max-width: 80%;
+
+        @include mq.desktopXS {
+          font-size: 1.2rem;
+        }
+        @include mq.tabletL {
+          max-width: 60%;
+          margin-bottom: 1.5rem;
+          font-size: 1rem;
+        }
+        @include mq.tabletS {
+          max-width: 100%;
+          margin-bottom: 1.5rem;
+          font-size: 1rem;
+        }
 
         .bg__orangeIsh {
           background-color: clr.$orange-ish;

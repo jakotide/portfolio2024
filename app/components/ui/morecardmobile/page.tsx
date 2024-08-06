@@ -31,6 +31,7 @@ export const MoreCardMobile: React.FC<MoreCardMobileProps> = ({
       </div>
       <div className={styles.mobile__card__type}>{projectType}</div>
       <div className={styles.mobile__card__desc}>{description}</div>
+      <div>View more</div>
       <div className={styles.mobile__card__border}></div>
     </div>
   );

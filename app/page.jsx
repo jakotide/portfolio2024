@@ -18,8 +18,8 @@ const Home = () => {
       <Hero id="hero" />
       <SelectedWork isCircleInView={isCircleInView} id="works" />
       <MoreWork setIsCircleInView={setIsCircleInView} />
-      {/* <About id="about" />
-      <Skills id="skills" />
+      <About id="about" />
+      {/* <Skills id="skills" />
       <Contact id="contact" />
       <Footer />  */}
     </main>

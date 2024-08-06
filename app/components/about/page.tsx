@@ -16,12 +16,12 @@ export const About: React.FC<AboutProps> = ({ id }) => {
     <section className={styles.about__container} id={id}>
       <div className={styles.about__content}>
         <div className={styles.about__left}>
-          <BlurReveal isInView={isInView} delay={0} duration={1.2}>
-            <h1 className={styles.about__h1} ref={ref}>
-              <span className={styles.a__little}>A Little</span>
-              <div className={styles.about__me}>About Me</div>
-            </h1>
-          </BlurReveal>
+          {/* <BlurReveal isInView={isInView} delay={0} duration={1.2}> */}
+          <h1 className={styles.about__h1} ref={ref}>
+            <span className={styles.a__little}>A Little</span>
+            <div className={styles.about__me}>About Me</div>
+          </h1>
+          {/* </BlurReveal> */}
 
           <Image
             src="/images/cvbilde.jpg"
@@ -39,16 +39,14 @@ export const About: React.FC<AboutProps> = ({ id }) => {
           </div>
           <div>
             I am currently working as a freelance web developer. I love
-            designing websites with a beautiful and solid{" "}
-            <span className={styles.bg__blue}>user experience.</span>
+            designing websites with a beautiful and solid user{" "}
+            <span className={styles.bg__blue}>experience.</span>
           </div>
           <div>
             Whether you're looking for a sleek and modern design, a vibrant and
             dynamic interface, or a classic and timeless look, I am dedicated to
             bringing your <span className={styles.bg__green}>vision</span> to
-            life. Let's work together to create something exceptional that
-            resonates with your audience and stands out in the digital
-            landscape.
+            life.
           </div>
         </div>
       </div>

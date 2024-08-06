@@ -9,7 +9,7 @@ export const MobileNav = () => {
   const lenis = useLenis();
   const { navStyle } = useScrollProvider();
   const [isClicked, setIsClicked] = useState(false);
-
+  console.log(navStyle);
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
 
@@ -20,7 +20,12 @@ export const MobileNav = () => {
 
   return (
     <div className={styles.nav__menu__mobile__container}>
-      <div onClick={() => scrollToSection("hero")}>folio2024</div>
+      <div
+        onClick={() => scrollToSection("hero")}
+        style={navStyle ? { color: "white" } : { color: "black" }}
+      >
+        folio2024
+      </div>
       <AnimatePresence>
         <motion.menu
           key="mobile-menu"
@@ -67,6 +72,7 @@ export const MobileNav = () => {
               animate="animate"
               exit="exit"
               transition={{ duration: 0.3 }}
+              style={navStyle ? { color: "white" } : { color: "black" }}
             >
               menu
             </motion.div>
