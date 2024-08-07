@@ -4,12 +4,12 @@ import React, { useState } from "react";
 import { useScrollProvider } from "../../context/";
 import { motion, AnimatePresence } from "framer-motion";
 import { showMobileNav, buttonTextVariants } from "./anim";
+import { GravityCanvas } from "../../effects";
 
 export const MobileNav = () => {
   const lenis = useLenis();
   const { navStyle } = useScrollProvider();
   const [isClicked, setIsClicked] = useState(false);
-  console.log(navStyle);
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
 
@@ -37,16 +37,24 @@ export const MobileNav = () => {
           style={navStyle ? { color: "white" } : { color: "black" }}
         >
           {isClicked && (
-            <>
-              <li onClick={() => scrollToSection("works")}>works</li>
-              <li onClick={() => scrollToSection("about")}>about</li>
-              <li onClick={() => scrollToSection("skills")}>skills</li>
-              <li onClick={() => scrollToSection("contact")}>contact</li>
-            </>
+            <div>
+              <div>
+                <li onClick={() => scrollToSection("works")}>works</li>
+                <li onClick={() => scrollToSection("about")}>about</li>
+                <li onClick={() => scrollToSection("skills")}>skills</li>
+                <li onClick={() => scrollToSection("contact")}>contact</li>
+              </div>
+              <div
+                className={styles.gravity__container}
+                style={{ width: "100%", height: "100%" }}
+              >
+                <GravityCanvas></GravityCanvas>
+              </div>
+            </div>
           )}
         </motion.menu>
       </AnimatePresence>
-      <motion.button
+      <motion.div
         className={styles.mobile__menu__btn}
         onClick={() => setIsClicked(!isClicked)}
         style={isClicked ? { color: "White" } : { color: "black" }}
@@ -78,7 +86,7 @@ export const MobileNav = () => {
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.button>
+      </motion.div>
     </div>
   );
 };

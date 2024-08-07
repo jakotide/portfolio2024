@@ -4,18 +4,22 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <div className={styles.footer__container}>
+    <footer className={styles.footer__container}>
       <div className={styles.footer__content}>
+        {/* <div className={styles.footer__group}> */}
         <div>
           <div>Available for employment and </div>
           <div>freelance opportunities</div>
           <div>Feel free to send my a message</div>
         </div>
-
         <div>
           <div>LinkedIn</div>
           <div>Instagram</div>
         </div>
+
+        {/* </div> */}
+
+        {/* <div className={styles.footer__group}> */}
         <div>
           <div>Somewhere in Oslo</div>
           <div>tidemand.dev@gmail.com</div>
@@ -27,6 +31,7 @@ export const Footer = () => {
           <div>&copy;2024</div>
         </div>
       </div>
-    </div>
+      {/* </div> */}
+    </footer>
   );
 };

@@ -1,22 +1,15 @@
 export const showMobileNav = {
   open: {
-    width: "80%",
-    height: "550px",
-    top: "20px",
-    right: "25px",
-    padding: "2rem",
+    x: "0%",
     transition: {
-      duration: 0.7,
+      duration: 0.8,
       ease: [0.76, 0, 0.24, 1],
     },
   },
   closed: {
-    width: "0px",
-    height: "0px",
-    top: "1rem",
-    right: "25px",
+    x: "100%",
     transition: {
-      duration: 0.7,
+      duration: 0.8,
       ease: [0.76, 0, 0.24, 1],
     },
   },

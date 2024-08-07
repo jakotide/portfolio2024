@@ -48,7 +48,7 @@ export const projects: ProjectData[] = [
   },
   {
     id: "b-diddy",
-    imageSrc: "/images/bdiddy-screen.png",
+    imageSrc: "/images/bdiddy-showcase.png",
     imageAlt: "Project cover of B-Diddy",
     cardNumber: "04",
     projectTitle: "B-Diddy",

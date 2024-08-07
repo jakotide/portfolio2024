@@ -1,4 +1,5 @@
 @use "../../scss/globals.scss" as clr;
+@use "../../scss/globals.scss" as mq;
 
 .footer__container {
   background-color: clr.$black;
@@ -6,12 +7,43 @@
   font-family: "GeneralSans-Regular";
   padding: 18rem 7rem 2rem;
 
+  @include mq.desktopXL {
+    padding: 18rem 3rem 2rem;
+  }
+  @include mq.tabletL {
+    padding: 8rem 3rem 2rem;
+  }
+  @include mq.mobileL {
+    padding: 6rem 1.5rem 2rem;
+  }
+
   .footer__content {
     display: flex;
     justify-content: space-between;
+    @include mq.tabletL {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 3rem;
+    }
+    @include mq.mobileL {
+      grid-template-columns: 1fr;
+
+      gap: 2rem;
+    }
 
     div {
       max-width: 300px;
+
+      @include mq.tablet {
+        // font-size: 0.9rem;
+        text-wrap: balance;
+        max-width: 350px;
+      }
+      @include mq.mobileL {
+        // font-size: 0.9rem;
+        text-wrap: balance;
+      }
     }
   }
 }

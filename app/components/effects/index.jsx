@@ -5,3 +5,4 @@ export { Preloader } from "./preloader/page";
 export { TransitionLink } from "./transitionlink/page";
 export { PageTransition } from "./pagetransition/page";
 export { ModalHover } from "./modalHover/page";
+export { GravityCanvas } from "./gravityCanvas/page";

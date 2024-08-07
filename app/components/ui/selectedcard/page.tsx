@@ -27,15 +27,15 @@ export const SelectedCard: React.FC<SelectedCardProps> = ({
       onMouseLeave={handleHoverEnd}
       onClick={handleHoverEnd}
     >
-      <div className={styles.selected__image}>
-        <video
-          className={styles.selected__video}
-          src={videoSrc}
-          autoPlay
-          muted
-          loop
-        ></video>
-      </div>
+      {/* <div className={styles.selected__image}> */}
+      <video
+        className={styles.selected__video}
+        src={videoSrc}
+        autoPlay
+        muted
+        loop
+      ></video>
+      {/* </div> */}
       <div className={styles.selected__card__info}>
         <div
           className={`${styles.selected__number__container} ${
