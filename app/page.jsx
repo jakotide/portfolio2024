@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import {
   SelectedWork,
   MoreWork,
@@ -11,13 +11,11 @@ import {
 } from "./components";
 
 const Home = () => {
-  const [isCircleInView, setIsCircleInView] = useState(false);
-
   return (
     <main style={{ overflow: "hidden" }}>
       <Hero id="hero" />
-      <SelectedWork isCircleInView={isCircleInView} id="works" />
-      <MoreWork setIsCircleInView={setIsCircleInView} />
+      <SelectedWork id="works" />
+      <MoreWork />
       <About id="about" />
       <Skills id="skills" />
       <Contact id="contact" />

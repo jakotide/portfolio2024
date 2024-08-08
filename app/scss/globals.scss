@@ -8,15 +8,18 @@ $orange: #fb9b2a;
 $orange-ish: #ff8788;
 $red: #e57066;
 $yellow: #f0cf61;
-$dark-grey: #28292b;
+
 $light-green: #aee0bc;
-$grey: #5f5f5f;
+
 $cream: #efe8d8;
 $pink: #ff8fa4;
 $brown: #501718;
 $teal: #b3e0e0;
 $grey-blue: #8aa9c6;
+$grey: #5f5f5f;
+$dark-grey: #28292b;
 
+$desktopXXL: 102rem;
 $desktopXL: 97.5em; // 1560px
 $desktopL: 91.25em; // 1460px
 $desktopM: 81.25em; // 1300px
@@ -30,6 +33,12 @@ $tabletS: 40.625em; // 650px
 $mobileL: 35em; // 560px
 $mobileS: 26.25em; // 420px
 $mobileXS: 23.125em; //370px
+
+@mixin desktopXXL {
+  @media (max-width: $desktopXXL) {
+    @content;
+  }
+}
 
 @mixin desktopXL {
   @media (max-width: $desktopXL) {

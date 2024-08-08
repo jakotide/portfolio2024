@@ -61,8 +61,13 @@ export default function RootLayout({
                 <PageTransition />
               </AnimatePresence>
               <Cursor />
-              {isTablet ? <MobileNav /> : <Navigation />}
-              {/* {isProjectPage ? <ProjectNav /> : <Navigation />} */}
+              {isProjectPage ? (
+                <ProjectNav />
+              ) : isTablet ? (
+                <MobileNav />
+              ) : (
+                <Navigation />
+              )}
               <BlurOverlay />
               <LenisSmoothScroll>{children}</LenisSmoothScroll>
             </TransitionContextProvider>

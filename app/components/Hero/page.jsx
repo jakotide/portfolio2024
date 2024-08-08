@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import styles from "./hero.module.scss";
 import { HeroHeader } from "../ui/heroheader/page";
 import { useOsloTime, useMediaQuery } from "../hooks/";
+import Link from "next/link";
 
 import {
   textSlideUp,
@@ -64,6 +65,7 @@ export const Hero = ({ id }) => {
                 >
                   Frontend Developer with a passion for design
                 </motion.div>
+                <div className={styles.mobile__time}>{osloTime}</div>
               </motion.div>
             ) : (
               <motion.div
@@ -83,8 +85,21 @@ export const Hero = ({ id }) => {
           animate="animate"
           className={styles.bottom__links}
         >
-          <div>LinkedIn</div>
-          <div>Github</div>
+          <Link
+            href="https://www.linkedin.com/in/jakob-tidemand-a46095307/"
+            target="blank"
+            style={{ textDecoration: "none" }}
+          >
+            LinkedIn
+          </Link>
+
+          <Link
+            href="https://github.com/jakotide"
+            target="blank"
+            style={{ textDecoration: "none" }}
+          >
+            Github
+          </Link>
           <div>CV</div>
         </motion.div>
         <motion.div

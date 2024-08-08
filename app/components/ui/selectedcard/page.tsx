@@ -8,7 +8,6 @@ interface SelectedCardProps {
   projectTitle: string;
   projectType: string;
   projectNumber: string;
-  isCircleInView: boolean;
 }
 
 export const SelectedCard: React.FC<SelectedCardProps> = ({
@@ -17,7 +16,6 @@ export const SelectedCard: React.FC<SelectedCardProps> = ({
   projectTitle,
   projectType,
   projectNumber,
-  isCircleInView,
 }) => {
   const { handleSelectedHoverCard, handleHoverEnd } = useCursor();
   return (
@@ -27,7 +25,6 @@ export const SelectedCard: React.FC<SelectedCardProps> = ({
       onMouseLeave={handleHoverEnd}
       onClick={handleHoverEnd}
     >
-      {/* <div className={styles.selected__image}> */}
       <video
         className={styles.selected__video}
         src={videoSrc}
@@ -35,23 +32,14 @@ export const SelectedCard: React.FC<SelectedCardProps> = ({
         muted
         loop
       ></video>
-      {/* </div> */}
+
       <div className={styles.selected__card__info}>
-        <div
-          className={`${styles.selected__number__container} ${
-            isCircleInView ? styles.moreColorNumb : ""
-          }`}
-        >
+        <div className={styles.selected__number__container}>
           <span className={styles.selected__number}>{projectNumber}</span>
           <div className={styles.selected__type}>{projectType}</div>
         </div>
-        <div
-          className={`${styles.selected__project__title} ${
-            isCircleInView ? styles.moreColor : ""
-          }`}
-        >
-          {projectTitle}
-        </div>
+        <div className={styles.selected__project__title}>{projectTitle}</div>
+        <div className={styles.view__more__btn}>View more</div>
       </div>
     </div>
   );

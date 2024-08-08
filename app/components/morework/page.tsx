@@ -8,54 +8,53 @@ import { useScrollProvider } from "../context/scrollContext/page";
 import { useMediaQuery } from "../hooks";
 
 interface MoreWorkProps {
-  setIsCircleInView: (isInView: boolean) => void;
   updateNavStyle: boolean;
 }
 
-export const MoreWork: React.FC<MoreWorkProps> = ({ setIsCircleInView }) => {
+export const MoreWork: React.FC<MoreWorkProps> = ({}) => {
   const container = useRef(null);
-  const circleRef = useRef(null);
   const [modal, setModal] = useState({ active: true, index: 0 });
   const { updateNavStyle, resetNavStyle } = useScrollProvider();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const isTabletL = useMediaQuery("(max-width: 960px)");
 
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["-300px end", "end start"],
-  });
+  // const { scrollYProgress } = useScroll({
+  //   target: container,
+  //   offset: ["-300px end", "end start"],
+  // });
 
-  const height = useTransform(scrollYProgress, [0, 0.5], [0, 90]);
+  // const height = useTransform(scrollYProgress, [0, 0.5], [0, 90]);
 
-  const circleYProgress = useScroll({
-    target: circleRef,
-    offset: ["-500px center", "end center"],
-  }).scrollYProgress;
+  // const circleYProgress = useScroll({
+  //   target: circleRef,
+  //   offset: ["-500px center", "end center"],
+  // }).scrollYProgress;
 
-  useEffect(() => {
-    const handleChange = (latest: number) => {
-      if (latest > 0.5) {
-        setIsCircleInView(true);
-        updateNavStyle(true);
-      } else {
-        setIsCircleInView(false);
-        resetNavStyle(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleChange = (latest: number) => {
+  //     if (latest > 0.5) {
+  //       setIsCircleInView(true);
+  //       updateNavStyle(true);
+  //     } else {
+  //       setIsCircleInView(false);
+  //       resetNavStyle(false);
+  //     }
+  //   };
 
-    const unsubscribe = circleYProgress.on("change", handleChange);
+  //   const unsubscribe = circleYProgress.on("change", handleChange);
 
-    return () => {
-      unsubscribe();
-    };
-  }, [circleYProgress, setIsCircleInView]);
+  //   return () => {
+  //     unsubscribe();
+  //   };
+  // }, [circleYProgress, setIsCircleInView]);
 
   return (
     <div className={styles.more__outer} ref={container}>
-      <motion.div className={styles.circle__cont} style={{ height }}>
+      {/* <motion.div className={styles.circle__cont} style={{ height }}>
         <div className={styles.circle} ref={circleRef}></div>
-      </motion.div>
+      </motion.div> */}
+      <div></div>
       <motion.section className={styles.more__section}>
         <motion.div className={styles.more__content}>
           <BlurReveal isInView={isInView} duration={1.2} delay={0}>

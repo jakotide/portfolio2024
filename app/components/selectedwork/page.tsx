@@ -7,27 +7,18 @@ import { projects } from "../project/projectData";
 import { BlurReveal, TransitionLink } from "../effects/index";
 
 interface SelectedWorkProps {
-  isCircleInView: boolean;
   id: string;
   isInView: boolean;
 }
 
-export const SelectedWork: React.FC<SelectedWorkProps> = ({
-  isCircleInView,
-  id,
-}) => {
+export const SelectedWork: React.FC<SelectedWorkProps> = ({ id }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
   });
 
   return (
-    <section
-      id={id}
-      className={`${styles.selected__container} ${
-        isCircleInView ? styles.moreBg : ""
-      }`}
-    >
+    <section id={id} className={styles.selected__container}>
       <div className={styles.selected__content__container}>
         <BlurReveal isInView={isInView} duration={1} delay={0}>
           <motion.h1 className={styles.selected__h1} ref={ref}>
@@ -40,28 +31,37 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({
         </BlurReveal>
         <div className={styles.selected__projects__container}>
           {projects.slice(0, 2).map((project, index) => (
-            <TransitionLink
+            <div
               key={project.id}
-              href={`/project/${project.id}`}
-              className={styles.transition__link}
+              className={styles[`card__group__${index + 1}`]}
             >
-              <SelectedCard
-                className={styles[`selected__card__${index + 1}`]}
-                videoSrc={index === 0 ? cardData1.videoSrc : cardData2.videoSrc}
-                projectTitle={
-                  index === 0 ? cardData1.projectTitle : cardData2.projectTitle
-                }
-                projectNumber={
-                  index === 0
-                    ? cardData1.projectNumber
-                    : cardData2.projectNumber
-                }
-                projectType={
-                  index === 0 ? cardData1.projectType : cardData2.projectType
-                }
-                isCircleInView={isCircleInView}
-              />
-            </TransitionLink>
+              <TransitionLink
+                key={project.id}
+                href={`/project/${project.id}`}
+                className={styles.transition__link}
+              >
+                <SelectedCard
+                  key={project.id}
+                  className={styles[`selected__card__${index + 1}`]}
+                  videoSrc={
+                    index === 0 ? cardData1.videoSrc : cardData2.videoSrc
+                  }
+                  projectTitle={
+                    index === 0
+                      ? cardData1.projectTitle
+                      : cardData2.projectTitle
+                  }
+                  projectNumber={
+                    index === 0
+                      ? cardData1.projectNumber
+                      : cardData2.projectNumber
+                  }
+                  projectType={
+                    index === 0 ? cardData1.projectType : cardData2.projectType
+                  }
+                />
+              </TransitionLink>
+            </div>
           ))}
         </div>
       </div>

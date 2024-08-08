@@ -5,42 +5,22 @@
   width: 100%;
   font-family: "GeneralSans-Regular";
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 
-  .selected__image {
-    background-image: url(/images/art3.png);
-    object-fit: cover;
-    width: 100%;
-    // height: 600px;
-    display: grid;
-    place-items: center;
-    aspect-ratio: 1 / 1;
-    // filter: grayscale(100%);
-    border-radius: 0.25em;
-
-    @include mq.desktopXS {
-      // height: 500px;
-      height: auto;
-      // aspect-ratio: 720 / 540;
-      max-height: 500px;
-    }
-    @include mq.desktopXS {
-      // height: 500px;
-      height: auto;
-      // aspect-ratio: 720 / 540;
-      max-height: 500px;
-    }
-  }
   .selected__video {
     width: 100%;
-
     filter: none;
+    // max-height: 500px;
   }
 
   .selected__card__info {
     width: 100%;
+    height: 100%;
     text-transform: uppercase;
     margin-top: 0.5rem;
     transition: all 0.8s ease-in;
+    padding: 0 0.25rem;
 
     .selected__number__container {
       display: flex;
@@ -55,7 +35,10 @@
     .selected__project__title {
       font-size: 1.5rem;
       margin-top: 1rem;
-      z-index: 3000;
+    }
+    .view__more__btn {
+      font-size: 0.9rem;
+      padding-top: 4rem;
     }
   }
 }
