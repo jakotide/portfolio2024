@@ -6,14 +6,14 @@ export interface CardData {
 }
 
 export const cardData1: CardData = {
-  videoSrc: "/videos/ferdvideo3.mp4",
+  videoSrc: "/videos/fsevideo.mp4",
   projectTitle: "Ferd Sosiale Entreprenører",
   projectType: "Freelance",
   projectNumber: "001",
 };
 
 export const cardData2: CardData = {
-  videoSrc: "/videos/topo-video.mp4",
+  videoSrc: "/videos/topovideo.mp4",
   projectTitle: "TOPO",
   projectType: "Project Exam",
   projectNumber: "002",

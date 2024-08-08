@@ -37,7 +37,7 @@ export const MobileNav = () => {
           style={navStyle ? { color: "white" } : { color: "black" }}
         >
           {isClicked && (
-            <div>
+            <div className={styles.nav__menu__flex}>
               <div>
                 <li onClick={() => scrollToSection("works")}>works</li>
                 <li onClick={() => scrollToSection("about")}>about</li>

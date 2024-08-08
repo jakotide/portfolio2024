@@ -41,7 +41,7 @@ export const Skills: React.FC<SkillsProps> = ({ id }) => {
         let xPercent = gsap.getProperty(ref, "xPercent") as number | string;
         xPercent =
           typeof xPercent === "string" ? parseFloat(xPercent) : xPercent;
-        xPercent += 0.05 * row.direction;
+        xPercent += 0.09 * row.direction;
         if (xPercent <= -100) xPercent = 0;
         if (xPercent >= 100) xPercent = 0;
         gsap.set(ref, { xPercent });
