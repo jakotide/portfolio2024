@@ -9,105 +9,91 @@ import { useMediaQuery } from "../hooks";
 
 interface MoreWorkProps {
   updateNavStyle: boolean;
+  id: string;
 }
 
-export const MoreWork: React.FC<MoreWorkProps> = ({}) => {
-  const container = useRef(null);
+export const MoreWork: React.FC<MoreWorkProps> = ({ id }) => {
   const [modal, setModal] = useState({ active: true, index: 0 });
-  const { updateNavStyle, resetNavStyle } = useScrollProvider();
+  const { updateBgColor, bgColor } = useScrollProvider();
   const ref = useRef(null);
+  const moreRef = useRef(null);
+  const [hasBeenInView, setHasBeenInView] = useState(false);
+  const [shouldRevert, setShouldRevert] = useState(false);
   const isInView = useInView(ref, { once: true });
   const isTabletL = useMediaQuery("(max-width: 960px)");
 
-  // const { scrollYProgress } = useScroll({
-  //   target: container,
-  //   offset: ["-300px end", "end start"],
+  // const moreInView = useInView(moreRef, {
+  //   amount: 0.2, // 20% of the element is in view
+  //   once: false, // Allow the element to trigger the in-view event multiple times
   // });
 
-  // const height = useTransform(scrollYProgress, [0, 0.5], [0, 90]);
-
-  // const circleYProgress = useScroll({
-  //   target: circleRef,
-  //   offset: ["-500px center", "end center"],
-  // }).scrollYProgress;
-
   // useEffect(() => {
-  //   const handleChange = (latest: number) => {
-  //     if (latest > 0.5) {
-  //       setIsCircleInView(true);
-  //       updateNavStyle(true);
-  //     } else {
-  //       setIsCircleInView(false);
-  //       resetNavStyle(false);
+  //   if (moreInView) {
+  //     if (!hasBeenInView) {
+  //       setHasBeenInView(true);
   //     }
-  //   };
-
-  //   const unsubscribe = circleYProgress.on("change", handleChange);
-
-  //   return () => {
-  //     unsubscribe();
-  //   };
-  // }, [circleYProgress, setIsCircleInView]);
+  //     updateBgColor("#171717"); // Color when the section is in view
+  //     console.log("MORE");
+  //   } else if (!moreInView && hasBeenInView) {
+  //     // Only revert if scrolling back up and not further down
+  //     updateBgColor("#f9f7e8"); // Revert color when scrolling back up past the section
+  //     console.log("PRIMARY");
+  //   }
+  // }, [moreInView, hasBeenInView, updateBgColor]);
 
   return (
-    <div className={styles.more__outer} ref={container}>
-      {/* <motion.div className={styles.circle__cont} style={{ height }}>
-        <div className={styles.circle} ref={circleRef}></div>
-      </motion.div> */}
-      <div></div>
-      <motion.section className={styles.more__section}>
-        <motion.div className={styles.more__content}>
-          <BlurReveal isInView={isInView} duration={1.2} delay={0}>
-            <h1 ref={ref} className={styles.more__h1}>
-              More Projects
-            </h1>
-          </BlurReveal>
+    <motion.section className={styles.more__section} id={id}>
+      <motion.div className={styles.more__content}>
+        <BlurReveal isInView={isInView} duration={1.2} delay={0}>
+          <h1 ref={ref} className={styles.more__h1}>
+            More Projects
+          </h1>
+        </BlurReveal>
 
-          {isTabletL ? (
-            <div className={styles.mobile__card__container}>
+        {isTabletL ? (
+          <div className={styles.mobile__card__container} ref={moreRef}>
+            {moreCard.map((card, i) => (
+              <MoreCardMobile
+                key={i}
+                imageSrc={card.imageSrc}
+                imageAlt={card.imageAlt}
+                projectTitle={card.projectTitle}
+                projectType={card.projectType}
+                description={card.description}
+                cardNumber={card.cardNumber}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className={styles.more__flex__container}>
+            <div className={styles.hover__container}>
+              <ModalHover modal={modal}></ModalHover>
+            </div>
+            <div className={styles.more__card__container}>
               {moreCard.map((card, i) => (
-                <MoreCardMobile
-                  key={i}
-                  imageSrc={card.imageSrc}
-                  imageAlt={card.imageAlt}
-                  projectTitle={card.projectTitle}
-                  projectType={card.projectType}
-                  description={card.description}
-                  cardNumber={card.cardNumber}
-                />
+                <TransitionLink
+                  href={`/project/${card.id}`}
+                  key={card.cardNumber}
+                  className={styles.more__card__link}
+                >
+                  <MoreCard
+                    key={i}
+                    imageSrc={card.imageSrc}
+                    imageAlt={card.imageAlt}
+                    projectTitle={card.projectTitle}
+                    projectType={card.projectType}
+                    description={card.description}
+                    cardNumber={card.cardNumber}
+                    setModal={setModal}
+                    index={i}
+                    isActive={modal.active && modal.index === i}
+                  />
+                </TransitionLink>
               ))}
             </div>
-          ) : (
-            <div className={styles.more__flex__container}>
-              <div className={styles.hover__container}>
-                <ModalHover modal={modal}></ModalHover>
-              </div>
-              <div className={styles.more__card__container}>
-                {moreCard.map((card, i) => (
-                  <TransitionLink
-                    href={`/project/${card.id}`}
-                    key={card.cardNumber}
-                    className={styles.more__card__link}
-                  >
-                    <MoreCard
-                      key={i}
-                      imageSrc={card.imageSrc}
-                      imageAlt={card.imageAlt}
-                      projectTitle={card.projectTitle}
-                      projectType={card.projectType}
-                      description={card.description}
-                      cardNumber={card.cardNumber}
-                      setModal={setModal}
-                      index={i}
-                      isActive={modal.active && modal.index === i}
-                    />
-                  </TransitionLink>
-                ))}
-              </div>
-            </div>
-          )}
-        </motion.div>
-      </motion.section>
-    </div>
+          </div>
+        )}
+      </motion.div>
+    </motion.section>
   );
 };

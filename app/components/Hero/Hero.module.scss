@@ -1,15 +1,16 @@
 @use "../../scss/globals.scss" as clr;
 @use "../../scss/globals.scss" as mq;
 
-.noise {
-  background-image: url(../../assets/images/noise-light.png);
-}
+// .noise {
+//   background-image: url(../../assets/images/noise-light.png);
+// }
 
 .hero__container {
   width: 100%;
   height: 100vh;
   height: 100dvh;
   margin-bottom: 6rem;
+
   background-color: clr.$primary;
   display: grid;
   place-items: center;

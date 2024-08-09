@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import styles from "./selectedwork.module.scss";
 import { useInView, motion } from "framer-motion";
 import { SelectedCard } from "../ui/";
 import { cardData1, cardData2 } from "../ui/selectedcard/cardData";
 import { projects } from "../project/projectData";
 import { BlurReveal, TransitionLink } from "../effects/index";
+import { useScrollProvider } from "../context/scrollContext/page";
 
 interface SelectedWorkProps {
   id: string;
@@ -13,12 +14,31 @@ interface SelectedWorkProps {
 
 export const SelectedWork: React.FC<SelectedWorkProps> = ({ id }) => {
   const ref = useRef(null);
+  const selectedRef = useRef(null);
   const isInView = useInView(ref, {
     once: true,
   });
+  // const selectedInView = useInView(selectedRef, {
+  //   margin: "500px 0px 0px 0px",
+  // });
+  // const { updateBgColor, bgColor } = useScrollProvider();
+
+  // useEffect(() => {
+  //   if (selectedInView) {
+  //     updateBgColor("#f9f7e8");
+
+  //     console.log("SELECTED");
+  //   }
+  // }, [selectedInView]);
 
   return (
-    <section id={id} className={styles.selected__container}>
+    <section
+      id={id}
+      // className={`${styles.selected__container} ${
+      //   bgColor === "black" ? styles.black : ""
+      // }`}
+      className={styles.selected__container}
+    >
       <div className={styles.selected__content__container}>
         <BlurReveal isInView={isInView} duration={1} delay={0}>
           <motion.h1 className={styles.selected__h1} ref={ref}>
@@ -64,6 +84,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ id }) => {
             </div>
           ))}
         </div>
+        <div ref={selectedRef}></div>
       </div>
     </section>
   );

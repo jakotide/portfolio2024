@@ -4,7 +4,7 @@ const ScrollContext = createContext();
 
 export const ScrollProvider = ({ children }) => {
   const [navStyle, setNavStyle] = useState(false);
-  const [BgColor, setBgColor] = useState("initialColor");
+  const [bgColor, setBgColor] = useState("#f9f7e8");
 
   const updateNavStyle = useCallback(() => {
     setNavStyle(true);
@@ -24,7 +24,7 @@ export const ScrollProvider = ({ children }) => {
         navStyle,
         updateNavStyle,
         resetNavStyle,
-        BgColor,
+        bgColor,
         updateBgColor,
       }}
     >

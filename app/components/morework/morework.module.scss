@@ -1,90 +1,68 @@
 @use "../../scss/globals.scss" as clr;
 @use "../../scss/globals.scss" as mq;
 
-.more__outer {
+.more__section {
+  background-color: transparent;
+  width: 100%;
+  margin: auto;
   position: relative;
+  padding-top: 10rem;
 
-  .circle__cont {
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 0;
-    background-color: clr.$black;
-    .circle {
-      height: 950%;
-      width: 150%;
-      left: -25%;
-      border-radius: 50% 50% 0% 0%;
-      background-color: clr.$black;
-      position: absolute;
-      pointer-events: none;
-      bottom: -320%;
-      filter: blur(43px);
+  .more__content {
+    padding: 8rem 7rem 14rem;
+    color: clr.$white;
+    transition: all 0.5s ease, filter 0.5s ease;
+    background-color: transparent;
+    height: 100%;
+
+    @include mq.desktopXL {
+      padding: 8rem 3rem 12rem;
     }
-  }
+    @include mq.tabletS {
+      padding: 5rem 1.5rem 10rem;
+    }
+    @include mq.mobileL {
+      padding: 5rem 1.5rem 7rem;
+    }
 
-  .more__section {
-    background-color: clr.$primary;
-    width: 100%;
-    margin: auto;
-    position: relative;
+    .more__h1 {
+      font-family: "Brown-Sugar";
+      font-size: 4rem;
+      margin-bottom: 4rem;
+    }
 
-    .more__content {
-      padding: 8rem 7rem 14rem;
-      color: clr.$white;
-      transition: opacity 0.5s ease, filter 0.5s ease;
-      background-color: clr.$black;
+    .more__flex__container {
+      display: flex;
+      justify-content: space-between;
+
+      .hover__container {
+        width: 50%;
+        align-self: center;
+        @include mq.desktopXL {
+          width: 40%;
+        }
+        @include mq.desktopXS {
+          width: 30%;
+        }
+      }
+      .more__card__container {
+        width: 50%;
+
+        @include mq.desktopXS {
+          width: 55%;
+        }
+
+        a {
+          text-decoration: none;
+        }
+        .more__card__link {
+          color: inherit;
+        }
+      }
+    }
+
+    .mobile__card__container {
       height: 100%;
-
-      @include mq.desktopXL {
-        padding: 8rem 3rem 12rem;
-      }
-      @include mq.tabletS {
-        padding: 5rem 1.5rem 10rem;
-      }
-      @include mq.mobileL {
-        padding: 5rem 1.5rem 7rem;
-      }
-
-      .more__h1 {
-        font-family: "Brown-Sugar";
-        font-size: 4rem;
-        margin-bottom: 4rem;
-      }
-
-      .more__flex__container {
-        display: flex;
-        justify-content: space-between;
-
-        .hover__container {
-          width: 50%;
-          align-self: center;
-          @include mq.desktopXL {
-            width: 40%;
-          }
-          @include mq.desktopXS {
-            width: 30%;
-          }
-        }
-        .more__card__container {
-          width: 50%;
-
-          @include mq.desktopXS {
-            width: 55%;
-          }
-
-          a {
-            text-decoration: none;
-          }
-          .more__card__link {
-            color: inherit;
-          }
-        }
-      }
-
-      .mobile__card__container {
-        height: 100%;
-      }
     }
   }
 }
