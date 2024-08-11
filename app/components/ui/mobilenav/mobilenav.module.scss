@@ -18,6 +18,10 @@
     padding: 1rem 1.5rem;
   }
 
+  .nav__mobile__home__btn {
+    cursor: pointer;
+  }
+
   .nav__menu__mobile {
     position: fixed;
     background-color: clr.$dark-grey;
@@ -58,6 +62,7 @@
     position: relative;
     z-index: 200;
     color: black;
+    cursor: pointer;
 
     .mobile__close__btn {
       // position: absolute;

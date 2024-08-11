@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./selectedwork.module.scss";
-import { useInView, motion } from "framer-motion";
+import { useInView, motion, useScroll, useTransform } from "framer-motion";
 import { SelectedCard } from "../ui/";
 import { cardData1, cardData2 } from "../ui/selectedcard/cardData";
 import { projects } from "../project/projectData";
 import { BlurReveal, TransitionLink } from "../effects/index";
-import { useScrollProvider } from "../context/scrollContext/page";
 
 interface SelectedWorkProps {
   id: string;
@@ -18,26 +17,22 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ id }) => {
   const isInView = useInView(ref, {
     once: true,
   });
-  // const selectedInView = useInView(selectedRef, {
-  //   margin: "500px 0px 0px 0px",
-  // });
-  // const { updateBgColor, bgColor } = useScrollProvider();
 
-  // useEffect(() => {
-  //   if (selectedInView) {
-  //     updateBgColor("#f9f7e8");
-
-  //     console.log("SELECTED");
-  //   }
-  // }, [selectedInView]);
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"],
+  });
+  const sm = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const md = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const lg = useTransform(scrollYProgress, [0, 1], [0, 250]);
 
   return (
-    <section
+    <motion.section
       id={id}
-      // className={`${styles.selected__container} ${
-      //   bgColor === "black" ? styles.black : ""
-      // }`}
       className={styles.selected__container}
+      style={{ y: lg }}
+      ref={container}
     >
       <div className={styles.selected__content__container}>
         <BlurReveal isInView={isInView} duration={1} delay={0}>
@@ -49,7 +44,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ id }) => {
             </div>
           </motion.h1>
         </BlurReveal>
-        <div className={styles.selected__projects__container}>
+        <motion.div className={styles.selected__projects__container}>
           {projects.slice(0, 2).map((project, index) => (
             <div
               key={project.id}
@@ -83,9 +78,9 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ id }) => {
               </TransitionLink>
             </div>
           ))}
-        </div>
+        </motion.div>
         <div ref={selectedRef}></div>
       </div>
-    </section>
+    </motion.section>
   );
 };

@@ -1,10 +1,9 @@
 import styles from "./morework.module.scss";
-import { useScroll, useTransform, motion, useInView } from "framer-motion";
-import React, { useRef, useEffect, useState } from "react";
+import { motion, useInView } from "framer-motion";
+import React, { useRef, useState } from "react";
 import { moreCard } from "../ui/morecard/cardData";
 import { MoreCard, MoreCardMobile } from "../ui";
 import { ModalHover, BlurReveal, TransitionLink } from "../effects/";
-import { useScrollProvider } from "../context/scrollContext/page";
 import { useMediaQuery } from "../hooks";
 
 interface MoreWorkProps {
@@ -14,32 +13,9 @@ interface MoreWorkProps {
 
 export const MoreWork: React.FC<MoreWorkProps> = ({ id }) => {
   const [modal, setModal] = useState({ active: true, index: 0 });
-  const { updateBgColor, bgColor } = useScrollProvider();
   const ref = useRef(null);
-  const moreRef = useRef(null);
-  const [hasBeenInView, setHasBeenInView] = useState(false);
-  const [shouldRevert, setShouldRevert] = useState(false);
   const isInView = useInView(ref, { once: true });
   const isTabletL = useMediaQuery("(max-width: 960px)");
-
-  // const moreInView = useInView(moreRef, {
-  //   amount: 0.2, // 20% of the element is in view
-  //   once: false, // Allow the element to trigger the in-view event multiple times
-  // });
-
-  // useEffect(() => {
-  //   if (moreInView) {
-  //     if (!hasBeenInView) {
-  //       setHasBeenInView(true);
-  //     }
-  //     updateBgColor("#171717"); // Color when the section is in view
-  //     console.log("MORE");
-  //   } else if (!moreInView && hasBeenInView) {
-  //     // Only revert if scrolling back up and not further down
-  //     updateBgColor("#f9f7e8"); // Revert color when scrolling back up past the section
-  //     console.log("PRIMARY");
-  //   }
-  // }, [moreInView, hasBeenInView, updateBgColor]);
 
   return (
     <motion.section className={styles.more__section} id={id}>
@@ -51,7 +27,7 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ id }) => {
         </BlurReveal>
 
         {isTabletL ? (
-          <div className={styles.mobile__card__container} ref={moreRef}>
+          <div className={styles.mobile__card__container}>
             {moreCard.map((card, i) => (
               <MoreCardMobile
                 key={i}

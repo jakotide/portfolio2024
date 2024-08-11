@@ -21,8 +21,6 @@ import {
   CursorProvider,
   ScrollProvider,
   TransitionContextProvider,
-  useBackgroundContext,
-  useScrollProvider,
 } from "./components/context/";
 import { useMediaQuery } from "./components/hooks/useMediaQuery";
 

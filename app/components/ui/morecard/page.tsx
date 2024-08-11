@@ -1,7 +1,7 @@
 import styles from "./morecard.module.scss";
 import Image from "next/image";
 import React from "react";
-import { useCursor } from "../../context/cursorContext/page";
+import { useCursor } from "../../context/";
 
 interface MoreCardProps {
   imageSrc: string;
@@ -24,6 +24,7 @@ export const MoreCard: React.FC<MoreCardProps> = ({
   isActive,
 }) => {
   const { handleHoverCard, handleHoverEnd } = useCursor();
+
   const handleMouseEnter = () => {
     setModal({ active: true, index: index });
     handleHoverCard();
@@ -49,7 +50,7 @@ export const MoreCard: React.FC<MoreCardProps> = ({
       </div>
 
       <div className={styles.card__content}>
-        <div className={styles.more__image}></div>
+        <div className={styles.more__deco}></div>
         <div className={styles.card__text}>
           <div className={styles.card__title}>{projectTitle}</div>
           <div className={styles.description__container}>

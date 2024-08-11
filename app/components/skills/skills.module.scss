@@ -5,8 +5,9 @@
   height: 100%;
   background-color: clr.$black;
   position: relative;
-  padding-bottom: 44rem;
+  padding-bottom: 40rem;
   width: 100%;
+
   .hidden {
     display: none;
     pointer-events: none;
@@ -236,11 +237,4 @@
       }
     }
   }
-}
-.skills__ref {
-  height: 2em;
-  padding-bottom: 1rem;
-  width: 100%;
-  margin: auto;
-  background-color: clr.$black;
 }

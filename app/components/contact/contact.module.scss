@@ -4,8 +4,7 @@
 .contact__section {
   height: 100vh;
   width: 100%;
-  // background-color: clr.$light-green;
-  background-color: transparent;
+  background-color: clr.$light-green;
   color: clr.$black;
   font-family: "GeneralSans-Regular";
 
@@ -50,10 +49,12 @@
       grid-area: header-side;
       border-right: 1px solid clr.$black;
       border-bottom: 1px solid clr.$black;
+      border-top: 1px solid clr.$black;
     }
     .box__2 {
       grid-area: header;
       border-bottom: 1px solid clr.$black;
+      border-top: 1px solid clr.$black;
     }
     .box__3 {
       grid-area: h1-side;

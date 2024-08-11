@@ -8,7 +8,7 @@ import { GravityCanvas } from "../../effects";
 
 export const MobileNav = () => {
   const lenis = useLenis();
-  const { navStyle } = useScrollProvider();
+  const { bgColor } = useScrollProvider();
   const [isClicked, setIsClicked] = useState(false);
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -21,8 +21,8 @@ export const MobileNav = () => {
   return (
     <div className={styles.nav__menu__mobile__container}>
       <div
+        className={styles.nav__mobile__home__btn}
         onClick={() => scrollToSection("hero")}
-        style={navStyle ? { color: "white" } : { color: "black" }}
       >
         folio2024
       </div>
@@ -34,7 +34,6 @@ export const MobileNav = () => {
           animate={isClicked ? "open" : "closed"}
           exit="closed"
           className={styles.nav__menu__mobile}
-          style={navStyle ? { color: "white" } : { color: "black" }}
         >
           {isClicked && (
             <div className={styles.nav__menu__flex}>
@@ -80,7 +79,6 @@ export const MobileNav = () => {
               animate="animate"
               exit="exit"
               transition={{ duration: 0.3 }}
-              style={navStyle ? { color: "white" } : { color: "black" }}
             >
               menu
             </motion.div>

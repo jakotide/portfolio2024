@@ -5,12 +5,10 @@ import { navReveal } from "./anim.jsx";
 import React from "react";
 import { useCursor, useScrollProvider } from "../../context/";
 import { useLenis } from "@studio-freight/react-lenis";
-import { useMediaQuery } from "../../hooks";
-import { MobileNav } from "../index";
 
 export const Navigation = () => {
   const { handleHoverStart, handleHoverEnd } = useCursor();
-  const { navStyle } = useScrollProvider();
+  const { bgColor } = useScrollProvider();
   const lenis = useLenis();
 
   const scrollToSection = (sectionId: string) => {
@@ -29,7 +27,7 @@ export const Navigation = () => {
       className={styles.nav}
     >
       <div
-        style={navStyle ? { color: "white" } : { color: "black" }}
+        style={bgColor === "#171717" ? { color: "white" } : { color: "black" }}
         className={styles.nav__left}
         onMouseEnter={handleHoverStart}
         onMouseLeave={handleHoverEnd}
@@ -40,7 +38,7 @@ export const Navigation = () => {
 
       <menu
         className={styles.nav__menu}
-        style={navStyle ? { color: "white" } : { color: "black" }}
+        style={bgColor === "#171717" ? { color: "white" } : { color: "black" }}
       >
         <li
           onMouseEnter={handleHoverStart}

@@ -11,7 +11,6 @@
   .selected__video {
     width: 100%;
     filter: none;
-    // max-height: 500px;
   }
 
   .selected__card__info {
@@ -19,17 +18,13 @@
     height: 100%;
     text-transform: uppercase;
     margin-top: 0.5rem;
-    transition: all 0.8s ease-in;
+    transition: all 0.5s ease-in;
     padding: 0 0.25rem;
 
     .selected__number__container {
       display: flex;
-      color: clr.$grey;
       font-size: 0.8rem;
       justify-content: space-between;
-    }
-    .moreColorNumb {
-      color: clr.$white;
     }
 
     .selected__project__title {
@@ -41,8 +36,4 @@
       padding-top: 4rem;
     }
   }
-}
-
-.moreColor {
-  color: clr.$white;
 }
