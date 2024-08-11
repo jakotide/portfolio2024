@@ -1,6 +1,12 @@
 import styles from "./morework.module.scss";
-import { motion, useInView } from "framer-motion";
-import React, { useRef, useState } from "react";
+import {
+  motion,
+  useInView,
+  useScroll,
+  useTransform,
+  useAnimation,
+} from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
 import { moreCard } from "../ui/morecard/cardData";
 import { MoreCard, MoreCardMobile } from "../ui";
 import { ModalHover, BlurReveal, TransitionLink } from "../effects/";
@@ -9,16 +15,27 @@ import { useMediaQuery } from "../hooks";
 interface MoreWorkProps {
   updateNavStyle: boolean;
   id: string;
+  scrollYProgress: any;
 }
 
-export const MoreWork: React.FC<MoreWorkProps> = ({ id }) => {
+export const MoreWork: React.FC<MoreWorkProps> = ({ id, scrollYProgress }) => {
   const [modal, setModal] = useState({ active: true, index: 0 });
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const isTabletL = useMediaQuery("(max-width: 960px)");
 
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 250 / window.innerHeight],
+    [0.5, 1]
+  );
+  // const rotate = useTransform(
+  //   scrollYProgress,
+  //   [0, 250 / window.innerHeight],
+  //   [-40, 0]
+  // );
   return (
-    <motion.section className={styles.more__section} id={id}>
+    <motion.section className={styles.more__section} id={id} style={{ scale }}>
       <motion.div className={styles.more__content}>
         <BlurReveal isInView={isInView} duration={1.2} delay={0}>
           <h1 ref={ref} className={styles.more__h1}>

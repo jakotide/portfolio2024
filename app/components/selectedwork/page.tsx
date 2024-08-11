@@ -18,21 +18,21 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ id }) => {
     once: true,
   });
 
-  const container = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start end", "end start"],
-  });
-  const sm = useTransform(scrollYProgress, [0, 1], [0, -50]);
-  const md = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const lg = useTransform(scrollYProgress, [0, 1], [0, 250]);
+  // const container = useRef(null);
+  // const { scrollYProgress } = useScroll({
+  //   target: container,
+  //   offset: ["start end", "end start"],
+  // });
+  // const sm = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  // const md = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  // const lg = useTransform(scrollYProgress, [0, 1], [0, 250]);
 
   return (
     <motion.section
       id={id}
       className={styles.selected__container}
-      style={{ y: lg }}
-      ref={container}
+      // style={{ y: lg }}
+      // ref={container}
     >
       <div className={styles.selected__content__container}>
         <BlurReveal isInView={isInView} duration={1} delay={0}>

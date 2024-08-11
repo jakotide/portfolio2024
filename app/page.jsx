@@ -1,5 +1,6 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
+import { useScroll } from "framer-motion";
 import {
   SelectedWork,
   MoreWork,
@@ -9,15 +10,24 @@ import {
   Contact,
   Footer,
 } from "./components";
-import { relative } from "path";
 
 const Home = () => {
-  return (
-    <main style={{ overflow: "hidden" }}>
-      <Hero id="hero" />
+  const scrollRef = useRef(null);
+  const container = useRef(null);
 
-      <SelectedWork id="works" />
-      <MoreWork id="morework" />
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end start"],
+  });
+  return (
+    <main>
+      <Hero id="hero" />
+      <div style={{ position: "relative", height: "360vh" }} ref={scrollRef}>
+        <div style={{ position: "sticky", top: "calc(0vh - 100%)" }}>
+          <SelectedWork id="works" />
+        </div>
+        <MoreWork id="morework" scrollYProgress={scrollYProgress} />
+      </div>
 
       <About id="about" />
       <Skills id="skills" />
