@@ -14,9 +14,15 @@ import {
 const Home = () => {
   const scrollRef = useRef(null);
   const container = useRef(null);
+  const skillRef = useRef(null);
 
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress: moreWorkScrollYProgress } = useScroll({
     target: container,
+    offset: ["start start", "end start"],
+  });
+
+  const { scrollYProgress: skillsScrollYProgress } = useScroll({
+    target: skillRef,
     offset: ["start start", "end start"],
   });
   return (
@@ -26,12 +32,29 @@ const Home = () => {
         <div style={{ position: "sticky", top: "calc(0vh - 100%)" }}>
           <SelectedWork id="works" />
         </div>
-        <MoreWork id="morework" scrollYProgress={scrollYProgress} />
+        <MoreWork id="morework" scrollYProgress={moreWorkScrollYProgress} />
       </div>
-
       <About id="about" />
-      <Skills id="skills" />
-      <Contact id="contact" />
+
+      <div style={{ position: "relative" }}>
+        <div
+          style={{ position: "relative", zIndex: 1, height: "100%" }}
+          ref={skillRef}
+        >
+          <Skills id="skills" scrollYProgress={skillsScrollYProgress} />
+        </div>
+
+        <div
+          style={{
+            position: "sticky",
+            bottom: 0,
+            height: "100vh",
+            zIndex: 0,
+          }}
+        >
+          <Contact id="contact" />
+        </div>
+      </div>
       <Footer id="footer" />
     </main>
   );

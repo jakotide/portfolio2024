@@ -3,14 +3,15 @@ import styles from "./skills.module.scss";
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import gsap from "gsap";
 import { rowData } from "./data";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { containerReveal } from "./data";
 
 interface SkillsProps {
   id: string;
+  scrollYProgress: any;
 }
 
-export const Skills: React.FC<SkillsProps> = ({ id }) => {
+export const Skills: React.FC<SkillsProps> = ({ id, scrollYProgress }) => {
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
   const animationFrameId = useRef<number | null>(null);
   const [activeButton, setActiveButton] = useState("chaos");
@@ -52,8 +53,18 @@ export const Skills: React.FC<SkillsProps> = ({ id }) => {
     };
   }, [activeButton]);
 
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 850 / window.innerHeight],
+    [1, 0.9]
+  );
+
   return (
-    <section className={styles.skills__section} id={id}>
+    <motion.section
+      className={styles.skills__section}
+      id={id}
+      style={{ scale }}
+    >
       <h1 className={styles.skills__h1}>Skills</h1>
       <div className={styles.skills__btn__container}>
         <div className={styles.view}>View</div>
@@ -158,6 +169,6 @@ export const Skills: React.FC<SkillsProps> = ({ id }) => {
           </div>
         </div>
       </motion.div>
-    </section>
+    </motion.section>
   );
 };
