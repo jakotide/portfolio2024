@@ -4,6 +4,7 @@ export interface CardData {
   projectType: string;
   projectNumber: string;
   id: string;
+  description: string;
 }
 
 export const cardData1: CardData = {
@@ -12,6 +13,8 @@ export const cardData1: CardData = {
   projectTitle: "Ferd Sosiale Entreprenører",
   projectType: "Freelance",
   projectNumber: "001",
+  description:
+    "My first job as a developer was to create and host the results report website for FSE. I also implemented usefathom for analytic work.",
 };
 
 export const cardData2: CardData = {
@@ -20,4 +23,5 @@ export const cardData2: CardData = {
   projectTitle: "TOPO",
   projectType: "Project Exam",
   projectNumber: "002",
+  description: "Project Exam bla bla",
 };

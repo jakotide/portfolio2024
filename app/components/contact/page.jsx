@@ -90,73 +90,63 @@ export const Contact = ({ id }) => {
 
   return (
     <section className={styles.contact__section} id={id}>
-      <div className={styles.contact__grid}>
-        <div className={`${styles.box} ${styles.box__line__side}`}></div>
-        <div className={`${styles.box} ${styles.box__line}`}></div>
-        <div className={`${styles.box} ${styles.box__1}`}></div>
-        <div className={`${styles.box} ${styles.box__2}`}></div>
-        <div className={`${styles.box} ${styles.box__3}`}></div>
-        <div className={`${styles.box} ${styles.box__4}`}>
-          <h1 className={styles.contact__h1}>Contact</h1>
-        </div>
-        <div className={`${styles.box} ${styles.box__5}`}></div>
-        <div className={`${styles.box} ${styles.box__6}`}>
-          <form onSubmit={handleSubmit} className={styles.contact__form}>
-            <label htmlFor="name">Name*</label>
-            <input
-              type="text"
-              id="name"
-              value={formState.name}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="email">Email*</label>
-            <input
-              type="email"
-              id="email"
-              value={formState.email}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="message">Your Message*</label>
-            <textarea
-              name="message"
-              id="message"
-              value={formState.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-            <button
-              type="submit"
-              className={styles.send__btn}
-              onMouseEnter={handleHoverStart}
-              onMouseLeave={handleHoverEnd}
-              ref={ref}
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? <span className={styles.spinner}></span> : "Send"}
-            </button>
-            <AnimatePresence>
-              {showNotification && (
-                <motion.div
-                  key="notification"
-                  variants={notificationAnimation}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
-                  onAnimationComplete={handleNotificationComplete}
-                  className={styles.notification}
-                >
-                  {submitMessage}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </form>
-          <div className={styles.contact__info}>
-            <div>Or send me an email at:</div>
-            <div>tidemand.dev@gmail.com</div>
-            <div>+47 47864047</div>
-          </div>
+      <h1 className={styles.contact__h1}>Contact</h1>
+      <div className={styles.contact__content}>
+        <form onSubmit={handleSubmit} className={styles.contact__form}>
+          <label htmlFor="name">Name*</label>
+          <input
+            type="text"
+            id="name"
+            value={formState.name}
+            onChange={handleChange}
+            required
+          />
+          <label htmlFor="email">Email*</label>
+          <input
+            type="email"
+            id="email"
+            value={formState.email}
+            onChange={handleChange}
+            required
+          />
+          <label htmlFor="message">Your Message*</label>
+          <textarea
+            name="message"
+            id="message"
+            value={formState.message}
+            onChange={handleChange}
+            required
+          ></textarea>
+          <button
+            type="submit"
+            className={styles.send__btn}
+            onMouseEnter={handleHoverStart}
+            onMouseLeave={handleHoverEnd}
+            ref={ref}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? <span className={styles.spinner}></span> : "Send"}
+          </button>
+          <AnimatePresence>
+            {showNotification && (
+              <motion.div
+                key="notification"
+                variants={notificationAnimation}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                onAnimationComplete={handleNotificationComplete}
+                className={styles.notification}
+              >
+                {submitMessage}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </form>
+        <div className={styles.contact__info}>
+          <div>Or send me an email at:</div>
+          <div>tidemand.dev@gmail.com</div>
+          <div>+47 47864047</div>
         </div>
       </div>
     </section>

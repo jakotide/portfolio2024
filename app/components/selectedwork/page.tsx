@@ -64,6 +64,9 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ id }) => {
                   projectType={
                     index === 0 ? cardData1.projectType : cardData2.projectType
                   }
+                  description={
+                    index === 0 ? cardData1.description : cardData2.description
+                  }
                 />
               </TransitionLink>
             </div>

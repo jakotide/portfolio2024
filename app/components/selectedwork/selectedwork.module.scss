@@ -75,9 +75,10 @@
 
     .selected__projects__container {
       display: flex;
+      flex-direction: column;
       width: 100%;
       justify-content: space-between;
-      gap: 2rem;
+      gap: 18rem;
 
       @include mq.desktopXS {
         flex-direction: column;
@@ -98,34 +99,34 @@
         color: inherit;
       }
 
-      .card__group__2 {
-        margin-top: 20rem;
-        @include mq.desktopXS {
-          margin-top: 2rem;
-        }
-      }
+      // .card__group__2 {
+      //   margin-top: 28rem;
+      //   @include mq.desktopXS {
+      //     margin-top: 2rem;
+      //   }
+      // }
 
-      .card__group__1,
-      .card__group__2 {
-        width: 650px;
-        height: 500px;
+      // .card__group__1,
+      // .card__group__2 {
+      //   width: 650px;
+      //   height: 500px;
 
-        @include mq.desktopXXL {
-          width: 600px;
-          height: 470px;
-        }
-        @include mq.desktopXL {
-          width: 550px;
-          height: 470px;
-        }
-        @include mq.desktop {
-          width: 470px;
-        }
-        @include mq.desktopXS {
-          width: 100%;
-          // margin-top: 2rem;
-        }
-      }
+      //   @include mq.desktopXXL {
+      //     width: 600px;
+      //     height: 470px;
+      //   }
+      //   @include mq.desktopXL {
+      //     width: 550px;
+      //     height: 470px;
+      //   }
+      //   @include mq.desktop {
+      //     width: 470px;
+      //   }
+      //   @include mq.desktopXS {
+      //     width: 100%;
+      //     // margin-top: 2rem;
+      //   }
+      // }
     }
   }
 }

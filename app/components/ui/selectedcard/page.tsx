@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./selectedcard.module.scss";
-import { useCursor, useScrollProvider } from "../../context/";
+import { useCursor } from "../../context/";
 
 interface SelectedCardProps {
   className?: string;
@@ -8,6 +8,7 @@ interface SelectedCardProps {
   projectTitle: string;
   projectType: string;
   projectNumber: string;
+  description: string;
 }
 
 export const SelectedCard: React.FC<SelectedCardProps> = ({
@@ -16,9 +17,9 @@ export const SelectedCard: React.FC<SelectedCardProps> = ({
   projectTitle,
   projectType,
   projectNumber,
+  description,
 }) => {
   const { handleSelectedHoverCard, handleHoverEnd } = useCursor();
-  const { bgColor } = useScrollProvider();
 
   return (
     <div
@@ -35,30 +36,14 @@ export const SelectedCard: React.FC<SelectedCardProps> = ({
         loop
       ></video>
 
-      <div
-        className={styles.selected__card__info}
-        style={
-          bgColor === "#171717" ? { color: "white" } : { color: "#171717" }
-        }
-      >
-        <div
-          className={styles.selected__number__container}
-          style={
-            bgColor === "#171717" ? { color: "white" } : { color: "#5f5f5f" }
-          }
-        >
-          <span className={styles.selected__number}>{projectNumber}</span>
-          <div className={styles.selected__type}>{projectType}</div>
-        </div>
+      <div className={styles.selected__card__info}>
         <div className={styles.selected__project__title}>{projectTitle}</div>
-        <div
-          className={styles.view__more__btn}
-          style={
-            bgColor === "#171717" ? { color: "white" } : { color: "#171717" }
-          }
-        >
-          View more
-        </div>
+        <div className={styles.selected__project__desc}>{description}</div>
+        <div className={styles.view__more__btn}>View more</div>
+      </div>
+      <div className={styles.selected__number__container}>
+        <span className={styles.selected__number}>{projectNumber}</span>
+        <div className={styles.selected__type}>{projectType}</div>
       </div>
     </div>
   );
