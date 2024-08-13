@@ -66,6 +66,9 @@
         @include mq.tabletS {
           font-size: 4rem;
         }
+        @include mq.mobileL {
+          font-size: 14vw;
+        }
       }
       .selected__amount {
         font-size: 1.5rem;

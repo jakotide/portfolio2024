@@ -20,12 +20,6 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ id, scrollYProgress }) => {
   const isTabletL = useMediaQuery("(max-width: 960px)");
   const [windowHeight, setWindowHeight] = useState(1000);
 
-  // const scale = useTransform(
-  //   scrollYProgress,
-  //   [0, 250 / window.innerHeight],
-  //   [0.9, 1]
-  // );
-
   const scale = useTransform(
     scrollYProgress,
     [0, 250 / windowHeight],
@@ -49,7 +43,11 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ id, scrollYProgress }) => {
       <motion.div className={styles.more__content}>
         <BlurReveal isInView={isInView} duration={1.2} delay={0}>
           <h1 ref={ref} className={styles.more__h1}>
-            More Projects
+            <span className={styles.more__word}>More</span>
+            <div className={styles.flex}>
+              <div className={styles.projects__word}>Projects</div>
+              <span className={styles.more__amount}>(03)</span>
+            </div>
           </h1>
         </BlurReveal>
 

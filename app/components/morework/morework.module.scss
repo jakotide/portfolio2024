@@ -30,8 +30,38 @@
 
     .more__h1 {
       font-family: "Brown-Sugar";
-      font-size: 4rem;
       margin-bottom: 4rem;
+
+      .more__word {
+        font-size: 3rem;
+        @include mq.desktopXS {
+          font-size: 2rem;
+        }
+        @include mq.tabletS {
+          font-size: 1.5rem;
+        }
+      }
+
+      .projects__word {
+        font-size: 8rem;
+        line-height: 0.8;
+
+        @include mq.desktopXS {
+          font-size: 6rem;
+        }
+        @include mq.tabletS {
+          font-size: 4rem;
+        }
+        @include mq.mobileL {
+          font-size: 14vw;
+        }
+      }
+      .more__amount {
+        font-size: 1.5rem;
+        @include mq.tabletS {
+          font-size: 1rem;
+        }
+      }
     }
 
     .more__flex__container {
