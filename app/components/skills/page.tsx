@@ -3,7 +3,7 @@ import styles from "./skills.module.scss";
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import gsap from "gsap";
 import { rowData } from "./data";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
 import { containerReveal } from "./data";
 
 interface SkillsProps {
@@ -15,6 +15,7 @@ export const Skills: React.FC<SkillsProps> = ({ id, scrollYProgress }) => {
   const rowRefs = useRef<(HTMLDivElement | null)[]>([]);
   const animationFrameId = useRef<number | null>(null);
   const [activeButton, setActiveButton] = useState("chaos");
+  const [windowHeight, setWindowHeight] = useState(1000);
 
   const handleButtonClick = useCallback(
     (buttonType: string) => {
@@ -53,11 +54,29 @@ export const Skills: React.FC<SkillsProps> = ({ id, scrollYProgress }) => {
     };
   }, [activeButton]);
 
+  // const scale = useTransform(
+  //   scrollYProgress,
+  //   [0, 950 / window.innerHeight],
+  //   [1, 0.9]
+  // );
+
   const scale = useTransform(
     scrollYProgress,
-    [0, 850 / window.innerHeight],
-    [1, 0.9]
+    [0, 950 / windowHeight],
+    [1, 0.95]
   );
+
+  useEffect(() => {
+    const updateHeight = () => {
+      setWindowHeight(window.innerHeight);
+    };
+
+    updateHeight();
+
+    window.addEventListener("resize", updateHeight);
+
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
 
   return (
     <motion.section

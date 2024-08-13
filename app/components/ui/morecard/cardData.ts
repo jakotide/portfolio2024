@@ -11,7 +11,7 @@ export interface MoreCardData {
 export const moreCard: MoreCardData[] = [
   {
     id: "sot",
-    imageSrc: "/images/sotscreen.png",
+    imageSrc: "/images/sotscreen2.png",
     imageAlt: "Project cover of Sot",
     cardNumber: "03",
     projectTitle: "Sot",

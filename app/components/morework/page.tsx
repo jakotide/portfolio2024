@@ -1,11 +1,6 @@
+"use client";
 import styles from "./morework.module.scss";
-import {
-  motion,
-  useInView,
-  useScroll,
-  useTransform,
-  useAnimation,
-} from "framer-motion";
+import { motion, useInView, useTransform, useMotionValue } from "framer-motion";
 import React, { useRef, useState, useEffect } from "react";
 import { moreCard } from "../ui/morecard/cardData";
 import { MoreCard, MoreCardMobile } from "../ui";
@@ -23,17 +18,32 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ id, scrollYProgress }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const isTabletL = useMediaQuery("(max-width: 960px)");
+  const [windowHeight, setWindowHeight] = useState(1000);
+
+  // const scale = useTransform(
+  //   scrollYProgress,
+  //   [0, 250 / window.innerHeight],
+  //   [0.9, 1]
+  // );
 
   const scale = useTransform(
     scrollYProgress,
-    [0, 250 / window.innerHeight],
-    [0.5, 1]
+    [0, 250 / windowHeight],
+    [0.9, 1]
   );
-  // const rotate = useTransform(
-  //   scrollYProgress,
-  //   [0, 250 / window.innerHeight],
-  //   [-40, 0]
-  // );
+
+  useEffect(() => {
+    const updateHeight = () => {
+      setWindowHeight(window.innerHeight);
+    };
+
+    updateHeight();
+
+    window.addEventListener("resize", updateHeight);
+
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
+
   return (
     <motion.section className={styles.more__section} id={id} style={{ scale }}>
       <motion.div className={styles.more__content}>

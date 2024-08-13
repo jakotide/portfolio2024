@@ -13,7 +13,7 @@ export interface ProjectData {
 export const projects: ProjectData[] = [
   {
     id: "fse",
-    imageSrc: "/images/ferdsss.jpg",
+    imageSrc: "/images/fseshowcaselg.png",
     imageAlt: "Project cover of Ferd",
     cardNumber: "01",
     projectTitle: "Ferd Sosiale Entreprenører",
@@ -24,7 +24,7 @@ export const projects: ProjectData[] = [
   },
   {
     id: "topo",
-    imageSrc: "/images/toposhowcase1.png",
+    imageSrc: "/images/toposhowcaselg.png",
     imageAlt: "Project cover of Topo",
     cardNumber: "02",
     projectTitle: "Topo",
@@ -37,7 +37,7 @@ export const projects: ProjectData[] = [
   },
   {
     id: "sot",
-    imageSrc: "/images/sotscreen.png",
+    imageSrc: "/images/sotshowcaselg.png",
     imageAlt: "Project cover of Sot",
     cardNumber: "03",
     projectTitle: "Sot",
