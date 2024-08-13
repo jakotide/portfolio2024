@@ -44,8 +44,8 @@
 
   .skills__btn__container {
     display: flex;
-    padding: 0 7rem 4rem;
-    font-size: 0.9rem;
+    padding: 0 7rem 6rem;
+    font-size: 1rem;
     align-items: center;
     color: clr.$white;
     text-transform: uppercase;
@@ -59,7 +59,7 @@
     }
 
     .view {
-      color: clr.$grey-blue;
+      color: clr.$orange-ish;
       padding-right: 1.5rem;
     }
 
@@ -68,16 +68,16 @@
     }
     .checkbox__btn {
       margin-right: 2rem;
-      height: 0.8rem;
-      width: 0.8rem;
-      border: 0.5px solid clr.$white;
+      height: 0.9rem;
+      width: 0.9rem;
+      border: 0.5px solid clr.$orange-ish;
       background-color: clr.$black;
       cursor: pointer;
       transition: all 0.4s ease-in;
     }
 
     .activeClass {
-      background-color: clr.$white;
+      background-color: clr.$orange-ish;
     }
   }
   .marquee__container,
@@ -227,8 +227,9 @@
       }
 
       .readable__category {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         margin-bottom: 1rem;
+        color: clr.$orange-ish;
         @include mq.mobileL {
           font-size: 1rem;
         }
