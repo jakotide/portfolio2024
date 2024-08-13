@@ -23,11 +23,12 @@ export const MoreCardMobile: React.FC<MoreCardMobileProps> = ({
       <img src={imageSrc} alt={imageAlt} className={styles.mobile__card__img} />
       <div className={styles.mobile__card__info}>
         <div className={styles.mobile__card__number}>{cardNumber}</div>
-        <div className={styles.mobile__card__title}>{projectTitle}</div>
+        <div className={styles.mobile__card__type}>{projectType}</div>
       </div>
-      <div className={styles.mobile__card__type}>{projectType}</div>
+      <div className={styles.mobile__card__title}>{projectTitle}</div>
+
       <div className={styles.mobile__card__desc}>{description}</div>
-      <div>View more</div>
+      <div className={styles.view__more__btn}>View more</div>
       <div className={styles.mobile__card__border}></div>
     </div>
   );

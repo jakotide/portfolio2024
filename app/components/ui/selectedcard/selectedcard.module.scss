@@ -7,10 +7,12 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  z-index: -1;
 
   .selected__video {
     width: 100%;
     filter: none;
+    z-index: -1;
   }
 
   .selected__card__info {

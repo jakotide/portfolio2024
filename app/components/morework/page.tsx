@@ -42,7 +42,11 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ id, scrollYProgress }) => {
     <motion.section className={styles.more__section} id={id} style={{ scale }}>
       <motion.div className={styles.more__content}>
         <BlurReveal isInView={isInView} duration={1.2} delay={0}>
-          <h1 ref={ref} className={styles.more__h1}>
+          <h1
+            ref={ref}
+            className={styles.more__h1}
+            aria-label="More Projects (03)"
+          >
             <span className={styles.more__word}>More</span>
             <div className={styles.flex}>
               <div className={styles.projects__word}>Projects</div>

@@ -31,7 +31,7 @@ const Home = () => {
     <main>
       <Hero id="hero" />
       <div style={{ position: "relative", height: "100%" }} ref={scrollRef}>
-        <div style={{ position: "sticky", top: "calc(0vh - 100%)" }}>
+        <div style={{ position: "sticky", top: "calc(0vh - 100%)", zIndex: 0 }}>
           <SelectedWork id="works" />
         </div>
         <MoreWork id="morework" scrollYProgress={moreWorkScrollYProgress} />

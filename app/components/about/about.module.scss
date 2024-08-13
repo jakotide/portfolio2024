@@ -8,6 +8,9 @@
   padding: 10rem 7rem 12rem;
   color: clr.$white;
   border-top: 1px solid #171717;
+  z-index: 3;
+  margin-top: -5rem;
+  position: relative;
   @include mq.desktopXL {
     padding: 10rem 3rem 12rem;
   }
@@ -36,6 +39,7 @@
     .about__left {
       width: 50%;
       position: relative;
+
       @include mq.tabletL {
         width: 100%;
       }
@@ -51,60 +55,35 @@
 
       .about__h1 {
         font-family: "Brown-Sugar";
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
 
-        @include mq.tabletL {
-          margin-bottom: 3rem;
+        @include mq.tabletS {
+          margin-bottom: 5rem;
         }
 
         .a__little {
           font-size: 3rem;
-          @include mq.desktopL {
-            font-size: 2.5rem;
-          }
-
-          @include mq.desktopS {
+          @include mq.desktopXS {
             font-size: 2rem;
           }
-          @include mq.tabletL {
-            font-size: 3rem;
-          }
-          @include mq.mobileL {
-            font-size: 2rem;
-          }
-          @include mq.mobileS {
+          @include mq.tabletS {
             font-size: 1.5rem;
           }
         }
 
         .about__me {
-          font-size: 8rem;
-          line-height: 0.9;
+          font-size: 6rem;
+          line-height: 0.8;
+          z-index: 4;
 
-          @include mq.desktopL {
-            font-size: 6rem;
-          }
-          @include mq.desktop {
-            font-size: 5rem;
-          }
-          @include mq.desktopS {
+          @include mq.desktopXS {
             font-size: 4rem;
           }
-          @include mq.tabletL {
-            font-size: 5.5rem;
-            top: 0;
-            z-index: 50;
-            position: relative;
-            mix-blend-mode: difference;
-          }
-          @include mq.tablet {
-            font-size: 4.5rem;
+          @include mq.tabletS {
+            font-size: 4rem;
           }
           @include mq.mobileL {
-            font-size: 3.5rem;
-          }
-          @include mq.mobileS {
-            font-size: 2.6rem;
+            font-size: 14vw;
           }
         }
       }
@@ -134,9 +113,17 @@
         @include mq.tablet {
           top: -60px;
         }
+        @include mq.tabletS {
+          height: 340px;
+          width: 100%;
+          position: relative;
+        }
+        @include mq.mobileL {
+          height: 300px;
+          background-position: top;
+        }
         @include mq.mobileS {
-          height: 150px;
-          width: 37%;
+          height: 250px;
         }
       }
     }
@@ -146,6 +133,9 @@
 
       @include mq.tabletL {
         width: 100%;
+      }
+      @include mq.tablet {
+        margin-top: -2rem;
       }
 
       .quote {

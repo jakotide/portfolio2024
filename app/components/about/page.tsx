@@ -19,14 +19,11 @@ export const About: React.FC<AboutProps> = ({ id }) => {
       <div className={styles.about__content}>
         <div className={styles.about__left}>
           {/* <BlurReveal isInView={isInView} delay={0} duration={1.2}> */}
-          {isMobileL ? (
-            <h1 className={styles.about__h1__mobile}>About</h1>
-          ) : (
-            <h1 className={styles.about__h1} ref={ref}>
-              <span className={styles.a__little}>A Little</span>
-              <div className={styles.about__me}>About Me</div>
-            </h1>
-          )}
+
+          <h1 className={styles.about__h1} ref={ref}>
+            <span className={styles.a__little}>A Little</span>
+            <div className={styles.about__me}>About Me</div>
+          </h1>
 
           {/* </BlurReveal> */}
 

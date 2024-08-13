@@ -22,7 +22,11 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ id }) => {
     <motion.section id={id} className={styles.selected__container}>
       <div className={styles.selected__content__container}>
         <BlurReveal isInView={isInView} duration={1} delay={0}>
-          <motion.h1 className={styles.selected__h1} ref={ref}>
+          <motion.h1
+            className={styles.selected__h1}
+            ref={ref}
+            aria-label="Selected Works (02)"
+          >
             <span>Selected</span>
             <div className={styles.flex}>
               <span className={styles.selected__work}>Work</span>
