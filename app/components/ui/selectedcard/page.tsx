@@ -1,14 +1,16 @@
 import React from "react";
 import styles from "./selectedcard.module.scss";
 import { useCursor } from "../../context/";
+import { useMediaQuery } from "../../hooks";
 
 interface SelectedCardProps {
   className?: string;
   videoSrc: string;
   projectTitle: string;
-  projectType: string;
+  projectType?: string;
   projectNumber: string;
   description: string;
+  projectTypeTablet?: string;
 }
 
 export const SelectedCard: React.FC<SelectedCardProps> = ({
@@ -18,7 +20,11 @@ export const SelectedCard: React.FC<SelectedCardProps> = ({
   projectType,
   projectNumber,
   description,
+  projectTypeTablet,
 }) => {
+  const isTablet = useMediaQuery("(max-width: 900px)");
+  const isMobile = useMediaQuery("(max-width: 650px)");
+
   const { handleSelectedHoverCard, handleHoverEnd } = useCursor();
 
   return (
@@ -41,10 +47,13 @@ export const SelectedCard: React.FC<SelectedCardProps> = ({
         <div className={styles.selected__project__desc}>{description}</div>
         <div className={styles.view__more__btn}>View more</div>
       </div>
-      <div className={styles.selected__number__container}>
-        <span className={styles.selected__number}>{projectNumber}</span>
-        <div className={styles.selected__type}>{projectType}</div>
-      </div>
+      {!isTablet || isMobile ? (
+        <div className={styles.selected__number__container}>
+          <span className={styles.selected__number}>{projectNumber}</span>
+
+          <div className={styles.selected__type}>{projectTypeTablet}</div>
+        </div>
+      ) : null}
     </div>
   );
 };

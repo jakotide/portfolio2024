@@ -3,7 +3,7 @@
 
 .selected__container {
   width: 100%;
-  height: 180vh;
+  height: 100%;
   background-color: clr.$primary;
   position: sticky;
   bottom: 0;
@@ -39,6 +39,9 @@
       font-family: "Brown-Sugar";
       margin: 8rem 0 8rem;
       gap: 0.3rem;
+      @include mq.tabletS {
+        margin: 4rem 0 4rem;
+      }
 
       span {
         font-size: 3rem;
@@ -84,48 +87,34 @@
         gap: 10rem;
       }
       @include mq.tabletS {
-        gap: 5rem;
-      }
-
-      .transition__link {
-        text-decoration: none;
-        height: 500px;
+        gap: 12rem;
       }
 
       .selected__card__1,
       .selected__card__2 {
         text-decoration: none;
         color: inherit;
+        height: 350px;
+        @include mq.desktop {
+          height: 320px;
+        }
+        @include mq.desktopXL {
+          height: 300px;
+        }
+        @include mq.desktopXS {
+          height: 270px;
+        }
+        @include mq.tabletL {
+          height: 250px;
+        }
+        @include mq.tablet {
+          height: 210px;
+        }
+        @include mq.tabletS {
+          height: 100%;
+          // max-height: 600px;
+        }
       }
-
-      // .card__group__2 {
-      //   margin-top: 28rem;
-      //   @include mq.desktopXS {
-      //     margin-top: 2rem;
-      //   }
-      // }
-
-      // .card__group__1,
-      // .card__group__2 {
-      //   width: 650px;
-      //   height: 500px;
-
-      //   @include mq.desktopXXL {
-      //     width: 600px;
-      //     height: 470px;
-      //   }
-      //   @include mq.desktopXL {
-      //     width: 550px;
-      //     height: 470px;
-      //   }
-      //   @include mq.desktop {
-      //     width: 470px;
-      //   }
-      //   @include mq.desktopXS {
-      //     width: 100%;
-      //     // margin-top: 2rem;
-      //   }
-      // }
     }
   }
 }

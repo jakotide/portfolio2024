@@ -1,10 +1,11 @@
 export interface CardData {
   videoSrc: string;
   projectTitle: string;
-  projectType: string;
+  projectType?: string;
   projectNumber: string;
   id: string;
   description: string;
+  projectTypeTablet?: string;
 }
 
 export const cardData1: CardData = {
@@ -22,6 +23,8 @@ export const cardData2: CardData = {
   videoSrc: "/videos/topovideo.mp4",
   projectTitle: "TOPO",
   projectType: "Project Exam",
+  projectTypeTablet: "Exam",
   projectNumber: "002",
-  description: "Project Exam bla bla",
+  description:
+    "TOPO is a venue booking site that allows users to register, book venues, create venues, check venue availability with a calendar and more.",
 };

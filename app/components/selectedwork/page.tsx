@@ -61,8 +61,10 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ id }) => {
                       ? cardData1.projectNumber
                       : cardData2.projectNumber
                   }
-                  projectType={
-                    index === 0 ? cardData1.projectType : cardData2.projectType
+                  projectTypeTablet={
+                    index === 0
+                      ? cardData1.projectTypeTablet
+                      : cardData2.projectTypeTablet
                   }
                   description={
                     index === 0 ? cardData1.description : cardData2.description

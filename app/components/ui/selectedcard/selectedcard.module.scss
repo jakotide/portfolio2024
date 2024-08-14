@@ -6,55 +6,151 @@
   font-family: "GeneralSans-Regular";
   cursor: pointer;
   display: flex;
-  z-index: -1;
-  gap: 12rem;
+  // z-index: -1;
+  gap: 6rem;
   justify-content: flex-end;
+  height: 100%;
+  overflow: hidden;
+
+  @include mq.desktopM {
+    gap: 2rem;
+  }
+  @include mq.desktop {
+    gap: 4rem;
+  }
+  @include mq.tabletL {
+    gap: 2rem;
+  }
+  @include mq.tabletS {
+    flex-direction: column;
+
+    gap: 0;
+  }
 }
 
 .selected__video {
-  width: 33%;
+  // width: 25%;
+  height: 100%;
   filter: none;
   z-index: -1;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 19px 0px;
+  @include mq.tabletS {
+    // max-height: 300px;
+    width: 100%;
+    box-shadow: none;
+    order: 1;
+    margin-bottom: 0.5rem;
+  }
 }
-
 .selected__card__info {
-  width: 46%;
+  width: 56%;
   transition: all 0.5s ease-in;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-left: 6rem;
+
+  @include mq.desktopXL {
+    padding-left: 2rem;
+  }
+  @include mq.desktopL {
+    padding-left: 0rem;
+  }
+  @include mq.tabletS {
+    order: 2;
+    width: 100%;
+  }
 
   .selected__project__title {
     font-size: 1.5rem;
     line-height: 0.9;
     text-transform: uppercase;
     font-weight: 600;
+
+    @include mq.desktop {
+      font-size: 1.25rem;
+    }
+    @include mq.desktopXS {
+      font-size: 1rem;
+      @include mq.tabletS {
+        margin-bottom: 2rem;
+        order: 2;
+        font-size: 1.5rem;
+      }
+      @include mq.mobileL {
+        font-size: 1.25rem;
+      }
+    }
   }
   .selected__project__desc {
     font-size: 1rem;
     margin-top: -8rem;
+    max-width: 90%;
+    text-wrap: balance;
+
+    @include mq.desktopXS {
+      margin-top: -2rem;
+      max-width: 100%;
+      font-size: 0.9rem;
+      // text-transform: uppercase;
+    }
+    @include mq.tabletS {
+      order: 3;
+      margin: 0 0 4rem;
+      width: 100%;
+    }
   }
   .view__more__btn {
     font-size: 1rem;
     line-height: 0.9rem;
+    @include mq.tabletS {
+      order: 4;
+    }
   }
 }
 .selected__number__container {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  width: 20%;
+  width: 10%;
   align-items: flex-end;
   text-transform: uppercase;
+
+  @include mq.tabletS {
+    order: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 
   .selected__number {
     line-height: 0.9;
     font-size: 1.5rem;
+
+    @include mq.desktop {
+      font-size: 1.25rem;
+    }
+    @include mq.desktopXS {
+      font-size: 1rem;
+    }
+    @include mq.mobileL {
+      font-size: 0.9rem;
+    }
   }
 
   .selected__type {
     font-size: 1rem;
+    @include mq.desktopXS {
+      font-size: 0.9rem;
+    }
+    @include mq.tabletS {
+      font-size: 1rem;
+    }
+    @include mq.mobileL {
+      font-size: 0.9rem;
+    }
   }
 }
