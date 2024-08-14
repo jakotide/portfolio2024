@@ -44,13 +44,18 @@ export const About: React.FC<AboutProps> = ({ id }) => {
           <div>
             I am currently working as a freelance web developer. I love
             designing websites with a beautiful and solid user{" "}
-            <span className={styles.bg__blue}>experience.</span>
+            <span className={styles.bg__green}>experience.</span>
           </div>
           <div>
             Whether you're looking for a sleek and modern design, a vibrant and
             dynamic interface, or a classic and timeless look, I am dedicated to
-            bringing your <span className={styles.bg__green}>vision</span> to
+            bringing your <span className={styles.bg__yellow}>vision</span> to
             life.
+          </div>
+          <div>
+            If I am not coding you will probably find me produce music, play the
+            guitar or scanvenge the internet for{" "}
+            <span className={styles.bg__blue}>inspiration.</span>
           </div>
         </div>
       </div>

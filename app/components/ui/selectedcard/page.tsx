@@ -20,7 +20,6 @@ export const SelectedCard: React.FC<SelectedCardProps> = ({
   projectType,
   projectNumber,
   description,
-  projectTypeTablet,
 }) => {
   const isTablet = useMediaQuery("(max-width: 900px)");
   const isMobile = useMediaQuery("(max-width: 650px)");
@@ -50,8 +49,7 @@ export const SelectedCard: React.FC<SelectedCardProps> = ({
       {!isTablet || isMobile ? (
         <div className={styles.selected__number__container}>
           <span className={styles.selected__number}>{projectNumber}</span>
-
-          <div className={styles.selected__type}>{projectTypeTablet}</div>
+          <div className={styles.selected__type}>{projectType}</div>
         </div>
       ) : null}
     </div>

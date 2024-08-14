@@ -9,14 +9,8 @@ export const Cursor = () => {
   const delayedMouse = useRef({ x: 0, y: 0 });
   const rafId = useRef(null);
   const circle = useRef();
-  const {
-    cursorSize,
-    cursorText,
-    cursorColor,
-    cursorTextColor,
-    isBlending,
-    showIcon,
-  } = useCursor();
+  const { cursorSize, cursorText, cursorColor, cursorTextColor, isBlending } =
+    useCursor();
 
   const lerp = (x, y, a) => x * (1 - a) + y * a;
 

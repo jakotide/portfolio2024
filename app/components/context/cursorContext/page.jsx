@@ -10,7 +10,7 @@ export const CursorProvider = ({ children }) => {
   const [cursorTextColor, setCursorTextColor] = useState("white");
 
   const handleHoverStart = useCallback(() => {
-    setCursorSize(58);
+    setCursorSize(64);
   }, []);
 
   const handleHoverEnd = useCallback(() => {
@@ -36,6 +36,12 @@ export const CursorProvider = ({ children }) => {
     setCursorTextColor("white");
   }, []);
 
+  const handleHoverNavItem = useCallback((color) => {
+    setCursorColor(color);
+    setIsBlending(false);
+    setCursorSize(64);
+  }, []);
+
   return (
     <CursorContext.Provider
       value={{
@@ -44,7 +50,7 @@ export const CursorProvider = ({ children }) => {
         cursorColor,
         isBlending,
         cursorTextColor,
-
+        handleHoverNavItem,
         handleHoverStart,
         handleHoverEnd,
         handleHoverCard,

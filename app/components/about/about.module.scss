@@ -172,12 +172,18 @@
         }
 
         .bg__blue {
-          background-color: clr.$green;
+          background-color: clr.$blue;
           padding: 0.1rem 0.3rem;
           color: #171717;
           font-weight: 600;
         }
         .bg__green {
+          background-color: clr.$green;
+          padding: 0.1rem 0.3rem;
+          color: #171717;
+          font-weight: 600;
+        }
+        .bg__yellow {
           background-color: clr.$yellow;
           padding: 0.1rem 0.3rem;
           color: #171717;

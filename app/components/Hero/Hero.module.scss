@@ -6,11 +6,11 @@
   height: 100vh;
   height: 100dvh;
   margin-bottom: 6rem;
-
   background-color: clr.$primary;
   display: grid;
   place-items: center;
   position: relative;
+  overflow: hidden;
 
   .hero__content__container {
     width: 100%;

@@ -22,7 +22,7 @@ export const cardData2: CardData = {
   id: "topo",
   videoSrc: "/videos/topovideo.mp4",
   projectTitle: "TOPO",
-  projectType: "Project Exam",
+  projectType: "Exam",
   projectTypeTablet: "Exam",
   projectNumber: "002",
   description:

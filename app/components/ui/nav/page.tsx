@@ -3,12 +3,12 @@ import styles from "./nav.module.scss";
 import { motion } from "framer-motion";
 import { navReveal } from "./anim.jsx";
 import React from "react";
-import { useCursor, useScrollProvider } from "../../context/";
+import { useCursor } from "../../context/";
 import { useLenis } from "@studio-freight/react-lenis";
 
 export const Navigation = () => {
-  const { handleHoverStart, handleHoverEnd } = useCursor();
-  const { bgColor } = useScrollProvider();
+  const { handleHoverStart, handleHoverEnd, handleHoverNavItem } = useCursor();
+
   const lenis = useLenis();
 
   const scrollToSection = (sectionId: string) => {
@@ -27,42 +27,38 @@ export const Navigation = () => {
       className={styles.nav}
     >
       <div
-        style={bgColor === "#171717" ? { color: "white" } : { color: "black" }}
         className={styles.nav__left}
-        onMouseEnter={handleHoverStart}
+        onMouseEnter={() => handleHoverNavItem("#19aad1")}
         onMouseLeave={handleHoverEnd}
         onClick={() => scrollToSection("hero")}
       >
         tidemand_folio2024
       </div>
 
-      <menu
-        className={styles.nav__menu}
-        style={bgColor === "#171717" ? { color: "white" } : { color: "black" }}
-      >
+      <menu className={styles.nav__menu}>
         <li
-          onMouseEnter={handleHoverStart}
+          onMouseEnter={() => handleHoverNavItem("#ff8788")}
           onMouseLeave={handleHoverEnd}
           onClick={() => scrollToSection("works")}
         >
           works
         </li>
         <li
-          onMouseEnter={handleHoverStart}
+          onMouseEnter={() => handleHoverNavItem("#aee0bc")}
           onMouseLeave={handleHoverEnd}
           onClick={() => scrollToSection("about")}
         >
           about
         </li>
         <li
-          onMouseEnter={handleHoverStart}
+          onMouseEnter={() => handleHoverNavItem("#f0cf61")}
           onMouseLeave={handleHoverEnd}
           onClick={() => scrollToSection("skills")}
         >
           skills
         </li>
         <li
-          onMouseEnter={handleHoverStart}
+          onMouseEnter={() => handleHoverNavItem("#19aad1")}
           onMouseLeave={handleHoverEnd}
           onClick={() => scrollToSection("contact")}
         >
