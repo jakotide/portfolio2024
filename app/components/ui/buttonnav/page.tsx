@@ -1,20 +1,28 @@
 import styles from "./buttonnav.module.scss";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { circleTransform } from "./anim";
 import { SlideMenu } from "../index";
 
 export const ButtonNav = () => {
   const [isActive, setIsActive] = useState(false);
+  const [showBtn, setShowBtn] = useState(false);
 
-  const handleButtonClick = () => {
-    setIsActive(!isActive);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setShowBtn(scrollY > 800);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div>
       <div
-        className={styles.button__nav}
+        className={`${styles.button__nav} ${showBtn ? styles.show__btn : ""}`}
         onClick={() => setIsActive(!isActive)}
       >
         <div

@@ -15,6 +15,8 @@
   cursor: pointer;
   overflow: hidden;
   border: none;
+  scale: 0;
+  transition: scale 0.3s cubic-bezier(0.76, 0, 0.24, 1);
 
   .burger {
     width: 100%;
@@ -60,4 +62,8 @@
     border-radius: 50%;
     z-index: 5;
   }
+}
+
+.show__btn {
+  scale: 1;
 }

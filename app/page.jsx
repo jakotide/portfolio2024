@@ -1,7 +1,8 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useLayoutEffect } from "react";
 import { useScroll } from "framer-motion";
 import { ButtonNav } from "./components/ui";
+
 import {
   SelectedWork,
   MoreWork,
@@ -28,9 +29,10 @@ const Home = () => {
     offset: ["center start", "end start"],
     layoutEffect: false,
   });
+
   return (
     <main>
-      <ButtonNav></ButtonNav>
+      <ButtonNav />
       <Hero id="hero" />
       <div style={{ position: "relative", height: "100%" }} ref={scrollRef}>
         <div style={{ position: "sticky", top: "calc(0vh - 100%)", zIndex: 0 }}>

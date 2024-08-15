@@ -56,13 +56,7 @@
     background-color: transparent;
     position: relative;
     z-index: 200;
-    color: black;
+    color: clr.$black;
     cursor: pointer;
-
-    .mobile__close__btn {
-      // position: absolute;
-      // top: 25px;
-      // right: 20px;
-    }
   }
 }
