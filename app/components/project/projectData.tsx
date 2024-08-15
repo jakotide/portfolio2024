@@ -1,13 +1,20 @@
+import { Url } from "next/dist/shared/lib/router/router";
+
 export interface ProjectData {
   id: string;
   imageSrc: string;
+  imageSrcTwo?: string;
   imageAlt: string;
   cardNumber: string;
   projectTitle: string;
   description: string;
   descriptionTwo?: string;
+  descriptionThree?: string;
   projectType: string;
   languages: string[];
+  projectDate?: string;
+  projectLink?: Url;
+  projectLinkName?: string;
 }
 
 export const projects: ProjectData[] = [
@@ -21,19 +28,28 @@ export const projects: ProjectData[] = [
       "My first job as a developer was to create and host the results report website for FSE. I also implemented usefathom for analytic work.",
     projectType: "Freelance",
     languages: ["HTML", "CSS", "Javascript", "Fathom"],
+    projectDate: "2023",
+    projectLink: "https://resultatrapport-fse-2021-2022.no/",
+    projectLinkName: "FSE",
   },
   {
     id: "topo",
     imageSrc: "/images/toposhowcaselg.png",
+    imageSrcTwo: "/images/topofigma.png",
     imageAlt: "Project cover of Topo",
     cardNumber: "02",
     projectTitle: "Topo",
     description:
       "TOPO is a venue booking site that allows users to register, book venues, create venues, check venue availability with a calendar and more.",
     descriptionTwo:
-      "This site leverages Noroff's API to provide its functionality. Users must register and log in to access the site's features.",
+      "This site leverages Noroff's API to provide its functionality. Users must register and log in to access the site's features. All the animations, button interactions and preloaders are mostly created using Framer Motion.",
+    descriptionThree:
+      "The design is based on a 3d animation theme with bright and vibrant colors. The images is created using midjourney and edited in figma. The page is also fully responsive.",
     projectType: "Project Exam",
     languages: ["React", "SCSS", "Framer Motion"],
+    projectDate: "2023",
+    projectLink: "https://topo-exam.netlify.app/",
+    projectLinkName: "Topo",
   },
   {
     id: "sot",

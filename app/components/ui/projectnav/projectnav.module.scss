@@ -1,3 +1,5 @@
+@use "../../../scss/globals.scss" as mq;
+
 .project__nav {
   position: fixed;
   top: 0;
@@ -8,6 +10,13 @@
   justify-content: space-between;
   font-family: "GeneralSans-Regular";
   text-decoration: none;
+
+  @include mq.desktopXL {
+    padding: 1rem 3rem;
+  }
+  @include mq.mobileL {
+    padding: 1rem 1.5rem;
+  }
 
   a {
     text-decoration: none;

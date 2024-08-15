@@ -82,6 +82,12 @@ $mobileXS: 23.125em; //370px
   }
 }
 
+@mixin tabletM {
+  @media (max-width: $tabletM) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (max-width: $tablet) {
     @content;
