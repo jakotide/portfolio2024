@@ -136,3 +136,13 @@ $mobileXS: 23.125em; //370px
 .overflow__hidden {
   overflow: hidden;
 }
+
+.noise__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  background-image: url("/images/figmanoise.png");
+}

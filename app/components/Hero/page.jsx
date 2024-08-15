@@ -18,6 +18,7 @@ export const Hero = ({ id }) => {
 
   return (
     <div className={`${styles.hero__container} ${styles.noise}`} id={id}>
+      <div className={styles.noise__container}></div>
       <div className={styles.hero__content__container}>
         <div className={styles.hero__mid}>
           {isTablet ? (

@@ -40,6 +40,7 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ id, scrollYProgress }) => {
 
   return (
     <motion.section className={styles.more__section} id={id} style={{ scale }}>
+      <div className={styles.noise__container__white}></div>
       <motion.div className={styles.more__content}>
         <BlurReveal isInView={isInView} duration={1.2} delay={0}>
           <h1
