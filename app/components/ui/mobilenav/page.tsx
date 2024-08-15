@@ -1,14 +1,12 @@
 import styles from "./mobilenav.module.scss";
 import { useLenis } from "@studio-freight/react-lenis";
 import React, { useState } from "react";
-import { useScrollProvider } from "../../context/";
 import { motion, AnimatePresence } from "framer-motion";
 import { showMobileNav, buttonTextVariants } from "./anim";
 import { GravityCanvas } from "../../effects";
 
 export const MobileNav = () => {
   const lenis = useLenis();
-  const { bgColor } = useScrollProvider();
   const [isClicked, setIsClicked] = useState(false);
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);

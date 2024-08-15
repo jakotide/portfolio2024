@@ -54,7 +54,6 @@ export default function RootLayout({
         <AnimatePresence mode="wait">
           {isLoading && <Preloader />}
         </AnimatePresence>
-
         <CursorProvider>
           <ScrollProvider>
             <TransitionContextProvider>

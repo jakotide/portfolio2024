@@ -19,31 +19,40 @@
 
   .footer__content {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     @include mq.tabletL {
       display: grid;
+      justify-content: space-between;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
       gap: 3rem;
     }
     @include mq.mobileL {
       grid-template-columns: 1fr;
-
       gap: 2rem;
+    }
+
+    .bottom__footer,
+    .top__footer {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
     }
 
     div {
       max-width: 300px;
-
       @include mq.tablet {
-        // font-size: 0.9rem;
+        font-size: 0.9rem;
         text-wrap: balance;
         max-width: 350px;
       }
       @include mq.mobileL {
-        // font-size: 0.9rem;
         text-wrap: balance;
       }
     }
+    // .footer__left__tablet {
+    //   justify-self: flex-end;
+    // }
   }
 }

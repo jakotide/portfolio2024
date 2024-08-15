@@ -2,7 +2,7 @@
 @use "../../../scss/globals.scss" as mq;
 
 .nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   z-index: 999;
   padding: 1rem 7rem;

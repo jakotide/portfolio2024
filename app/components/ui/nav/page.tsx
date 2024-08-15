@@ -7,7 +7,7 @@ import { useCursor } from "../../context/";
 import { useLenis } from "@studio-freight/react-lenis";
 
 export const Navigation = () => {
-  const { handleHoverStart, handleHoverEnd, handleHoverNavItem } = useCursor();
+  const { handleHoverEnd, handleHoverNavItem } = useCursor();
 
   const lenis = useLenis();
 
