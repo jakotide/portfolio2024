@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { useScroll } from "framer-motion";
+import { ButtonNav } from "./components/ui";
 import {
   SelectedWork,
   MoreWork,
@@ -29,6 +30,7 @@ const Home = () => {
   });
   return (
     <main>
+      <ButtonNav></ButtonNav>
       <Hero id="hero" />
       <div style={{ position: "relative", height: "100%" }} ref={scrollRef}>
         <div style={{ position: "sticky", top: "calc(0vh - 100%)", zIndex: 0 }}>

@@ -17,8 +17,8 @@ const Project = () => {
   const id = params?.id;
   const titleRef = useRef(null);
   const isTitleInView = useInView(titleRef, { once: true });
-  const linkRef = useRef(null);
-  const isLinkRefInView = useInView(linkRef, { once: true });
+  const botLinkRef = useRef(null);
+  const isBotLinkInView = useInView(botLinkRef, { once: true });
   const isMobile = useMediaQuery("(max-width: 500px)");
 
   if (!id) {
@@ -89,12 +89,13 @@ const Project = () => {
             className={styles.project__img2}
           />
           <p>{project.descriptionThree}</p>
-          <BlurReveal isInView={linkRef} delay={0} duration={1}>
+          <BlurReveal isInView={isBotLinkInView} delay={0} duration={1}>
             <div className={styles.visit__here}>Visit site here:</div>
             <Link
               href={project.projectLink ?? ""}
               target="_blank"
               className={styles.project__link}
+              ref={botLinkRef}
             >
               {project.projectLinkName}
             </Link>

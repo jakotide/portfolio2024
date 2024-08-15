@@ -5,3 +5,5 @@ export { BlurOverlay } from "./blur/page";
 export { ProjectNav } from "./projectnav/page";
 export { MobileNav } from "./mobilenav/page";
 export { MoreCardMobile } from "./morecardmobile/page";
+export { ButtonNav } from "./buttonnav/page";
+export { SlideMenu } from "./slidemenu/page";
