@@ -1,4 +1,5 @@
 @use "../../../scss/globals.scss" as clr;
+@use "../../../scss/globals.scss" as mq;
 
 .slide__menu__container {
   overflow: hidden;
@@ -12,6 +13,13 @@
     width: 550px;
     justify-content: space-between;
     z-index: 1000;
+
+    @include mq.tabletS {
+      width: 70%;
+    }
+    @include mq.mobileL {
+      width: 100%;
+    }
 
     .nav__menu__flex {
       display: flex;

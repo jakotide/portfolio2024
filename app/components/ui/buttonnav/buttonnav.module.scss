@@ -1,4 +1,5 @@
 @use "../../../scss/globals.scss" as clr;
+@use "../../../scss/globals.scss" as mq;
 
 .button__nav {
   position: fixed;
@@ -17,6 +18,21 @@
   border: none;
   scale: 0;
   transition: scale 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+
+  @include mq.desktopXL {
+    right: 3rem;
+    height: 74px;
+    width: 74px;
+  }
+  @include mq.tabletL {
+    height: 68px;
+    width: 68px;
+  }
+  @include mq.mobileL {
+    right: 1.5rem;
+    height: 62px;
+    width: 62px;
+  }
 
   .burger {
     width: 100%;
