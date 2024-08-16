@@ -5,6 +5,7 @@ import React from "react";
 export const Footer = () => {
   return (
     <footer className={styles.footer__container}>
+      <div className={styles.noise__container}></div>
       <div className={styles.footer__content}>
         <div>
           <div>Available for employment and </div>

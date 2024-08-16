@@ -8,6 +8,7 @@
   color: clr.$black;
   font-family: "GeneralSans-Regular";
   padding: 10rem 7rem 14rem;
+  position: relative;
 
   @include mq.desktopXL {
     padding: 8rem 3rem 12rem;
@@ -62,6 +63,7 @@
       flex-direction: column;
       width: 50%;
       text-transform: uppercase;
+      z-index: 15;
 
       @include mq.tabletL {
         width: 80%;
@@ -87,6 +89,7 @@
         margin-bottom: 2rem;
         height: 2rem;
         padding: 0.3rem;
+
         @include mq.desktop {
           margin-bottom: 1rem;
         }
@@ -98,7 +101,7 @@
       }
 
       input:enabled {
-        background-color: clr.$light-green;
+        background: clr.$light-green;
       }
 
       textarea {

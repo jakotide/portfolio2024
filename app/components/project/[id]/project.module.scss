@@ -127,7 +127,7 @@
         object-fit: cover;
         max-height: 800px;
         box-shadow: 11px 11px 22px #9e9e9e, 21px 21px 52px #d9d9d9;
-
+        z-index: 5;
         @include mq.mobileL {
           height: 300px;
         }

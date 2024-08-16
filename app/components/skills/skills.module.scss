@@ -17,6 +17,10 @@
     pointer-events: none;
   }
 
+  .noise__container__white {
+    z-index: 5;
+  }
+
   .skills__h1 {
     font-family: "Brown-Sugar";
     color: clr.$white;
@@ -74,6 +78,7 @@
       background-color: clr.$black;
       cursor: pointer;
       transition: all 0.4s ease-in;
+      z-index: 15;
     }
 
     .activeClass {
@@ -88,6 +93,7 @@
     width: 100%;
     height: 100%;
     will-change: transform;
+    z-index: 100;
   }
 
   .marquee__container {

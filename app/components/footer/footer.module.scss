@@ -6,6 +6,7 @@
   color: clr.$black;
   font-family: "GeneralSans-Regular";
   padding: 18rem 7rem 2rem;
+  position: relative;
 
   @include mq.desktopXL {
     padding: 18rem 3rem 2rem;
@@ -51,8 +52,5 @@
         text-wrap: balance;
       }
     }
-    // .footer__left__tablet {
-    //   justify-self: flex-end;
-    // }
   }
 }

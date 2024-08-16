@@ -90,6 +90,7 @@ export const Contact = ({ id }) => {
 
   return (
     <section className={styles.contact__section} id={id}>
+      <div className={styles.noise__container}></div>
       <h1 className={styles.contact__h1}>Contact</h1>
       <div className={styles.contact__content}>
         <form onSubmit={handleSubmit} className={styles.contact__form}>

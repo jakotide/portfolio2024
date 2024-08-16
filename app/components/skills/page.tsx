@@ -84,6 +84,7 @@ export const Skills: React.FC<SkillsProps> = ({ id, scrollYProgress }) => {
       id={id}
       style={{ scale }}
     >
+      <div className={styles.noise__container__white}></div>
       <h1 className={styles.skills__h1}>Skills</h1>
       <div className={styles.skills__btn__container}>
         <div className={styles.view}>View</div>

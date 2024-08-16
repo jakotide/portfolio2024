@@ -33,6 +33,7 @@ const Project = () => {
 
   return (
     <main className={styles.project__container}>
+      <div className={styles.noise__container}></div>
       <div className={styles.project__content}>
         <div className={styles.project__landing}>
           <BlurReveal isInView={isTitleInView} delay={1.3} duration={1}>
