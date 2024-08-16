@@ -3,26 +3,39 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { circleTransform } from "./anim";
 import { SlideMenu } from "../index";
+import { Overlay } from "../../effects";
+import { useScrollLock } from "../../hooks";
 
 export const ButtonNav = () => {
   const [isActive, setIsActive] = useState(false);
   const [showBtn, setShowBtn] = useState(false);
+
+  useScrollLock(isActive);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setShowBtn(scrollY > 800);
     };
+
+    // Initial check
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
+  // Combine scroll position and isActive state to determine button visibility
+  const buttonVisible = showBtn || isActive;
+
   return (
     <div>
       <div
-        className={`${styles.button__nav} ${showBtn ? styles.show__btn : ""}`}
+        className={`${styles.button__nav} ${
+          buttonVisible ? styles.show__btn : ""
+        }`}
         onClick={() => setIsActive(!isActive)}
       >
         <div
@@ -38,6 +51,7 @@ export const ButtonNav = () => {
         ></motion.div>
       </div>
       <SlideMenu isActive={isActive} />
+      <Overlay isActive={isActive} />
     </div>
   );
 };
