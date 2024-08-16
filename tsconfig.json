@@ -21,6 +21,18 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["video.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/ui/nav/anim.jsx", "app/page.jsx"],
+  "include": [
+    "video.d.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/components/ui/nav/anim.jsx",
+    "app/page.jsx",
+    "app/components/hooks/useMediaQuery.js",
+    "app/components/effects/pagetransition/page.jsx",
+    "app/components/contact/page.jsx",
+    "app/components/effects/cursorFollow/page.jsx"
+  ],
   "exclude": ["node_modules"]
 }
