@@ -31,7 +31,7 @@ const Home = () => {
   });
 
   return (
-    <main>
+    <main style={{ position: "relative", height: "100%" }}>
       <ButtonNav />
       <Hero id="hero" />
       <div style={{ position: "relative", height: "100%" }} ref={scrollRef}>

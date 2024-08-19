@@ -84,11 +84,22 @@ const Project = () => {
             className={styles.project__img1}
           />
           <p>{project.descriptionTwo}</p>
-          <img
-            src={project.imageSrcTwo}
-            alt=""
-            className={styles.project__img2}
-          />
+          {project.videoSrc ? (
+            <video
+              src={project.videoSrc}
+              autoPlay
+              loop
+              muted
+              className={styles.video__two}
+            ></video>
+          ) : project.imageSrcTwo ? (
+            <img
+              src={project.imageSrcTwo}
+              alt=""
+              className={styles.project__img2}
+            />
+          ) : null}
+
           <p>{project.descriptionThree}</p>
           <BlurReveal isInView={isBotLinkInView} delay={0} duration={1}>
             <div className={styles.visit__here}>Visit site here:</div>

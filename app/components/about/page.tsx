@@ -53,7 +53,7 @@ export const About: React.FC<AboutProps> = ({ id }) => {
           </div>
           <div>
             If I am not coding you will probably find me produce music, play the
-            guitar or scanvenge the internet for{" "}
+            guitar or scavenge the internet for{" "}
             <span className={styles.bg__blue}>inspiration.</span>
           </div>
         </div>

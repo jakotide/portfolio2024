@@ -4,6 +4,7 @@ export interface ProjectData {
   id: string;
   imageSrc: string;
   imageSrcTwo?: string;
+  videoSrc?: string;
   imageAlt: string;
   cardNumber: string;
   projectTitle: string;
@@ -21,6 +22,7 @@ export const projects: ProjectData[] = [
   {
     id: "fse",
     imageSrc: "/images/fseshowcaselg.png",
+    videoSrc: "/videos/fsevideo.mp4",
     imageAlt: "Project cover of Ferd",
     cardNumber: "01",
     projectTitle: "Ferd Sosiale Entreprenører",
@@ -42,7 +44,7 @@ export const projects: ProjectData[] = [
     description:
       "TOPO is a venue booking site that allows users to register, book venues, create venues, check venue availability with a calendar and more.",
     descriptionTwo:
-      "This site leverages Noroff's API to provide its functionality. Users must register and log in to access the site's features. All the animations, button interactions and preloaders are mostly created using Framer Motion.",
+      "This site leverages Noroff's API to provide it's functionality. Users must register and log in to access the site's features. All the animations, button interactions and preloaders are mostly created using Framer Motion.",
     descriptionThree:
       "The design is based on a 3d animation theme with bright and vibrant colors. The images is created using midjourney and edited in figma. The page is also fully responsive.",
     projectType: "Project Exam",
@@ -55,23 +57,38 @@ export const projects: ProjectData[] = [
     id: "sot",
     imageSrc: "/images/sotshowcaselg.png",
     imageAlt: "Project cover of Sot",
+    videoSrc: "/videos/sotvideo.mp4",
     cardNumber: "03",
     projectTitle: "Sot",
+    projectDate: "2023",
+    projectLink: "https://sotsotsot.netlify.app/",
+    projectLinkName: "Sot",
     description:
-      "This is a site I made to showcase some of the music I've created over the past couple of years. I used GSAP to incorporate animations, hover effects, and parallax images. Additionally, I used Lenis scroll library for smoother scrolling and animations.",
+      "This is a site I made to showcase some of the music I've created over the past couple of years.",
+    descriptionTwo:
+      "I used GSAP to incorporate animations, hover effects, and parallax images. Additionally, I used Lenis scroll library for smoother scrolling and animations.",
+    descriptionThree: "The images are created using midjourney.",
     projectType: "Personal Project",
-    languages: ["React", "SCSS", "Framer Motion"],
+    languages: ["SCSS", "Javascript", "GSAP", "Lenis"],
   },
   {
     id: "b-diddy",
     imageSrc: "/images/bdiddy-showcase.png",
+    videoSrc: "/videos/bdiddyvideo.mp4",
     imageAlt: "Project cover of B-Diddy",
     cardNumber: "04",
     projectTitle: "B-Diddy",
+    projectDate: "2023",
+    projectLink: "https://jakotide.github.io/sp2-bdiddy/",
+    projectLinkName: "B-Diddy",
     description:
-      "For this assignment we were to design and create an auction house that logged in users can create, bid on and sell items...",
+      "B-Diddy is an auction house that allows logged-in users to create listings, place bids, and sell items.",
+    descriptionTwo:
+      "This site leverages Noroff's API for its functionality. Users must register and log in to access all features. Animations are created using CSS and GSAP.",
+    descriptionThree:
+      "The site is designed in Figma and is inspired by the Neubrutalism design style. It features a marquee and a playful theme picker that allows users to change the homepage colors.",
     projectType: "Semester Project",
-    languages: ["React", "SCSS", "Framer Motion"],
+    languages: ["HTML", "SCSS", "Javascript", "GSAP"],
   },
   {
     id: "goose",
@@ -79,6 +96,7 @@ export const projects: ProjectData[] = [
     imageAlt: "Project cover of Goose",
     cardNumber: "05",
     projectTitle: "Goose",
+    projectDate: "2022",
     description:
       "For this assignment we were to showcase our design and programming skills that we acquired during our first year of study...",
     projectType: "Project Exam",

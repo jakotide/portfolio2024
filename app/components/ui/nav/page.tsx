@@ -19,6 +19,14 @@ export const Navigation = () => {
     }
   };
 
+  const scrollToContactSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+
+    if (section && lenis) {
+      lenis.scrollTo(section, { offset: 1100 });
+    }
+  };
+
   return (
     <motion.nav
       variants={navReveal}
@@ -60,7 +68,7 @@ export const Navigation = () => {
         <li
           onMouseEnter={() => handleHoverNavItem("#19aad1")}
           onMouseLeave={handleHoverEnd}
-          onClick={() => scrollToSection("contact")}
+          onClick={() => scrollToContactSection("contact")}
         >
           contact
         </li>

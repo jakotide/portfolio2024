@@ -1,6 +1,7 @@
 import styles from "./pagetransition.module.scss";
 import React, { useState, useEffect } from "react";
 import { useTransitionProvider } from "../../context";
+import { useMediaQuery } from "../../hooks";
 import { pageTransitionSlider, boxAnimation, boxFadeIn } from "./anim";
 import { motion } from "framer-motion";
 
@@ -8,6 +9,7 @@ export const PageTransition = () => {
   const { transitionStage } = useTransitionProvider();
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
   const [svgDisplay, setSvgDisplay] = useState("none");
+  const isMobile = useMediaQuery("(max-width: 560px)");
 
   useEffect(() => {
     setDimension({ width: window.innerWidth, height: window.innerHeight });

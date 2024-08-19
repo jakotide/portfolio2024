@@ -9,6 +9,7 @@ import { useScrollLock } from "../../hooks";
 export const ButtonNav = () => {
   const [isActive, setIsActive] = useState(false);
   const [showBtn, setShowBtn] = useState(false);
+  // const [blockScroll, allowScroll] = useScrollLock();
 
   useScrollLock(isActive);
 
@@ -18,7 +19,6 @@ export const ButtonNav = () => {
       setShowBtn(scrollY > 800);
     };
 
-    // Initial check
     handleScroll();
 
     window.addEventListener("scroll", handleScroll);
@@ -27,7 +27,16 @@ export const ButtonNav = () => {
     };
   }, []);
 
-  // Combine scroll position and isActive state to determine button visibility
+  // useEffect(() => {
+  //   if (isActive) {
+  //     console.log(isActive);
+  //     blockScroll();
+  //   } else {
+  //     console.log(isActive);
+  //     allowScroll();
+  //   }
+  // }, [isActive, blockScroll, allowScroll]);
+
   const buttonVisible = showBtn || isActive;
 
   return (
@@ -50,7 +59,7 @@ export const ButtonNav = () => {
           className={styles.hover__circle}
         ></motion.div>
       </div>
-      <SlideMenu isActive={isActive} />
+      <SlideMenu isActive={isActive} setIsActive={setIsActive} />
       <Overlay isActive={isActive} />
     </div>
   );
