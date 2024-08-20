@@ -8,13 +8,14 @@ import { useScrollLock } from "../../hooks";
 
 export const ButtonNav = () => {
   const [isActive, setIsActive] = useState(false);
+  const [isActiveHovered, setIsActiveHovered] = useState(false);
   const [showBtn, setShowBtn] = useState(false);
 
   const handleOpenSlideNav = () => {
     setIsActive(!isActive);
   };
 
-  useScrollLock(isActive, 700);
+  useScrollLock(isActive, 800);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,13 +44,17 @@ export const ButtonNav = () => {
         <div
           className={`${styles.burger} ${
             isActive ? styles.burger__active : ""
-          }`}
+          } ${isActiveHovered ? styles.burger__hover : ""}`}
         ></div>
         <motion.div
+          onMouseEnter={() => setIsActiveHovered(true)}
+          onMouseLeave={() => setIsActiveHovered(false)}
           variants={circleTransform}
           initial="hidden"
           animate={isActive ? "visible" : "hidden"}
-          className={styles.active__circle}
+          className={`${styles.active__circle} ${
+            isActiveHovered ? styles.active__hovered : ""
+          }`}
         ></motion.div>
       </div>
       <SlideMenu isActive={isActive} setIsActive={setIsActive} />

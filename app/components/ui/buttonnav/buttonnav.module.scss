@@ -68,6 +68,13 @@
     background-color: clr.$black;
   }
 
+  .burger__hover::after {
+    transform: rotate(135deg);
+  }
+  .burger__hover::before {
+    transform: rotate(-135deg);
+  }
+
   .active__circle {
     height: 150%;
     width: 155%;

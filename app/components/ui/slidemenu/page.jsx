@@ -1,10 +1,16 @@
 "use client";
 import styles from "./slidemenu.module.scss";
 import React, { useState } from "react";
-import { GravityCanvas } from "../../effects/index";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLenis } from "@studio-freight/react-lenis";
-import { showMobileNav, scaleSpan, itemSlide } from "./anim.jsx";
+import {
+  showMobileNav,
+  scaleSpan,
+  itemSlide,
+  itemReveal,
+  revealBoxes,
+} from "./anim.jsx";
+import { createNavItems } from "./data.jsx";
 
 export const SlideMenu = ({ isActive, setIsActive }) => {
   const [isWorkHovered, setIsWorkHovered] = useState(false);
@@ -14,27 +20,28 @@ export const SlideMenu = ({ isActive, setIsActive }) => {
 
   const lenis = useLenis();
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId, defaultOffset = 0) => {
     setIsActive(false);
 
     setTimeout(() => {
       const section = document.getElementById(sectionId);
       if (section && lenis) {
-        lenis.scrollTo(section, { offset: 0, duration: 0.3 });
+        const offset = sectionId === "contact" ? 1100 : defaultOffset;
+        lenis.scrollTo(section, { offset: offset, duration: 0.3 });
       }
     }, 300);
   };
 
-  const scrollToContactSection = (sectionId) => {
-    setIsActive(false);
-
-    setTimeout(() => {
-      const section = document.getElementById(sectionId);
-      if (section && lenis) {
-        lenis.scrollTo(section, { offset: 1100, duration: 0.3 });
-      }
-    }, 300);
-  };
+  const navItems = createNavItems(
+    isWorkHovered,
+    setIsWorkHovered,
+    isAboutHovered,
+    setIsAboutHovered,
+    isSkillsHovered,
+    setIsSkillsHovered,
+    isContactHovered,
+    setIsContactHovered
+  );
 
   const rectangles = [
     { className: `${styles.deco__rectangel} ${styles.deco__rectangel__blue}` },
@@ -56,88 +63,60 @@ export const SlideMenu = ({ isActive, setIsActive }) => {
           <div className={styles.left__container}>
             <div className={styles.left__text}>Portfolio 2024</div>
             <div className={styles.left__text}>Jakob Tidemand</div>
-            <div className={styles.rectangles__container}>
+            <motion.div
+              variants={revealBoxes}
+              initial="initial"
+              animate={isActive ? "revealed" : ""}
+              className={styles.rectangles__container}
+            >
               {rectangles.map((rect, index) => (
-                <div key={index} className={rect.className}></div>
+                <motion.div
+                  variants={{
+                    initial: { opacity: 0.1 },
+                    revealed: { opacity: 1 },
+                  }}
+                  key={index}
+                  className={rect.className}
+                ></motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
           <div className={styles.nav__menu__flex}>
             <div className={styles.menu__header}>Menu</div>
-            <div className={styles.menu__list__items}>
-              <div className={styles.list__flex}>
-                <motion.span
-                  className={styles.hover__dot}
-                  variants={scaleSpan}
-                  animate={isWorkHovered ? "hovered" : "initial"}
-                />
-                <motion.li
-                  variants={itemSlide}
-                  onClick={() => scrollToSection("works")}
-                  whileHover="hovered"
-                  onHoverStart={() => setIsWorkHovered(true)}
-                  onHoverEnd={() => setIsWorkHovered(false)}
-                  className={styles.menu__item}
-                  initial="initial"
+            <motion.div
+              variants={itemReveal}
+              initial="initial"
+              animate={isActive ? "revealed" : ""}
+              className={styles.menu__list__items}
+            >
+              {navItems.map((item, index) => (
+                <motion.div
+                  key={index}
+                  className={styles.list__flex}
+                  variants={{
+                    initial: { x: "60px", opacity: 0.5 },
+                    revealed: { x: "0px", opacity: 1 },
+                  }}
                 >
-                  works
-                </motion.li>
-              </div>
-              <div className={styles.list__flex}>
-                <motion.span
-                  className={styles.hover__dot}
-                  variants={scaleSpan}
-                  animate={isAboutHovered ? "hovered" : "initial"}
-                />
-                <motion.li
-                  variants={itemSlide}
-                  onClick={() => scrollToSection("about")}
-                  whileHover="hovered"
-                  onHoverStart={() => setIsAboutHovered(true)}
-                  onHoverEnd={() => setIsAboutHovered(false)}
-                  className={styles.menu__item}
-                  initial="initial"
-                >
-                  about
-                </motion.li>
-              </div>
-              <div className={styles.list__flex}>
-                <motion.span
-                  className={styles.hover__dot}
-                  variants={scaleSpan}
-                  animate={isSkillsHovered ? "hovered" : "initial"}
-                />
-                <motion.li
-                  variants={itemSlide}
-                  onClick={() => scrollToSection("skills")}
-                  whileHover="hovered"
-                  onHoverStart={() => setIsSkillsHovered(true)}
-                  onHoverEnd={() => setIsSkillsHovered(false)}
-                  className={styles.menu__item}
-                  initial="initial"
-                >
-                  skills
-                </motion.li>
-              </div>
-              <div className={styles.list__flex}>
-                <motion.span
-                  className={styles.hover__dot}
-                  variants={scaleSpan}
-                  animate={isContactHovered ? "hovered" : "initial"}
-                />
-                <motion.li
-                  variants={itemSlide}
-                  onClick={() => scrollToContactSection("contact")}
-                  whileHover="hovered"
-                  onHoverStart={() => setIsContactHovered(true)}
-                  onHoverEnd={() => setIsContactHovered(false)}
-                  className={styles.menu__item}
-                  initial="initial"
-                >
-                  contact
-                </motion.li>
-              </div>
-            </div>
+                  <motion.span
+                    className={styles.hover__dot}
+                    variants={scaleSpan}
+                    animate={item.hoverState ? "hovered" : "initial"}
+                  />
+                  <motion.li
+                    variants={itemSlide}
+                    onClick={() => scrollToSection(item.id, 0)}
+                    whileHover="hovered"
+                    onHoverStart={() => item.setHoverState(true)}
+                    onHoverEnd={() => item.setHoverState(false)}
+                    className={styles.menu__item}
+                    initial="initial"
+                  >
+                    {item.text}
+                  </motion.li>
+                </motion.div>
+              ))}
+            </motion.div>
             <div className={styles.nav__contacts}>
               <div>tidemand.dev@gmail.com</div>
               <div>+47 47864047</div>
