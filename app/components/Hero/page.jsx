@@ -109,7 +109,7 @@ export const Hero = ({ id }) => {
           animate="animate"
           className={styles.scroll__down}
         >
-          <div>(scroll down for more)</div>
+          (scroll down for more)
         </motion.div>
       </div>
     </div>

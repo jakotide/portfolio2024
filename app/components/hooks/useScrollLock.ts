@@ -1,34 +1,37 @@
 import { useEffect, useCallback } from "react";
 
-export function useScrollLock(lock: boolean) {
+export function useScrollLock(lock: boolean, delay: number = 300) {
+  const html = document.documentElement;
+  const { body } = document;
+
+  const scrollBarWidth = window.innerWidth - html.clientWidth;
+  const bodyPaddingRight =
+    parseInt(window.getComputedStyle(body).getPropertyValue("padding-right")) ||
+    0;
+
   const lockScroll = useCallback(() => {
-    const scrollY = window.scrollY; // Store the current scroll position
+    const scrollY = window.scrollY;
 
-    // Lock the scroll by setting position to fixed and top to negative scroll position
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.left = "0";
-    document.body.style.right = "0";
-    document.body.style.overflow = "hidden";
-    document.body.style.width = "100%"; // Prevent horizontal scroll
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.left = "0";
+    body.style.right = "0";
+    body.style.width = "100%";
+    body.style.paddingRight = `${bodyPaddingRight + scrollBarWidth}px`;
 
-    // Prevent scroll on touch devices
     const preventDefault = (e: TouchEvent) => e.preventDefault();
     document.addEventListener("touchmove", preventDefault, { passive: false });
 
     return () => {
-      // Restore the original styles
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      document.body.style.overflow = "";
-      document.body.style.width = "";
+      body.style.position = "";
+      body.style.top = "";
+      body.style.left = "";
+      body.style.right = "";
+      body.style.width = "";
+      body.style.paddingRight = "";
 
-      // Restore the scroll position
       window.scrollTo(0, scrollY);
 
-      // Remove the event listener
       document.removeEventListener("touchmove", preventDefault);
     };
   }, []);
@@ -39,17 +42,19 @@ export function useScrollLock(lock: boolean) {
     let unlockScroll: (() => void) | undefined;
 
     if (lock) {
-      unlockScroll = lockScroll();
-    }
+      const timer = setTimeout(() => {
+        unlockScroll = lockScroll();
+      }, delay);
 
-    return () => {
-      if (unlockScroll) {
-        unlockScroll();
-      }
-    };
-  }, [lock, lockScroll]);
+      return () => {
+        clearTimeout(timer);
+        if (unlockScroll) {
+          unlockScroll();
+        }
+      };
+    }
+  }, [lock, lockScroll, delay]);
 }
-// import { useRef } from "react";
 
 // export const useScrollLock = () => {
 //   const scroll = useRef(false);
@@ -68,8 +73,8 @@ export function useScrollLock(lock: boolean) {
 //         window.getComputedStyle(body).getPropertyValue("padding-right")
 //       ) || 0;
 
-//     // html.style.position = "relative";
-//     // body.style.position = "static";
+//     html.style.position = "relative";
+//     body.style.position = "relative";
 //     html.style.overflow = "hidden";
 //     body.style.overflow = "hidden";
 //     body.style.paddingRight = `${bodyPaddingRight + scrollBarWidth}px`;

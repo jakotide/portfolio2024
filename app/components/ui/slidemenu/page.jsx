@@ -14,33 +14,26 @@ export const SlideMenu = ({ isActive, setIsActive }) => {
 
   const lenis = useLenis();
 
-  // const scrollToSection = (sectionId) => {
-  //   const section = document.getElementById(sectionId);
-  //   // setIsActive(false);
-
-  //   if (section && lenis) {
-  //     setIsActive(false);
-  //     lenis.scrollTo(section);
-  //   }
-  // };
-
   const scrollToSection = (sectionId) => {
-    setIsActive(false); // Close the menu
+    setIsActive(false);
 
     setTimeout(() => {
       const section = document.getElementById(sectionId);
       if (section && lenis) {
         lenis.scrollTo(section, { offset: 0, duration: 0.3 });
       }
-    }, 300); // Adjust delay as needed
+    }, 300);
   };
 
   const scrollToContactSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
+    setIsActive(false);
 
-    if (section && lenis) {
-      lenis.scrollTo(section, { offset: 1100 });
-    }
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+      if (section && lenis) {
+        lenis.scrollTo(section, { offset: 1100, duration: 0.3 });
+      }
+    }, 300);
   };
 
   return (
@@ -54,6 +47,9 @@ export const SlideMenu = ({ isActive, setIsActive }) => {
           exit="closed"
           className={styles.nav__menu__mobile}
         >
+          <div className={styles.left__container}>
+            <div>Portfolio2024</div>
+          </div>
           <div className={styles.nav__menu__flex}>
             <div className={styles.menu__list__items}>
               <div className={styles.list__flex}>

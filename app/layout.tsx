@@ -33,7 +33,7 @@ export default function RootLayout({
   const isProjectPage = pathname.startsWith("/project");
   const isTablet = useMediaQuery("(max-width: 796px)");
 
-  useScrollLock(isLoading);
+  useScrollLock(isLoading, 0);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {

@@ -9,9 +9,12 @@ import { useScrollLock } from "../../hooks";
 export const ButtonNav = () => {
   const [isActive, setIsActive] = useState(false);
   const [showBtn, setShowBtn] = useState(false);
-  // const [blockScroll, allowScroll] = useScrollLock();
 
-  useScrollLock(isActive);
+  const handleOpenSlideNav = () => {
+    setIsActive(!isActive);
+  };
+
+  useScrollLock(isActive, 700);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,16 +30,6 @@ export const ButtonNav = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   if (isActive) {
-  //     console.log(isActive);
-  //     blockScroll();
-  //   } else {
-  //     console.log(isActive);
-  //     allowScroll();
-  //   }
-  // }, [isActive, blockScroll, allowScroll]);
-
   const buttonVisible = showBtn || isActive;
 
   return (
@@ -45,7 +38,7 @@ export const ButtonNav = () => {
         className={`${styles.button__nav} ${
           buttonVisible ? styles.show__btn : ""
         }`}
-        onClick={() => setIsActive(!isActive)}
+        onClick={handleOpenSlideNav}
       >
         <div
           className={`${styles.burger} ${
