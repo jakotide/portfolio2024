@@ -49,7 +49,7 @@ export const ButtonNav = () => {
           variants={circleTransform}
           initial="hidden"
           animate={isActive ? "visible" : "hidden"}
-          className={styles.hover__circle}
+          className={styles.active__circle}
         ></motion.div>
       </div>
       <SlideMenu isActive={isActive} setIsActive={setIsActive} />

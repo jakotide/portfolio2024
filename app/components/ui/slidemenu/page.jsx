@@ -36,6 +36,12 @@ export const SlideMenu = ({ isActive, setIsActive }) => {
     }, 300);
   };
 
+  const rectangles = [
+    { className: `${styles.deco__rectangel} ${styles.deco__rectangel__blue}` },
+    { className: `${styles.deco__rectangel} ${styles.deco__rectangel__red}` },
+    { className: `${styles.deco__rectangel} ${styles.deco__rectangel__green}` },
+  ];
+
   return (
     <AnimatePresence>
       <div className={styles.slide__menu__container}>
@@ -48,9 +54,16 @@ export const SlideMenu = ({ isActive, setIsActive }) => {
           className={styles.nav__menu__mobile}
         >
           <div className={styles.left__container}>
-            <div>Portfolio2024</div>
+            <div className={styles.left__text}>Portfolio 2024</div>
+            <div className={styles.left__text}>Jakob Tidemand</div>
+            <div className={styles.rectangles__container}>
+              {rectangles.map((rect, index) => (
+                <div key={index} className={rect.className}></div>
+              ))}
+            </div>
           </div>
           <div className={styles.nav__menu__flex}>
+            <div className={styles.menu__header}>Menu</div>
             <div className={styles.menu__list__items}>
               <div className={styles.list__flex}>
                 <motion.span
@@ -125,12 +138,14 @@ export const SlideMenu = ({ isActive, setIsActive }) => {
                 </motion.li>
               </div>
             </div>
-            {/* <div
-              className={styles.gravity__container}
-              style={{ width: "100%", height: "100%" }}
-            >
-              <GravityCanvas />
-            </div> */}
+            <div className={styles.nav__contacts}>
+              <div>tidemand.dev@gmail.com</div>
+              <div>+47 47864047</div>
+            </div>
+          </div>
+          <div className={styles.right__container}>
+            <div>LinkedIn</div>
+            <div>Github</div>
           </div>
         </motion.menu>
       </div>

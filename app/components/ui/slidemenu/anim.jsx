@@ -36,7 +36,7 @@ export const itemSlide = {
   initial: {
     x: "-10px",
     transition: {
-      duration: 0.8,
+      duration: 0.3,
       ease: [0.76, 0, 0.24, 1],
     },
   },
