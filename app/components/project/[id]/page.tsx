@@ -101,17 +101,19 @@ const Project = () => {
           ) : null}
 
           <p>{project.descriptionThree}</p>
-          <BlurReveal isInView={isBotLinkInView} delay={0} duration={1}>
-            <div className={styles.visit__here}>Visit site here:</div>
-            <Link
-              href={project.projectLink ?? ""}
-              target="_blank"
-              className={styles.project__link}
-              ref={botLinkRef}
-            >
-              {project.projectLinkName}
-            </Link>
-          </BlurReveal>
+          {id === "goose" ? null : (
+            <BlurReveal isInView={isBotLinkInView} delay={0} duration={1}>
+              <div className={styles.visit__here}>Visit site here:</div>
+              <Link
+                href={project.projectLink ?? ""}
+                target="_blank"
+                className={styles.project__link}
+                ref={botLinkRef}
+              >
+                {project.projectLinkName}
+              </Link>
+            </BlurReveal>
+          )}
         </div>
       </div>
     </main>

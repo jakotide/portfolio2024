@@ -29,6 +29,11 @@
     width: 8rem;
     z-index: 1001;
 
+    @include mq.tabletS {
+      height: 1.5rem;
+      width: 5rem;
+    }
+
     .blue__box {
       background-color: clr.$blue;
       width: 100%;

@@ -41,15 +41,15 @@ export const About: React.FC<AboutProps> = ({ id }) => {
             and design.
           </div>
           <div>
-            I am currently working as a freelance web developer. I love
-            designing websites with a beautiful and solid user{" "}
+            I am currently working as a freelance web developer. I love creating
+            websites with a beautiful and solid user{" "}
             <span className={styles.bg__green}>experience.</span>
           </div>
           <div>
-            Whether you're looking for a sleek and modern design, a vibrant and
-            dynamic interface, or a classic and timeless look, I am dedicated to
-            bringing your <span className={styles.bg__yellow}>vision</span> to
-            life.
+            With a <span className={styles.bg__yellow}>passion</span> for
+            front-end development, I'm always expanding my skill set. I am
+            currently diving into Next.js, Typescript, 3D design and furthering
+            my animation skills.
           </div>
           <div>
             If I am not coding you will probably find me produce music, play the

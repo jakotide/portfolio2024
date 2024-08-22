@@ -31,7 +31,7 @@ export const moreCard: MoreCardData[] = [
   },
   {
     id: "goose",
-    imageSrc: "/images/goosescreen.png",
+    imageSrc: "/images/gooseshowcase.webp",
     imageAlt: "Project cover of B-Diddy",
     cardNumber: "05",
     projectTitle: "Goose",

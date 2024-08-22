@@ -95,14 +95,21 @@ export const projects: ProjectData[] = [
   },
   {
     id: "goose",
-    imageSrc: "/images/goosescreen.png",
+    imageSrc: "/images/gooseshowcase.webp",
+    videoSrc: "/videos/goosevideo.mp4",
     imageAlt: "Project cover of Goose",
     cardNumber: "05",
     projectTitle: "Goose",
     projectDate: "2022",
     description:
-      "For this assignment we were to showcase our design and programming skills that we acquired during our first year of study...",
+      "Goose is a synth review blog that tests out unusual synthesizers and other unique devices.",
+    descriptionTwo:
+      "The site is designed in Figma, and the images are created with MidJourney. It features a carousel and SVG drawing animations.",
+    descriptionThree:
+      "The blog posts are fetched using the WordPress REST API. Unfortunately, the site is no longer active.",
+
     projectType: "Project Exam",
-    languages: ["React", "SCSS", "Framer Motion"],
+
+    languages: ["HTML", "SCSS", "Javascript", "Wordpress"],
   },
 ];

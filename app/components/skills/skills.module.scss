@@ -74,7 +74,7 @@
       margin-right: 2rem;
       height: 0.9rem;
       width: 0.9rem;
-      border: 0.5px solid clr.$orange-ish;
+      border: 0.5px solid clr.$white;
       background-color: clr.$black;
       cursor: pointer;
       transition: all 0.4s ease-in;
@@ -82,7 +82,7 @@
     }
 
     .activeClass {
-      background-color: clr.$orange-ish;
+      background-color: clr.$white;
     }
   }
   .marquee__container,
