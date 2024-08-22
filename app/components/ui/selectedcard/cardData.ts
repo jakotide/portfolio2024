@@ -10,7 +10,7 @@ export interface CardData {
 
 export const cardData1: CardData = {
   id: "fse",
-  videoSrc: "/videos/fsevideo.mp4",
+  videoSrc: "/videos/ferdvideo2.mp4",
   projectTitle: "Ferd Sosiale Entreprenører",
   projectType: "Freelance",
   projectNumber: "001",

@@ -21,13 +21,16 @@ export interface ProjectData {
 export const projects: ProjectData[] = [
   {
     id: "fse",
-    imageSrc: "/images/fseshowcaselg.png",
-    videoSrc: "/videos/fsevideo.mp4",
+    imageSrc: "/images/fseshowcase.webp",
+    videoSrc: "/videos/ferdvideo2.mp4",
     imageAlt: "Project cover of Ferd",
     cardNumber: "01",
     projectTitle: "Ferd Sosiale Entreprenører",
     description:
-      "My first job as a developer was to create and host the results report website for FSE. I also implemented usefathom for analytic work.",
+      "My first job as a developer was to create and host the results report website for Ferd Sosiale Entreprenører.",
+    descriptionTwo:
+      "I implemented the use of Fathom Analytics to track various metrics, including page traffic and user origin.",
+    descriptionThree: " I am still hosting and maintaining their website.",
     projectType: "Freelance",
     languages: ["HTML", "CSS", "Javascript", "Fathom"],
     projectDate: "2023",
@@ -36,8 +39,8 @@ export const projects: ProjectData[] = [
   },
   {
     id: "topo",
-    imageSrc: "/images/toposhowcaselg.png",
-    imageSrcTwo: "/images/topofigma.png",
+    imageSrc: "/images/toposhowcase.webp",
+    videoSrc: "/videos/topovideo.mp4",
     imageAlt: "Project cover of Topo",
     cardNumber: "02",
     projectTitle: "Topo",
@@ -55,7 +58,7 @@ export const projects: ProjectData[] = [
   },
   {
     id: "sot",
-    imageSrc: "/images/sotshowcaselg.png",
+    imageSrc: "/images/sotshowcase.webp",
     imageAlt: "Project cover of Sot",
     videoSrc: "/videos/sotvideo.mp4",
     cardNumber: "03",
@@ -73,13 +76,13 @@ export const projects: ProjectData[] = [
   },
   {
     id: "b-diddy",
-    imageSrc: "/images/bdiddy-showcase.png",
+    imageSrc: "/images/bdiddyshowcase.webp",
     videoSrc: "/videos/bdiddyvideo.mp4",
     imageAlt: "Project cover of B-Diddy",
     cardNumber: "04",
     projectTitle: "B-Diddy",
     projectDate: "2023",
-    projectLink: "https://jakotide.github.io/sp2-bdiddy/",
+    projectLink: "https://b-diddy.netlify.app/",
     projectLinkName: "B-Diddy",
     description:
       "B-Diddy is an auction house that allows logged-in users to create listings, place bids, and sell items.",
