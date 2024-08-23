@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "./hero.module.scss";
-import { HeroHeader } from "../ui/heroheader/page";
-import { useOsloTime, useMediaQuery } from "../hooks/";
+import { HeroHeader } from "../../components/ui/heroheader/page";
+import { useOsloTime, useMediaQuery } from "../../components/hooks";
 import Link from "next/link";
 
 import {

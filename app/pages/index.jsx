@@ -1,6 +1,6 @@
 // export { Preloader } from "./effects/preloader/page";
 export { SelectedWork } from "./selectedwork/page";
-export { MoreWork } from "./morework/page.tsx";
+export { MoreWork } from "./morework/page";
 export { Hero } from "./hero/page";
 export { About } from "./about/page";
 export { Skills } from "./skills/page";

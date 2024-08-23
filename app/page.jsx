@@ -11,7 +11,7 @@ import {
   Skills,
   Contact,
   Footer,
-} from "./components";
+} from "./pages";
 
 const Home = () => {
   const scrollRef = useRef(null);

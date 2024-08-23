@@ -2,10 +2,14 @@
 import styles from "./morework.module.scss";
 import { motion, useInView, useTransform, useMotionValue } from "framer-motion";
 import React, { useRef, useState, useEffect } from "react";
-import { moreCard } from "../ui/morecard/cardData";
-import { MoreCard, MoreCardMobile } from "../ui";
-import { ModalHover, BlurReveal, TransitionLink } from "../effects/";
-import { useMediaQuery } from "../hooks";
+import { moreCard } from "../../components/ui/morecard/cardData";
+import { MoreCard, MoreCardMobile } from "../../components/ui";
+import {
+  ModalHover,
+  BlurReveal,
+  TransitionLink,
+} from "../../components/effects";
+import { useMediaQuery } from "../../components/hooks";
 
 interface MoreWorkProps {
   updateNavStyle: boolean;

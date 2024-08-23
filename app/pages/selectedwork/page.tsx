@@ -1,10 +1,14 @@
+"use client";
 import React, { useEffect, useRef } from "react";
 import styles from "./selectedwork.module.scss";
 import { useInView, motion, useScroll, useTransform } from "framer-motion";
-import { SelectedCard } from "../ui/";
-import { cardData1, cardData2 } from "../ui/selectedcard/cardData";
-import { projects } from "../project/projectData";
-import { BlurReveal, TransitionLink } from "../effects/index";
+import { SelectedCard } from "../../components/ui";
+import {
+  cardData1,
+  cardData2,
+} from "../../components/ui/selectedcard/cardData";
+import { projects } from "../../components/project/projectData";
+import { BlurReveal, TransitionLink } from "../../components/effects/index";
 
 interface SelectedWorkProps {
   id: string;

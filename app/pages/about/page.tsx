@@ -2,7 +2,7 @@
 import styles from "./about.module.scss";
 import Image from "next/image";
 import React, { useRef } from "react";
-import { BlurReveal } from "../effects";
+import { BlurReveal } from "../../components/effects";
 import { useInView, motion } from "framer-motion";
 
 interface AboutProps {

@@ -1,8 +1,9 @@
+"use client";
 import styles from "./contact.module.scss";
-import { useCursor } from "../context/cursorContext/page";
+import { useCursor } from "../../components/context/cursorContext/page";
 import React, { useRef, useEffect, useState } from "react";
 import { useInView, motion, AnimatePresence } from "framer-motion";
-import { useScrollProvider } from "../context";
+import { useScrollProvider } from "../../components/context";
 
 const notificationAnimation = {
   initial: {
