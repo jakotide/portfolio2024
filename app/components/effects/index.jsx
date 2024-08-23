@@ -1,4 +1,4 @@
-export { Cursor } from "./cursorfollow/page.jsx";
+export { Cursor } from "./cursorFollow/page.jsx";
 export { LenisSmoothScroll } from "./lenissmoothscroll/page.jsx";
 export { Preloader } from "./preloader/page";
 export { TransitionLink } from "./transitionlink/page";
