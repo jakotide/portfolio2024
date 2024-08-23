@@ -1,7 +1,7 @@
-export { Cursor } from "./cursorFollow/page.jsx";
-export { LenisSmoothScroll } from "./lenissmoothscroll/page.jsx";
-export { Preloader } from "./preloader/page";
-export { TransitionLink } from "./transitionlink/page";
-export { PageTransition } from "./pagetransition/page";
-export { ModalHover } from "./modalhover/page.tsx";
+export { Cursor } from "./cursorfollow/cursorfollow.jsx";
+export { LenisSmoothScroll } from "./lenissmoothscroll.jsx";
+export { Preloader } from "./preloader/preloader.jsx";
+export { TransitionLink } from "./transitionlink.jsx";
+export { PageTransition } from "./pagetransition/pagetransition.jsx";
+export { ModalHover } from "./modalhover/modalhover.jsx";
 export { BlurReveal } from "./blurreveal.jsx";

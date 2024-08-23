@@ -2,7 +2,7 @@
 import Link, { LinkProps } from "next/link";
 import React from "react";
 import { useRouter } from "next/navigation";
-import { useTransitionProvider, useScrollProvider } from "../../context";
+import { useTransitionProvider, useScrollProvider } from "../context";
 
 interface TransitionLinkProps extends LinkProps {
   children: React.ReactNode;

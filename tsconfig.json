@@ -30,9 +30,9 @@
     "app/components/ui/nav/anim.jsx",
     "app/page.jsx",
     "app/components/hooks/useMediaQuery.js",
-    "app/components/effects/pagetransition/page.jsx",
+    "app/components/effects/pagetransition/pagetransition.jsx",
     "app/pages/contact/page.jsx",
-    "app/components/effects/cursorFollow/page.jsx"
+    "app/components/effects/cursorfollow/cursorfollow.jsx"
   ],
   "exclude": ["node_modules"]
 }

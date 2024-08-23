@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { circleTransform } from "./anim";
 import { SlideMenu } from "../index";
-import { Overlay } from "../../effects/navoverlay/page";
+import { Overlay } from "../../effects/navoverlay/navoverlay";
 import { useScrollLock } from "../../hooks";
 
 export const ButtonNav = () => {
