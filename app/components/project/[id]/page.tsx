@@ -16,7 +16,6 @@ const Project = () => {
   const params = useParams();
   const id = params?.id;
   const titleRef = useRef(null);
-  const isTitleInView = useInView(titleRef, { once: true });
   const botLinkRef = useRef(null);
   const isBotLinkInView = useInView(botLinkRef, { once: true });
   const isMobile = useMediaQuery("(max-width: 500px)");
@@ -36,14 +35,12 @@ const Project = () => {
       <div className={styles.noise__container}></div>
       <div className={styles.project__content}>
         <div className={styles.project__landing}>
-          <BlurReveal isInView={isTitleInView} delay={1.3} duration={1}>
-            <h1
-              ref={titleRef}
-              className={id === "fse" ? styles.fse__h1 : styles.project__h1}
-            >
-              {project.projectTitle}
-            </h1>
-          </BlurReveal>
+          <h1
+            ref={titleRef}
+            className={id === "fse" ? styles.fse__h1 : styles.project__h1}
+          >
+            {project.projectTitle}
+          </h1>
 
           <p className={styles.project__desc__1}>{project.description}</p>
 

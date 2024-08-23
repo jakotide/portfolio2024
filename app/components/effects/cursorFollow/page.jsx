@@ -47,7 +47,7 @@ export const Cursor = () => {
       window.removeEventListener("mousemove", manageMouseMove);
       window.cancelAnimationFrame(rafId.current);
     };
-  }, [animate]);
+  }, []);
 
   return (
     <div
