@@ -1,5 +1,5 @@
 export { Cursor } from "./cursorFollow/page.jsx";
-export { LenisSmoothScroll } from "./lenissmoothscrollcomponent/page.jsx";
+export { LenisSmoothScroll } from "./lenissmoothscroll/page.jsx";
 export { Preloader } from "./preloader/page";
 export { TransitionLink } from "./transitionlink/page";
 export { PageTransition } from "./pagetransition/page";
