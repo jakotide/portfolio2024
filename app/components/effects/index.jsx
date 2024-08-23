@@ -5,4 +5,3 @@ export { TransitionLink } from "./transitionlink.jsx";
 export { PageTransition } from "./pagetransition/pagetransition.jsx";
 export { ModalHover } from "./modalhover/modalhover.jsx";
 export { BlurReveal } from "./blurreveal.jsx";
-//Testing
