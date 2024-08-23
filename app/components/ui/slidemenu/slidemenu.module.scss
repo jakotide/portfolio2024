@@ -22,8 +22,9 @@
     font-size: 0.9rem;
 
     @include mq.tabletS {
-      width: 70%;
+      flex-direction: column;
     }
+
     @include mq.mobileL {
       width: 100%;
     }
@@ -38,8 +39,31 @@
       justify-content: space-between;
       padding: 5rem 0 3rem;
 
+      @include mq.tabletS {
+        flex-direction: row;
+        order: 2;
+        border-right: none;
+        width: 100%;
+        justify-self: flex-end;
+        padding: 12rem 2rem 2rem;
+      }
+
+      & > :nth-child(2) {
+        @include mq.tabletS {
+          display: none;
+        }
+      }
+
       .left__text {
         transform: rotate(-90deg);
+
+        @include mq.desktopM {
+          font-size: 0.8rem;
+        }
+        @include mq.tabletS {
+          transform: rotate(0);
+          order: 2;
+        }
       }
 
       .rectangles__container {
@@ -62,6 +86,13 @@
         .deco__rectangel__green {
           background-color: clr.$green;
         }
+        @include mq.tabletS {
+          flex-direction: row;
+          margin-top: 0;
+        }
+        @include mq.mobileL {
+          gap: 1rem;
+        }
       }
     }
 
@@ -74,6 +105,17 @@
       justify-content: flex-end;
       padding-bottom: 2rem;
       gap: 1rem;
+
+      div {
+        padding-right: 1.5rem;
+        @include mq.tabletL {
+          display: none;
+        }
+        @include mq.tabletS {
+          flex-direction: row;
+          order: 3;
+        }
+      }
     }
 
     .nav__menu__flex {
@@ -83,6 +125,20 @@
       height: 100%;
       padding: 2rem 0;
 
+      @include mq.tabletS {
+        order: 1;
+
+        align-self: center;
+      }
+
+      .menu__header {
+        @include mq.tabletS {
+          padding-bottom: 8rem;
+          justify-self: flex-start;
+          align-self: flex-start;
+        }
+      }
+
       .nav__contacts {
         display: flex;
         flex-direction: column;
@@ -90,6 +146,10 @@
 
         div:nth-child(2) {
           font-size: 1rem;
+        }
+
+        @include mq.tabletS {
+          display: none;
         }
       }
 
@@ -116,16 +176,13 @@
             font-size: 6rem;
             line-height: 0.9;
             cursor: pointer;
+
+            @include mq.desktopM {
+              font-size: 4rem;
+            }
           }
         }
       }
-    }
-
-    .gravity__container {
-      width: 100%;
-      height: 100%;
-      align-content: end;
-      margin-bottom: 0.5rem;
     }
   }
 }

@@ -2,7 +2,7 @@
 @use "../../../scss/globals.scss" as mq;
 
 .nav__menu__mobile__container {
-  position: fixed;
+  position: absolute;
   z-index: 999;
   padding: 1rem 7rem;
   display: flex;
@@ -20,6 +20,12 @@
 
   .nav__mobile__home__btn {
     cursor: pointer;
+  }
+
+  .nav__mobile__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
   }
 
   .nav__menu__mobile {

@@ -62,7 +62,8 @@ export default function RootLayout({
               <AnimatePresence mode="wait">
                 <PageTransition />
               </AnimatePresence>
-              <Cursor />
+              {isTablet ? "" : <Cursor />}
+
               {isProjectPage ? (
                 <ProjectNav />
               ) : isTablet ? (

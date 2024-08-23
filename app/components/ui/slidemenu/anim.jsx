@@ -24,7 +24,7 @@ export const itemReveal = {
     x: "0px",
     opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.4,
       ease: [0.76, 0, 0.24, 1],
       staggerChildren: 0.05,
       when: "beforeChildren",
@@ -78,5 +78,24 @@ export const itemSlide = {
       duration: 0.3,
       ease: [0.76, 0, 0.24, 1],
     },
+  },
+};
+
+export const smallTextLeftReveal = {
+  initial: {
+    opacity: 0,
+  },
+  revealed: {
+    opacity: 1,
+    transition: { duration: 0.2, delay: 0.7, ease: [0.76, 0, 0.24, 1] },
+  },
+};
+export const smallTextReveal = {
+  initial: {
+    opacity: 0,
+  },
+  revealed: {
+    opacity: 1,
+    transition: { duration: 0.2, delay: 0.4, ease: [0.76, 0, 0.24, 1] },
   },
 };

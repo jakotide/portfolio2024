@@ -9,6 +9,8 @@ import {
   itemSlide,
   itemReveal,
   revealBoxes,
+  smallTextLeftReveal,
+  smallTextReveal,
 } from "./anim.jsx";
 import { createNavItems } from "./data.jsx";
 
@@ -28,6 +30,21 @@ export const SlideMenu = ({ isActive, setIsActive }) => {
       if (section && lenis) {
         const offset = sectionId === "contact" ? 1100 : defaultOffset;
         lenis.scrollTo(section, { offset: offset, duration: 0.3 });
+      }
+    }, 300);
+  };
+
+  const scrollToWork = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    setIsActive(false);
+
+    setTimeout(() => {
+      if (section) {
+        window.scroll({
+          top: section.offsetHeight,
+          left: 0,
+          behavior: "smooth",
+        });
       }
     }, 300);
   };
@@ -61,8 +78,22 @@ export const SlideMenu = ({ isActive, setIsActive }) => {
           className={styles.nav__menu__mobile}
         >
           <div className={styles.left__container}>
-            <div className={styles.left__text}>Portfolio 2024</div>
-            <div className={styles.left__text}>Jakob Tidemand</div>
+            <motion.div
+              variants={smallTextLeftReveal}
+              initial="initial"
+              animate={isActive ? "revealed" : ""}
+              className={styles.left__text}
+            >
+              Portfolio 2024
+            </motion.div>
+            <motion.div
+              variants={smallTextLeftReveal}
+              initial="initial"
+              animate={isActive ? "revealed" : ""}
+              className={styles.left__text}
+            >
+              Tidemand
+            </motion.div>
             <motion.div
               variants={revealBoxes}
               initial="initial"
@@ -82,7 +113,14 @@ export const SlideMenu = ({ isActive, setIsActive }) => {
             </motion.div>
           </div>
           <div className={styles.nav__menu__flex}>
-            <div className={styles.menu__header}>Menu</div>
+            <motion.div
+              variants={smallTextReveal}
+              initial="initial"
+              animate={isActive ? "revealed" : ""}
+              className={styles.menu__header}
+            >
+              Menu
+            </motion.div>
             <motion.div
               variants={itemReveal}
               initial="initial"
@@ -105,7 +143,13 @@ export const SlideMenu = ({ isActive, setIsActive }) => {
                   />
                   <motion.li
                     variants={itemSlide}
-                    onClick={() => scrollToSection(item.id, 0)}
+                    onClick={() => {
+                      if (item.id === "works") {
+                        scrollToWork(item.id);
+                      } else {
+                        scrollToSection(item.id, 0);
+                      }
+                    }}
                     whileHover="hovered"
                     onHoverStart={() => item.setHoverState(true)}
                     onHoverEnd={() => item.setHoverState(false)}
@@ -118,8 +162,20 @@ export const SlideMenu = ({ isActive, setIsActive }) => {
               ))}
             </motion.div>
             <div className={styles.nav__contacts}>
-              <div>tidemand.dev@gmail.com</div>
-              <div>+47 47864047</div>
+              <motion.div
+                variants={smallTextReveal}
+                initial="initial"
+                animate={isActive ? "revealed" : ""}
+              >
+                tidemand.dev@gmail.com
+              </motion.div>
+              <motion.div
+                variants={smallTextReveal}
+                initial="initial"
+                animate={isActive ? "revealed" : ""}
+              >
+                +47 47864047
+              </motion.div>
             </div>
           </div>
           <div className={styles.right__container}>

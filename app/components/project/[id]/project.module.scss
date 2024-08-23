@@ -179,8 +179,12 @@
           border-radius: 2em;
           background-color: clr.$black;
           color: clr.$white;
-
           text-transform: uppercase;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: clr.$dark-grey;
+          }
         }
       }
     }

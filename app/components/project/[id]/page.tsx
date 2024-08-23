@@ -6,7 +6,7 @@ import { projects, ProjectData } from "../projectData";
 import { BlurReveal } from "../../effects";
 import { useInView } from "framer-motion";
 import { useMediaQuery } from "../../hooks";
-import React, { useRef } from "react";
+import { useRef } from "react";
 
 const getProjectById = (id: string): ProjectData | undefined => {
   return projects.find((project) => project.id === id);

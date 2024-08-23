@@ -66,7 +66,7 @@ export const Hero = ({ id }) => {
                 >
                   Frontend Developer with a passion for design
                 </motion.div>
-                <div className={styles.mobile__time}>{osloTime}</div>
+                <div className={styles.mobile__time}>{osloTime}, Oslo</div>
               </motion.div>
             ) : (
               <motion.div
