@@ -1,7 +1,7 @@
-export { CursorProvider, useCursor } from "./cursorContext/page.jsx";
-export { ScrollProvider, useScrollProvider } from "./scrollContext/page.jsx";
+export { CursorProvider, useCursor } from "./cursorcontext/page.jsx";
+export { ScrollProvider, useScrollProvider } from "./scrollcontext/page.jsx";
 export {
   TransitionContextProvider,
   useTransitionProvider,
-} from "./transitionContext/page.jsx";
+} from "./transitioncontext/page.jsx";
 // GEKK
