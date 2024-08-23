@@ -35,8 +35,9 @@ export const About: React.FC<AboutProps> = ({ id }) => {
         </div>
         <div className={styles.about__right}>
           <div className={styles.quote}>
-            Hello! I'm Jakob. A front-end developer and a generally geeky dude
-            who loves <span className={styles.bg__orangeIsh}>creativity </span>
+            Hello! I&apos;m Jakob. A front-end developer and a generally geeky
+            dude who loves{" "}
+            <span className={styles.bg__orangeIsh}>creativity </span>
             and design.
           </div>
           <div>
@@ -46,7 +47,7 @@ export const About: React.FC<AboutProps> = ({ id }) => {
           </div>
           <div>
             With a <span className={styles.bg__yellow}>passion</span> for
-            front-end development, I'm always expanding my skill set. I am
+            front-end development, I&apos;m always expanding my skill set. I am
             currently diving into Next.js, Typescript, 3D design and furthering
             my animation skills.
           </div>
