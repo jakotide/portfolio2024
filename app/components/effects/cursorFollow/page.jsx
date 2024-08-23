@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import styles from "./cursor.module.scss";
 import { useCursor } from "../../context/cursorcontext/page";
@@ -23,7 +23,24 @@ export const Cursor = () => {
     };
   };
 
-  const animate = () => {
+  // const animate = () => {
+  //   const { x, y } = delayedMouse.current;
+
+  //   delayedMouse.current = {
+  //     x: lerp(x, mouse.current.x, 0.1),
+  //     y: lerp(y, mouse.current.y, 0.1),
+  //   };
+
+  //   moveCircle(delayedMouse.current.x, delayedMouse.current.y);
+
+  //   rafId.current = window.requestAnimationFrame(animate);
+  // };
+
+  const moveCircle = (x, y) => {
+    gsap.set(circle.current, { x, y, xPercent: -50, yPercent: -50 });
+  };
+
+  const animate = useCallback(() => {
     const { x, y } = delayedMouse.current;
 
     delayedMouse.current = {
@@ -34,11 +51,7 @@ export const Cursor = () => {
     moveCircle(delayedMouse.current.x, delayedMouse.current.y);
 
     rafId.current = window.requestAnimationFrame(animate);
-  };
-
-  const moveCircle = (x, y) => {
-    gsap.set(circle.current, { x, y, xPercent: -50, yPercent: -50 });
-  };
+  }, [lerp, moveCircle, mouse, delayedMouse]);
 
   useEffect(() => {
     animate();
