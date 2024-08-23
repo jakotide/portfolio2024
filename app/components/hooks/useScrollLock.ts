@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useCallback } from "react";
 
 export function useScrollLock(lock: boolean, delay: number = 300) {
