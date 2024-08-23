@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import styles from "./hero.module.scss";
 import { HeroHeader } from "../ui/heroheader/page";

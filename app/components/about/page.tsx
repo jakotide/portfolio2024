@@ -1,9 +1,9 @@
+"use client";
 import styles from "./about.module.scss";
 import Image from "next/image";
 import React, { useRef } from "react";
 import { BlurReveal } from "../effects";
 import { useInView, motion } from "framer-motion";
-import { useMediaQuery } from "../hooks";
 
 interface AboutProps {
   id?: string;
@@ -12,7 +12,6 @@ interface AboutProps {
 export const About: React.FC<AboutProps> = ({ id }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const isMobileL = useMediaQuery("(max-width: 560px)");
 
   return (
     <section className={styles.about__container} id={id}>
