@@ -8,7 +8,7 @@ import {
   ProjectNav,
   MobileNav,
 } from "./components/ui";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import {
   LenisSmoothScroll,
