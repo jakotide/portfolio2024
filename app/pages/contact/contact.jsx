@@ -1,6 +1,6 @@
 "use client";
 import styles from "./contact.module.scss";
-import { useCursor } from "../../components/context/cursorcontext.tsx";
+import { useCursor } from "../../components/context/cursorcontext";
 import React, { useRef, useEffect, useState } from "react";
 import { useInView, motion, AnimatePresence } from "framer-motion";
 import { useScrollProvider } from "../../components/context";
