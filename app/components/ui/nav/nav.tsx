@@ -3,7 +3,7 @@ import styles from "./nav.module.scss";
 import { motion } from "framer-motion";
 import { navReveal } from "./anim.jsx";
 import React from "react";
-import { useCursor } from "../../context/";
+import { useCursor } from "../../context";
 import { useLenis } from "@studio-freight/react-lenis";
 
 export const Navigation = () => {

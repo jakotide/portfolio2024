@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./selectedcard.module.scss";
-import { useCursor } from "../../context/";
+import { useCursor } from "../../context";
 import { useMediaQuery } from "../../hooks";
 
 interface SelectedCardProps {

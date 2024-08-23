@@ -1,7 +1,7 @@
 import styles from "./morecard.module.scss";
 import Image from "next/image";
 import React from "react";
-import { useCursor } from "../../context/";
+import { useCursor } from "../../context";
 
 interface MoreCardProps {
   imageSrc: string;
