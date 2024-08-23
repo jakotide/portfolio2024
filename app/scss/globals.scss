@@ -119,16 +119,16 @@ $mobileXS: 23.125em; //370px
 
 @font-face {
   font-family: "Brown-Sugar";
-  src: url(../assets/fonts/brownsugar.woff2), format("woff2");
+  src: url("/assets/fonts/brownsugar.woff2"), format("woff2");
 }
 
 @font-face {
   font-family: "GeneralSans-Regular";
-  src: url(../assets/fonts/GeneralSans-Regular.woff2), format("woff2");
+  src: url("/assets/fonts/GeneralSans-Regular.woff2"), format("woff2");
 }
 @font-face {
   font-family: "GrandSlang";
-  src: url(../assets/fonts/GrandSlang-Roman.woff2), format("woff2");
+  src: url("/assets/fonts/GrandSlang-Roman.woff2"), format("woff2");
 }
 
 .flex {
