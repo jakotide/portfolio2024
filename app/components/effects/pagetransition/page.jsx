@@ -1,3 +1,4 @@
+"use client";
 import styles from "./pagetransition.module.scss";
 import React, { useState, useEffect } from "react";
 import { useTransitionProvider } from "../../context";

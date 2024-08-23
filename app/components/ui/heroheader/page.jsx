@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect } from "react";
 import styles from "./heroheader.module.scss";
 import { motion, useAnimation } from "framer-motion";

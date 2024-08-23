@@ -1,13 +1,13 @@
 import styles from "./mobilenav.module.scss";
 import { useLenis } from "@studio-freight/react-lenis";
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { showMobileNav, buttonTextVariants } from "./anim";
-import { SlideMenu } from "../slidemenu/page";
+import React from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { showMobileNav, buttonTextVariants } from "./anim";
+// import { SlideMenu } from "../slidemenu/page";
 
 export const MobileNav = () => {
   const lenis = useLenis();
-  const [isClicked, setIsClicked] = useState(false);
+  // const [isClicked, setIsClicked] = useState(false);
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
 
