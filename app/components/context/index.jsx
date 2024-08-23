@@ -4,4 +4,3 @@ export {
   TransitionContextProvider,
   useTransitionProvider,
 } from "./transitioncontext/page.jsx";
-// GEKK
