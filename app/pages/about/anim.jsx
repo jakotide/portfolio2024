@@ -1,6 +1,6 @@
 export const spanWidthReveal = {
   initial: {
-    width: 0,
+    width: "0%",
   },
   animate: {
     width: "100%",

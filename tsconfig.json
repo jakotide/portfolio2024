@@ -32,7 +32,7 @@
     "app/components/hooks/useMediaQuery.js",
     "app/components/effects/pagetransition/page.jsx",
     "app/pages/contact/page.jsx",
-    "app/components/effects/cursorFollow/page.jsx"
+    "app/components/effects/cursorfollow/page.jsx"
   ],
   "exclude": ["node_modules"]
 }

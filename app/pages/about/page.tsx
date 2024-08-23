@@ -3,7 +3,7 @@ import styles from "./about.module.scss";
 import Image from "next/image";
 import React, { useRef } from "react";
 import { BlurReveal } from "../../components/effects";
-import { useInView, motion } from "framer-motion";
+import { useInView } from "framer-motion";
 
 interface AboutProps {
   id?: string;
@@ -36,13 +36,13 @@ export const About: React.FC<AboutProps> = ({ id }) => {
         <div className={styles.about__right}>
           <div className={styles.quote}>
             Hello! I'm Jakob. A front-end developer and a generally geeky dude
-            who loves <span className={styles.bg__orangeIsh}>creativity</span>{" "}
+            who loves <span className={styles.bg__orangeIsh}>creativity </span>
             and design.
           </div>
           <div>
             I am currently working as a freelance web developer. I love creating
-            websites with a beautiful and solid user{" "}
-            <span className={styles.bg__green}>experience.</span>
+            websites with a beautiful and solid user
+            <span className={styles.bg__green}> experience.</span>
           </div>
           <div>
             With a <span className={styles.bg__yellow}>passion</span> for
@@ -52,8 +52,8 @@ export const About: React.FC<AboutProps> = ({ id }) => {
           </div>
           <div>
             If I am not coding you will probably find me produce music, play the
-            guitar or scavenge the internet for{" "}
-            <span className={styles.bg__blue}>inspiration.</span>
+            guitar or scavenge the internet for
+            <span className={styles.bg__blue}> inspiration.</span>
           </div>
         </div>
       </div>

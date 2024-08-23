@@ -1,6 +1,6 @@
-export { CursorProvider, useCursor } from "./cursorContext/page";
-export { ScrollProvider, useScrollProvider } from "./scrollContext/page";
+export { CursorProvider, useCursor } from "./cursorcontext/page";
+export { ScrollProvider, useScrollProvider } from "./scrollcontext/page";
 export {
   TransitionContextProvider,
   useTransitionProvider,
-} from "./transitionContext/page";
+} from "./transitioncontext/page";

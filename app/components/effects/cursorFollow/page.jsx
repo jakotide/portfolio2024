@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import styles from "./cursor.module.scss";
-import { useCursor } from "../../context/cursorContext/page";
+import { useCursor } from "../../context/cursorcontext/page";
 
 export const Cursor = () => {
   const mouse = useRef({ x: 0, y: 0 });
