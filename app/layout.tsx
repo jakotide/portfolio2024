@@ -31,7 +31,7 @@ export default function RootLayout({
   const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
   const isProjectPage = pathname.startsWith("/project");
-  const isTablet = useMediaQuery("(max-width: 796px)");
+  const isTablet = useMediaQuery("(max-width: 768px)");
 
   useScrollLock(isLoading, 0);
 

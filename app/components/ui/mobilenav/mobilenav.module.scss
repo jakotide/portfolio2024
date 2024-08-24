@@ -12,9 +12,6 @@
   overflow: hidden;
 
   @include mq.tabletL {
-    padding: 1rem 3rem;
-  }
-  @include mq.mobileL {
     padding: 1rem 1.5rem;
   }
 

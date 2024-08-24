@@ -4,43 +4,42 @@
 .hero__container {
   width: 100%;
   height: 100vh;
-  height: 100dvh;
-  padding-bottom: 6rem;
+  // height: 100dvh;
+  padding: 0 7rem 2rem;
   background-color: clr.$primary;
   display: grid;
   place-items: center;
   position: relative;
 
+  @include mq.desktopXL {
+    padding: 0rem 3rem 2rem;
+  }
+  @include mq.tabletL {
+    padding: 0rem 1.5rem 2rem;
+  }
+
   .hero__content__container {
     width: 100%;
     height: 100%;
-    padding: 8rem 7rem;
-    display: grid;
-    place-items: center;
-
-    @include mq.desktopXL {
-      padding: 8rem 5rem;
-    }
-    @include mq.desktopL {
-      padding: 9rem 3rem;
-    }
-    @include mq.mobileL {
-      padding: 9rem 1.5rem;
-    }
+    display: flex;
+    flex-direction: column;
 
     .hero__mid {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      align-self: center;
       font-size: 0.9rem;
-      height: 80%;
-      width: 79%;
+      justify-content: center;
+      width: 80%;
+      height: 100%;
 
-      @include mq.desktop {
-        height: 75%;
-      }
       @include mq.tabletL {
         width: 100%;
+        padding: 0 1rem;
+      }
+      @include mq.tablet {
+        padding: 0rem;
+        margin-top: -4rem;
       }
 
       .h1__container {
@@ -48,6 +47,7 @@
         font-family: "Brown-Sugar";
         display: flex;
         flex-direction: column;
+        padding-top: 8rem;
 
         .hero__subheader__small {
           font-family: "GeneralSans-Regular";
@@ -55,6 +55,7 @@
 
         .hero__subheader {
           font-size: 3rem;
+          margin-top: 1rem;
 
           @include mq.desktop {
             font-size: clamp(2rem, 3.5vw, 2.5rem);
@@ -63,7 +64,7 @@
 
         .h1__jakob,
         .h1__tidemand {
-          font-size: clamp(4.3rem, 14vw, 8rem);
+          font-size: clamp(4.3rem, 15vw, 8rem);
           line-height: 1;
 
           @include mq.mobileXS {
@@ -81,7 +82,7 @@
           font-family: "GeneralSans-Regular";
           color: #686868;
 
-          padding-top: 8rem;
+          padding-top: 2rem;
         }
       }
 
@@ -100,47 +101,49 @@
   }
 }
 
-.bottom__links {
+.bottom__container {
   display: flex;
-  gap: 2.5rem;
-  font-family: "GeneralSans-Regular";
-  color: clr.$dark-grey;
-  position: absolute;
-  bottom: 2rem;
-  right: 7rem;
-  cursor: pointer;
-  text-decoration: none;
+  justify-content: flex-end;
+  margin-top: auto;
+  width: 100%;
 
-  @include mq.desktopXL {
-    right: 3rem;
-  }
-  @include mq.mobileL {
-    left: 1.5rem;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-.flex__container {
-  display: flex;
-  align-items: center;
-  margin: auto;
-}
+  .bottom__space__between {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .bottom__links {
+      display: flex;
+      gap: 2.5rem;
+      font-family: "GeneralSans-Regular";
+      color: clr.$dark-grey;
+      order: 2;
+      cursor: pointer;
+      text-decoration: none;
 
-.scroll__down {
-  font-family: "GeneralSans-Regular";
-  color: #686868;
-  position: absolute;
-  bottom: 2rem;
-  left: 7rem;
-  pointer-events: none;
-  width: fit-content;
+      @include mq.mobileL {
+        flex-direction: column;
+        gap: 0.5rem;
+        order: 1;
+      }
+    }
+    .flex__container {
+      display: flex;
+      align-items: center;
+      margin: auto;
+    }
 
-  @include mq.desktopXL {
-    left: 3rem;
-  }
-  @include mq.mobileL {
-    margin-left: auto;
-    font-size: 0.9rem;
-    right: 1.5rem;
+    .scroll__down {
+      font-family: "GeneralSans-Regular";
+      color: #686868;
+      order: 1;
+      pointer-events: none;
+      width: fit-content;
+
+      @include mq.mobileL {
+        order: 2;
+        font-size: 0.9rem;
+        align-self: flex-end;
+      }
+    }
   }
 }

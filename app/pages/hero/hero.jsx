@@ -14,7 +14,7 @@ import {
 
 export const Hero = ({ id }) => {
   const osloTime = useOsloTime();
-  const isTablet = useMediaQuery("(max-width: 796px)");
+  const isTablet = useMediaQuery("(max-width: 768px)");
 
   return (
     <div className={`${styles.hero__container} ${styles.noise}`} id={id}>
@@ -79,38 +79,41 @@ export const Hero = ({ id }) => {
             )}
           </div>
         </div>
+        <div className={styles.bottom__container}>
+          <div className={styles.bottom__space__between}>
+            <motion.div
+              variants={textSlideUp}
+              initial="initial"
+              animate="animate"
+              className={styles.bottom__links}
+            >
+              <Link
+                href="https://www.linkedin.com/in/jakob-tidemand-a46095307/"
+                target="blank"
+                style={{ textDecoration: "none" }}
+              >
+                LinkedIn
+              </Link>
 
-        <motion.div
-          variants={textSlideUp}
-          initial="initial"
-          animate="animate"
-          className={styles.bottom__links}
-        >
-          <Link
-            href="https://www.linkedin.com/in/jakob-tidemand-a46095307/"
-            target="blank"
-            style={{ textDecoration: "none" }}
-          >
-            LinkedIn
-          </Link>
-
-          <Link
-            href="https://github.com/jakotide"
-            target="blank"
-            style={{ textDecoration: "none" }}
-          >
-            Github
-          </Link>
-          <div>CV</div>
-        </motion.div>
-        <motion.div
-          variants={textSlideUp}
-          initial="initial"
-          animate="animate"
-          className={styles.scroll__down}
-        >
-          (scroll down for more)
-        </motion.div>
+              <Link
+                href="https://github.com/jakotide"
+                target="blank"
+                style={{ textDecoration: "none" }}
+              >
+                Github
+              </Link>
+              <div>CV</div>
+            </motion.div>
+            <motion.div
+              variants={textSlideUp}
+              initial="initial"
+              animate="animate"
+              className={styles.scroll__down}
+            >
+              (scroll down for more)
+            </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   );

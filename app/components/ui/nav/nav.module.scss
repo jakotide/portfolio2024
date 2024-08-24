@@ -16,6 +16,9 @@
   @include mq.desktopXL {
     padding: 1rem 3rem;
   }
+  @include mq.tabletL {
+    padding: 1rem 1.5rem;
+  }
   .nav__left {
     transition: all 0.3s ease-out;
     cursor: pointer;
