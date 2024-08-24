@@ -37,13 +37,12 @@ export const About: React.FC<AboutProps> = ({ id }) => {
           <div className={styles.quote}>
             Hello! I&apos;m Jakob. A front-end developer and a generally geeky
             dude who loves{" "}
-            <span className={styles.bg__orangeIsh}>creativity </span>
-            and design.
+            <span className={styles.bg__orangeIsh}>creativity</span>and design.
           </div>
           <div>
             I am currently working as a freelance web developer. I love creating
             websites with a beautiful and solid user
-            <span className={styles.bg__green}> experience.</span>
+            <span className={styles.bg__green}>experience.</span>
           </div>
           <div>
             With a <span className={styles.bg__yellow}>passion</span> for
@@ -52,9 +51,9 @@ export const About: React.FC<AboutProps> = ({ id }) => {
             my animation skills.
           </div>
           <div>
-            If I am not coding you will probably find me produce music, play the
-            guitar or scavenge the internet for
-            <span className={styles.bg__blue}> inspiration.</span>
+            If I am not coding, you will probably find me producing music,
+            playing the guitar, or getting lost in a rabbit hole on the internet
+            looking for <span className={styles.bg__blue}>inspiration.</span>
           </div>
         </div>
       </div>

@@ -38,6 +38,7 @@ export const SelectedCard: React.FC<SelectedCardProps> = ({
         src={videoSrc}
         autoPlay
         muted
+        playsInline
         loop
       ></video>
 
