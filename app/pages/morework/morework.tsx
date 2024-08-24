@@ -1,7 +1,7 @@
 "use client";
 import styles from "./morework.module.scss";
-import { motion, useInView, useTransform, useMotionValue } from "framer-motion";
-import React, { useRef, useState, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
+import React, { useRef, useState } from "react";
 import { moreCard } from "../../components/ui/morecard/cardData";
 import { MoreCard, MoreCardMobile } from "../../components/ui";
 import {
@@ -17,33 +17,14 @@ interface MoreWorkProps {
   scrollYProgress: any;
 }
 
-export const MoreWork: React.FC<MoreWorkProps> = ({ id, scrollYProgress }) => {
+export const MoreWork: React.FC<MoreWorkProps> = ({ id }) => {
   const [modal, setModal] = useState({ active: true, index: 0 });
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const isTabletL = useMediaQuery("(max-width: 960px)");
-  const [windowHeight, setWindowHeight] = useState(1000);
-
-  const scale = useTransform(
-    scrollYProgress,
-    [0, 250 / windowHeight],
-    [0.9, 1]
-  );
-
-  useEffect(() => {
-    const updateHeight = () => {
-      setWindowHeight(window.innerHeight);
-    };
-
-    updateHeight();
-
-    window.addEventListener("resize", updateHeight);
-
-    return () => window.removeEventListener("resize", updateHeight);
-  }, []);
 
   return (
-    <motion.section className={styles.more__section} id={id} style={{ scale }}>
+    <motion.section className={styles.more__section} id={id}>
       <div className={styles.noise__container__white}></div>
       <motion.div className={styles.more__content}>
         <BlurReveal isInView={isInView} duration={1.2} delay={0}>

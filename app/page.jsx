@@ -18,17 +18,17 @@ const Home = () => {
   const container = useRef(null);
   const skillRef = useRef(null);
 
-  const { scrollYProgress: moreWorkScrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end start"],
-    layoutEffect: false,
-  });
+  // const { scrollYProgress: moreWorkScrollYProgress } = useScroll({
+  //   target: container,
+  //   offset: ["start start", "end start"],
+  //   layoutEffect: false,
+  // });
 
-  const { scrollYProgress: skillsScrollYProgress } = useScroll({
-    target: skillRef,
-    offset: ["center start", "end start"],
-    layoutEffect: false,
-  });
+  // const { scrollYProgress: skillsScrollYProgress } = useScroll({
+  //   target: skillRef,
+  //   offset: ["center start", "end start"],
+  //   layoutEffect: false,
+  // });
 
   return (
     <main style={{ position: "relative", height: "100%" }}>
@@ -38,7 +38,7 @@ const Home = () => {
         <div style={{ position: "sticky", top: "calc(0vh - 100%)", zIndex: 0 }}>
           <SelectedWork id="works" />
         </div>
-        <MoreWork id="morework" scrollYProgress={moreWorkScrollYProgress} />
+        <MoreWork id="morework" />
       </div>
       <About id="about" />
       <div style={{ position: "relative" }}>
@@ -46,7 +46,7 @@ const Home = () => {
           style={{ position: "relative", zIndex: 1, height: "100%" }}
           ref={skillRef}
         >
-          <Skills id="skills" scrollYProgress={skillsScrollYProgress} />
+          <Skills id="skills" />
         </div>
 
         <div
