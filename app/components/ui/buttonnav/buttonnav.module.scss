@@ -29,9 +29,10 @@
     width: 68px;
   }
   @include mq.mobileL {
-    right: 1.5rem;
+    right: 1rem;
     height: 62px;
     width: 62px;
+    top: 1rem;
   }
 
   .burger {

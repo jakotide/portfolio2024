@@ -127,15 +127,15 @@
 
       @include mq.tabletS {
         order: 1;
-
         align-self: center;
+        gap: 2rem;
       }
 
       .menu__header {
         @include mq.tabletS {
-          padding-bottom: 8rem;
-          justify-self: flex-start;
-          align-self: flex-start;
+          position: absolute;
+          top: 2rem;
+          left: 1.5rem;
         }
       }
 
@@ -179,6 +179,9 @@
 
             @include mq.desktopM {
               font-size: 4rem;
+            }
+            @include mq.tabletS {
+              font-size: 3rem;
             }
           }
         }
