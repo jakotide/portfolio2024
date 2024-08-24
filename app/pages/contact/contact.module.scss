@@ -7,7 +7,7 @@
   background-color: clr.$light-green;
   color: clr.$black;
   font-family: "GeneralSans-Regular";
-  padding: 10rem 7rem 14rem;
+  padding: 12rem 7rem 14rem;
   position: relative;
 
   @include mq.desktopXL {
@@ -127,6 +127,7 @@
       .send__btn {
         font-size: 1.5rem;
         border: 1px solid clr.$black;
+        color: clr.$black;
         width: 10rem;
         height: 4rem;
         padding: 0.4rem;

@@ -34,14 +34,17 @@ export const SlideMenu = ({ isActive, setIsActive }) => {
     }, 300);
   };
 
-  const scrollToWork = (sectionId) => {
+  const scrollToWork = (sectionId, offset = 0) => {
     const section = document.getElementById(sectionId);
     setIsActive(false);
 
     setTimeout(() => {
       if (section) {
+        // Calculate the top position of the section and apply the offset
+        const sectionTop = section.offsetHeight - offset;
+
         window.scroll({
-          top: section.offsetHeight,
+          top: sectionTop,
           left: 0,
           behavior: "smooth",
         });
@@ -145,7 +148,7 @@ export const SlideMenu = ({ isActive, setIsActive }) => {
                     variants={itemSlide}
                     onClick={() => {
                       if (item.id === "works") {
-                        scrollToWork(item.id);
+                        scrollToWork("works", 850);
                       } else {
                         scrollToSection(item.id, 0);
                       }

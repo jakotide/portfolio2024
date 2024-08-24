@@ -95,12 +95,16 @@
         }
         .more__card__link {
           color: inherit;
+          text-decoration: none;
         }
       }
     }
 
     .mobile__card__container {
       height: 100%;
+      a {
+        text-decoration: none;
+      }
     }
   }
 }

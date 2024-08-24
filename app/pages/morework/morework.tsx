@@ -63,15 +63,21 @@ export const MoreWork: React.FC<MoreWorkProps> = ({ id, scrollYProgress }) => {
         {isTabletL ? (
           <div className={styles.mobile__card__container}>
             {moreCard.map((card, i) => (
-              <MoreCardMobile
-                key={i}
-                imageSrc={card.imageSrc}
-                imageAlt={card.imageAlt}
-                projectTitle={card.projectTitle}
-                projectType={card.projectType}
-                description={card.description}
-                cardNumber={card.cardNumber}
-              />
+              <TransitionLink
+                href={`/project/${card.id}`}
+                key={card.cardNumber}
+                className={styles.more__card__link}
+              >
+                <MoreCardMobile
+                  key={i}
+                  imageSrc={card.imageSrc}
+                  imageAlt={card.imageAlt}
+                  projectTitle={card.projectTitle}
+                  projectType={card.projectType}
+                  description={card.description}
+                  cardNumber={card.cardNumber}
+                />
+              </TransitionLink>
             ))}
           </div>
         ) : (
