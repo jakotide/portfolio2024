@@ -56,11 +56,15 @@
 
       .about__h1 {
         font-family: "Brown-Sugar";
-        margin-bottom: 6rem;
-        margin-top: -7rem;
+        margin-bottom: 4rem;
+        margin-top: -6rem;
+
+        @include mq.desktopXS {
+          margin-top: -3rem;
+        }
 
         @include mq.tabletS {
-          margin-bottom: 8rem;
+          margin-bottom: 6.5rem;
         }
         @include mq.mobileL {
           margin-bottom: 6.5rem;
@@ -118,7 +122,7 @@
           top: -60px;
         }
         @include mq.tabletS {
-          height: 340px;
+          height: 360px;
           width: 100%;
           position: relative;
         }
@@ -138,17 +142,19 @@
 
       @include mq.tabletL {
         width: 100%;
-      }
-      @include mq.tablet {
         margin-top: -2rem;
       }
 
       .quote {
         font-size: 1.5rem;
 
+        @include mq.tabletS {
+          margin-top: 1rem;
+        }
+
         @include mq.mobileL {
           font-size: 1.25rem;
-          margin-top: 1rem;
+          margin-top: 1.5rem;
         }
       }
 

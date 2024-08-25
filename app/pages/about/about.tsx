@@ -37,12 +37,12 @@ export const About: React.FC<AboutProps> = ({ id }) => {
           <div className={styles.quote}>
             Hello! I&apos;m Jakob. A front-end developer and a generally geeky
             dude who loves{" "}
-            <span className={styles.bg__orangeIsh}>creativity</span>and design.
+            <span className={styles.bg__orangeIsh}>creativity</span> and design.
           </div>
           <div>
             I am currently working as a freelance web developer. I love creating
-            websites with a beautiful and solid user
-            <span className={styles.bg__green}>experience.</span>
+            websites with a beautiful and solid user{" "}
+            <span className={styles.bg__green}> experience.</span>
           </div>
           <div>
             With a <span className={styles.bg__yellow}>passion</span> for
