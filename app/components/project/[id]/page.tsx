@@ -87,6 +87,7 @@ const Project = () => {
               autoPlay
               loop
               muted
+              playsInline
               className={styles.video__two}
             ></video>
           ) : project.imageSrcTwo ? (

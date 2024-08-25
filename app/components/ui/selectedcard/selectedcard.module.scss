@@ -35,6 +35,16 @@
   filter: none;
   z-index: -1;
   box-shadow: 3px 3px 10px #c9c9c9, 5px 5px 22px #f9f7e8;
+  pointer-events: none;
+
+  &::-webkit-media-controls {
+    display: none !important;
+    opacity: 0;
+  }
+
+  &::-webkit-media-controls-start-playback-button {
+    display: none !important;
+  }
   @include mq.tabletS {
     // max-height: 300px;
     width: 100%;
@@ -43,6 +53,7 @@
     margin-bottom: 0.5rem;
   }
 }
+
 .selected__card__info {
   width: 56%;
   transition: all 0.5s ease-in;

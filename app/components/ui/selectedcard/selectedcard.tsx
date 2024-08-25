@@ -34,6 +34,7 @@ export const SelectedCard: React.FC<SelectedCardProps> = ({
       onClick={handleHoverEnd}
     >
       <video
+        id="video"
         className={styles.selected__video}
         src={videoSrc}
         autoPlay

@@ -40,7 +40,10 @@
       margin: 8rem 0 8rem;
       gap: 0.3rem;
       @include mq.tabletS {
-        margin: 4rem 0 4rem;
+        margin: 4rem 0;
+      }
+      @include mq.mobileL {
+        margin: 4rem 0 3rem;
       }
 
       span {

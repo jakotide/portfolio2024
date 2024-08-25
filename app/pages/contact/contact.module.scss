@@ -2,19 +2,19 @@
 @use "../../scss/globals.scss" as mq;
 
 .contact__section {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-color: clr.$light-green;
   color: clr.$black;
   font-family: "GeneralSans-Regular";
-  padding: 12rem 7rem 14rem;
+  padding: 12rem 7rem 4rem;
   position: relative;
 
   @include mq.desktopXL {
-    padding: 8rem 3rem 12rem;
+    padding: 12rem 3rem 4rem;
   }
   @include mq.tabletS {
-    padding: 8rem 1.5rem 10rem;
+    padding: 12rem 1.5rem 6rem;
   }
 
   .contact__h1 {
@@ -139,6 +139,9 @@
         align-items: center;
         background-color: clr.$light-green;
         justify-content: center;
+        display: inline-block;
+        visibility: visible;
+        z-index: 10;
 
         @include mq.desktop {
           font-size: 1.25rem;

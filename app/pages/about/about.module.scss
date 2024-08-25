@@ -5,20 +5,20 @@
   background-color: clr.$black;
   height: 100%;
   width: 100%;
-  padding: 10rem 7rem 12rem;
+  padding: 10rem 7rem 6rem;
   color: clr.$white;
   border-top: 1px solid #171717;
   z-index: 3;
   margin-top: -5rem;
   position: relative;
   @include mq.desktopXL {
-    padding: 10rem 3rem 12rem;
+    padding: 10rem 3rem 6rem;
   }
   @include mq.tabletS {
-    padding: 7rem 3rem 12rem;
+    padding: 7rem 3rem 6rem;
   }
   @include mq.mobileL {
-    padding: 7rem 1.5rem 12rem;
+    padding: 7rem 1.5rem 6rem;
   }
 
   .about__content {
@@ -169,7 +169,6 @@
         @include mq.tabletL {
           max-width: 60%;
           margin-bottom: 1.5rem;
-          font-size: 1rem;
         }
         @include mq.tabletS {
           max-width: 100%;
