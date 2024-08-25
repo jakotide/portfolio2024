@@ -14,19 +14,14 @@ export const pageTransitionSlider = {
 };
 
 export const boxAnimation = {
-  initial: {
-    // opacity: 0,
-  },
+  initial: {},
   animate: {
-    // opacity: 1,
     transition: {
       delayChildren: 0.6,
       staggerChildren: 0.2,
     },
   },
-  exit: {
-    // opacity: 0,
-  },
+  exit: {},
 };
 
 export const boxFadeIn = {

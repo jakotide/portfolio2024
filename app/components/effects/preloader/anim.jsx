@@ -1,5 +1,3 @@
-import { easeOut } from "framer-motion";
-
 export const slide = {
   initial: {
     x: "0",
@@ -24,19 +22,4 @@ export const textReveal = {
     opacity: 0,
     transition: { duration: 0.2, ease: [0.76, 0, 0.24, 1] },
   },
-};
-
-export const counterReveal = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-
-    transition: { duration: 0.2 },
-  },
-  //   exit: {
-  //     opacity: 0,
-  //     transition: { duration: 0.2, ease: [0.76, 0, 0.24, 1] },
-  //   },
 };
