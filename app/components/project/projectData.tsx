@@ -22,7 +22,7 @@ export const projects: ProjectData[] = [
   {
     id: "fse",
     imageSrc: "/images/fseshowcase.webp",
-    videoSrc: "/videos/ferdvideo2.mp4",
+    videoSrc: "/videos/fsevideolowq.mp4",
     imageAlt: "Project cover of Ferd",
     cardNumber: "01",
     projectTitle: "Ferd Sosiale Entreprenører",
