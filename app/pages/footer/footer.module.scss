@@ -5,11 +5,11 @@
   background-color: clr.$light-green;
   color: clr.$black;
   font-family: "GeneralSans-Regular";
-  padding: 16rem 7rem 2rem;
+  padding: 18rem 7rem 2rem;
   position: relative;
 
   @include mq.desktopXL {
-    padding: 16rem 3rem 2rem;
+    padding: 18rem 3rem 2rem;
   }
   @include mq.tabletL {
     padding: 8rem 3rem 2rem;

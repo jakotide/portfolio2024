@@ -47,6 +47,5 @@ export const opacityRevealThree = {
     opacity: 1,
     filter: "0",
     transition: { duration: 0.7, delay: 1.6 },
-    once: true,
   },
 };

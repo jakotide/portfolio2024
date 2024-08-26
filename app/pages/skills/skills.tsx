@@ -148,7 +148,6 @@ export const Skills: React.FC<SkillsProps> = ({ id }) => {
               <div>Figma</div>
               <div>Git</div>
               <div>Github</div>
-              <div>Trello</div>
             </div>
           </div>
           <div>

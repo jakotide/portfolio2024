@@ -98,12 +98,12 @@
       }
 
       .about__image {
-        height: 450px;
+        height: auto;
         width: 550px;
         object-fit: cover;
         border-radius: 0.25em;
         z-index: 5;
-        background-image: url("../../../public/images/cvbilde.jpg");
+        background-image: url("../../../public/images/cvbilde.webp");
 
         @include mq.desktopL {
           height: 400px;

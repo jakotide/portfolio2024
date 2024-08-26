@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import styles from "./cursor.module.scss";
 import { useCursor } from "../../context/cursorcontext";
@@ -8,7 +8,7 @@ export const Cursor = () => {
   const mouse = useRef({ x: 0, y: 0 });
   const delayedMouse = useRef({ x: 0, y: 0 });
   const rafId = useRef(null);
-  const circle = useRef();
+  const circle = useRef(null);
   const { cursorSize, cursorText, cursorColor, cursorTextColor, isBlending } =
     useCursor();
 
@@ -24,25 +24,32 @@ export const Cursor = () => {
   };
 
   const animate = () => {
-    const { x, y } = delayedMouse.current;
+    if (circle.current) {
+      const { x, y } = delayedMouse.current;
 
-    delayedMouse.current = {
-      x: lerp(x, mouse.current.x, 0.1),
-      y: lerp(y, mouse.current.y, 0.1),
-    };
+      delayedMouse.current = {
+        x: lerp(x, mouse.current.x, 0.1),
+        y: lerp(y, mouse.current.y, 0.1),
+      };
 
-    moveCircle(delayedMouse.current.x, delayedMouse.current.y);
+      moveCircle(delayedMouse.current.x, delayedMouse.current.y);
 
-    rafId.current = window.requestAnimationFrame(animate);
+      rafId.current = window.requestAnimationFrame(animate);
+    }
   };
 
   const moveCircle = (x, y) => {
-    gsap.set(circle.current, { x, y, xPercent: -50, yPercent: -50 });
+    if (circle.current) {
+      gsap.set(circle.current, { x, y, xPercent: -50, yPercent: -50 });
+    }
   };
 
   useEffect(() => {
-    animate();
-    window.addEventListener("mousemove", manageMouseMove);
+    if (circle.current) {
+      animate();
+      window.addEventListener("mousemove", manageMouseMove);
+    }
+
     return () => {
       window.removeEventListener("mousemove", manageMouseMove);
       window.cancelAnimationFrame(rafId.current);

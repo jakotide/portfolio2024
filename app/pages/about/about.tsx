@@ -26,8 +26,8 @@ export const About: React.FC<AboutProps> = ({ id }) => {
           </BlurReveal>
 
           <Image
-            src="/images/cvbilde.jpg"
-            width={500}
+            src="/images/cvbilde.webp"
+            width={550}
             height={450}
             alt="Of me"
             className={styles.about__image}
