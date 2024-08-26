@@ -1,6 +1,4 @@
 "use client";
-import React, { useRef, useLayoutEffect } from "react";
-import { useScroll } from "framer-motion";
 import { ButtonNav } from "./components/ui";
 
 import {
@@ -14,15 +12,11 @@ import {
 } from "./pages";
 
 const Home = () => {
-  const scrollRef = useRef(null);
-  const container = useRef(null);
-  const skillRef = useRef(null);
-
   return (
     <main style={{ position: "relative", height: "100%" }}>
       <ButtonNav />
       <Hero id="hero" />
-      <div style={{ position: "relative", height: "100%" }} ref={scrollRef}>
+      <div style={{ position: "relative", height: "100%" }}>
         <div style={{ position: "sticky", top: "calc(0vh - 100%)", zIndex: 0 }}>
           <SelectedWork id="works" />
         </div>
@@ -30,10 +24,7 @@ const Home = () => {
       </div>
       <About id="about" />
       <div style={{ position: "relative" }}>
-        <div
-          style={{ position: "relative", zIndex: 1, height: "100%" }}
-          ref={skillRef}
-        >
+        <div style={{ position: "relative", zIndex: 1, height: "100%" }}>
           <Skills id="skills" />
         </div>
 

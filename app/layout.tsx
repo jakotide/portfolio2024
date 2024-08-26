@@ -1,5 +1,5 @@
 "use client";
-// import type { Metadata } from "next";
+import Head from "next/head";
 import "./scss/reset.scss";
 import { usePathname } from "next/navigation";
 import {
@@ -22,6 +22,7 @@ import {
   TransitionContextProvider,
 } from "./components/context/";
 import { useMediaQuery, useScrollLock } from "./components/hooks/";
+import { projects } from "./components/project/projectData";
 
 export default function RootLayout({
   children,
@@ -50,8 +51,29 @@ export default function RootLayout({
     }
   }, [isLoading]);
 
+  let metadata = {
+    title: "Home | Jakob Tidemand Portfolio",
+    description: "Developer portfolio for Jakob Tidemand 2024",
+  };
+
+  if (isProjectPage) {
+    const projectId = pathname.split("/").pop();
+    const project = projects.find((proj) => proj.id === projectId);
+
+    if (project) {
+      metadata = {
+        title: project.pageTitle,
+        description: project.pageDescription,
+      };
+    }
+  }
+
   return (
     <html lang="en">
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+      </Head>
       <body>
         <AnimatePresence mode="wait">
           {isLoading && <Preloader />}

@@ -16,6 +16,8 @@ export interface ProjectData {
   projectDate?: string;
   projectLink?: Url;
   projectLinkName?: string;
+  pageTitle: string;
+  pageDescription: string;
 }
 
 export const projects: ProjectData[] = [
@@ -30,12 +32,15 @@ export const projects: ProjectData[] = [
       "My first job as a developer was to create and host the results report website for Ferd Sosiale Entreprenører.",
     descriptionTwo:
       "I implemented the use of Fathom Analytics to track various metrics, including page traffic and user origin.",
-    descriptionThree: " I am still hosting and maintaining their website.",
+    descriptionThree: "I am still hosting and maintaining their website.",
     projectType: "Freelance",
     languages: ["HTML", "CSS", "Javascript", "Fathom"],
     projectDate: "2023",
     projectLink: "https://resultatrapport-fse-2021-2022.no/",
     projectLinkName: "FSE",
+    pageTitle: "Ferd Sosiale Entreprenører - Results Report Website",
+    pageDescription:
+      "A results report website for Ferd Sosiale Entreprenører, showcasing their impact.",
   },
   {
     id: "topo",
@@ -45,16 +50,19 @@ export const projects: ProjectData[] = [
     cardNumber: "02",
     projectTitle: "Topo",
     description:
-      "TOPO is a venue booking site that allows users to register, book venues, create venues, check venue availability with a calendar and more.",
+      "TOPO is a venue booking site that allows users to register, book venues, create venues, check venue availability with a calendar, and more.",
     descriptionTwo:
-      "This site leverages Noroff's API to provide it's functionality. Users must register and log in to access the site's features. All the animations, button interactions and preloaders are mostly created using Framer Motion.",
+      "This site leverages Noroff's API to provide its functionality. Users must register and log in to access the site's features. All animations, button interactions, and preloaders are mostly created using Framer Motion.",
     descriptionThree:
-      "The design is based on a 3d animation theme with bright and vibrant colors. The images is created using midjourney and edited in figma. The page is also fully responsive.",
+      "The design is based on a 3D animation theme with bright and vibrant colors. The images are created using MidJourney and edited in Figma. The page is also fully responsive.",
     projectType: "Project Exam",
     languages: ["React", "SCSS", "Framer Motion"],
     projectDate: "2023",
     projectLink: "https://topo-exam.netlify.app/",
     projectLinkName: "Topo",
+    pageTitle: "Topo - Venue Booking Site",
+    pageDescription:
+      "A venue booking site that allows users to register, book venues, create venues, and more.",
   },
   {
     id: "sot",
@@ -69,10 +77,13 @@ export const projects: ProjectData[] = [
     description:
       "This is a site I made to showcase some of the music I've created over the past couple of years.",
     descriptionTwo:
-      "I used GSAP to incorporate animations, hover effects, and parallax images. Additionally, I used Lenis scroll library for smoother scrolling and animations.",
-    descriptionThree: "The images are created using midjourney.",
+      "I used GSAP to incorporate animations, hover effects, and parallax images. Additionally, I used the Lenis scroll library for smoother scrolling and animations.",
+    descriptionThree: "The images are created using MidJourney.",
     projectType: "Personal Project",
     languages: ["SCSS", "Javascript", "GSAP", "Lenis"],
+    pageTitle: "Sot - Music Showcase",
+    pageDescription:
+      "A personal project showcasing music with animations and smooth scrolling effects.",
   },
   {
     id: "b-diddy",
@@ -92,6 +103,9 @@ export const projects: ProjectData[] = [
       "The site is designed in Figma and is inspired by the Neubrutalism design style. It features a marquee and a playful theme picker that allows users to change the homepage colors.",
     projectType: "Semester Project",
     languages: ["HTML", "SCSS", "Javascript", "GSAP"],
+    pageTitle: "B-Diddy - Auction House",
+    pageDescription:
+      "An auction house site allowing users to create listings, place bids, and sell items.",
   },
   {
     id: "goose",
@@ -107,9 +121,10 @@ export const projects: ProjectData[] = [
       "The site is designed in Figma, and the images are created with MidJourney. It features a carousel and SVG drawing animations.",
     descriptionThree:
       "The blog posts are fetched using the WordPress REST API. Unfortunately, the site is no longer active.",
-
     projectType: "Project Exam",
-
     languages: ["HTML", "SCSS", "Javascript", "Wordpress"],
+    pageTitle: "Goose - Synth Review Blog",
+    pageDescription:
+      "A synth review blog that tests out unusual synthesizers and unique devices.",
   },
 ];

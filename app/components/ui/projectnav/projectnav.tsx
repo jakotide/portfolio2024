@@ -8,7 +8,7 @@ export const ProjectNav = () => {
 
   return (
     <nav className={styles.project__nav}>
-      <TransitionLink href="/" className={styles.project__link}>
+      <TransitionLink href="/#works" className={styles.project__link}>
         <div onMouseEnter={handleHoverStart} onMouseLeave={handleHoverEnd}>
           Home
         </div>
