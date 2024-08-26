@@ -96,21 +96,20 @@
           }
         }
       }
-
       .about__image {
+        width: 100%;
         height: auto;
-        width: 550px;
+        max-width: 550px;
         object-fit: cover;
         border-radius: 0.25em;
         z-index: 5;
         background-image: url("../../../public/images/cvbilde.webp");
 
         @include mq.desktopL {
-          height: 400px;
           width: 500px;
         }
+
         @include mq.tabletL {
-          height: auto;
           width: 35%;
           position: absolute;
           display: block;
@@ -118,20 +117,14 @@
           top: -40px;
           z-index: 0;
         }
+
         @include mq.tablet {
           top: -60px;
         }
+
         @include mq.tabletS {
-          height: 360px;
           width: 100%;
           position: relative;
-        }
-        @include mq.mobileL {
-          height: 340px;
-          background-position: top;
-        }
-        @include mq.mobileS {
-          height: 250px;
         }
       }
     }
