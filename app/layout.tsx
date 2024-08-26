@@ -22,7 +22,8 @@ import {
   TransitionContextProvider,
 } from "./components/context/";
 import { useMediaQuery, useScrollLock } from "./components/hooks/";
-import { projects } from "./components/project/projectData";
+import MetadataProvider from "./meta/metaprovider";
+import { projects } from "@/app/components/project/projectData";
 
 export default function RootLayout({
   children,
@@ -33,6 +34,10 @@ export default function RootLayout({
   const pathname = usePathname();
   const isProjectPage = pathname.startsWith("/project");
   const isTablet = useMediaQuery("(max-width: 768px)");
+  const [metadata, setMetadata] = useState({
+    title: "Jakob Tidemand | Portfolio 2024",
+    description: "Developer portfolio for Jakob Tidemand 2024",
+  });
 
   useScrollLock(isLoading, 0);
 
@@ -51,29 +56,28 @@ export default function RootLayout({
     }
   }, [isLoading]);
 
-  let metadata = {
-    title: "Home | Jakob Tidemand Portfolio",
-    description: "Developer portfolio for Jakob Tidemand 2024",
-  };
-
-  if (isProjectPage) {
+  useEffect(() => {
     const projectId = pathname.split("/").pop();
-    const project = projects.find((proj) => proj.id === projectId);
+    const project = projectId
+      ? projects.find((proj) => proj.id === projectId)
+      : null;
 
     if (project) {
-      metadata = {
-        title: project.pageTitle,
-        description: project.pageDescription,
-      };
+      setMetadata({
+        title: project?.pageTitle || "Jakob Tidemand Portfolio",
+        description:
+          project?.pageDescription ||
+          "Developer portfolio for Jakob Tidemand 2024",
+      });
     }
-  }
+  }, [pathname]);
 
   return (
     <html lang="en">
-      <Head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-      </Head>
+      <MetadataProvider
+        seoTitle={metadata.title}
+        seoDescription={metadata.description}
+      />
       <body>
         <AnimatePresence mode="wait">
           {isLoading && <Preloader />}

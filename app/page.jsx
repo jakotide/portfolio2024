@@ -1,6 +1,5 @@
 "use client";
 import { ButtonNav } from "./components/ui";
-
 import {
   SelectedWork,
   MoreWork,
@@ -27,12 +26,10 @@ const Home = () => {
         <div style={{ position: "relative", zIndex: 1, height: "100%" }}>
           <Skills id="skills" />
         </div>
-
         <div
           style={{
             position: "sticky",
             bottom: 0,
-
             zIndex: 0,
           }}
         >
