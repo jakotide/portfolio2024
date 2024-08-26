@@ -2,27 +2,31 @@
 @use "../../scss/globals.scss" as mq;
 
 .contact__section {
-  height: 120vh;
+  height: 100vh;
   width: 100%;
   background-color: clr.$light-green;
   color: clr.$black;
   font-family: "GeneralSans-Regular";
-  padding: 18rem 7rem 18rem;
+  padding: 6rem 7rem 8rem;
   position: relative;
 
   @include mq.desktopXL {
-    padding: 18rem 3rem 18rem;
+    padding: 6rem 3rem 8rem;
   }
   @include mq.tabletS {
-    padding: 18rem 1.5rem 18rem;
+    padding: 6rem 1.5rem 8rem;
   }
 
   .contact__h1 {
     font-size: 8rem;
-
+    // margin-top: 18rem;
     font-family: "Brown-Sugar";
 
-    @include mq.desktopXS {
+    @include mq.desktopL {
+      font-size: 6rem;
+    }
+
+    @include mq.desktopM {
       font-size: 6rem;
     }
     @include mq.tabletS {
@@ -40,7 +44,7 @@
   .contact__content {
     display: flex;
     gap: 6rem;
-    margin-top: 6rem;
+    margin-top: 3rem;
     @include mq.tabletL {
       justify-content: space-between;
       gap: 4rem;
@@ -56,6 +60,9 @@
       gap: 0.25rem;
       @include mq.tabletL {
         font-size: 1rem;
+      }
+      @include mq.mobileL {
+        display: none;
       }
     }
 
