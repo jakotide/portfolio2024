@@ -18,18 +18,6 @@ const Home = () => {
   const container = useRef(null);
   const skillRef = useRef(null);
 
-  // const { scrollYProgress: moreWorkScrollYProgress } = useScroll({
-  //   target: container,
-  //   offset: ["start start", "end start"],
-  //   layoutEffect: false,
-  // });
-
-  // const { scrollYProgress: skillsScrollYProgress } = useScroll({
-  //   target: skillRef,
-  //   offset: ["center start", "end start"],
-  //   layoutEffect: false,
-  // });
-
   return (
     <main style={{ position: "relative", height: "100%" }}>
       <ButtonNav />
@@ -53,7 +41,7 @@ const Home = () => {
           style={{
             position: "sticky",
             bottom: 0,
-            height: "100%",
+
             zIndex: 0,
           }}
         >
