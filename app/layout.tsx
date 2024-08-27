@@ -1,5 +1,4 @@
 "use client";
-import Head from "next/head";
 import "./scss/reset.scss";
 import { usePathname } from "next/navigation";
 import {
@@ -33,9 +32,10 @@ export default function RootLayout({
   const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
   const isProjectPage = pathname.startsWith("/project");
+  const isReturnedHomePage = pathname.startsWith("/#works");
   const isTablet = useMediaQuery("(max-width: 768px)");
   const [metadata, setMetadata] = useState({
-    title: "Jakob Tidemand | Portfolio 2024",
+    title: "Jakob Tidemand | Frontend Developer",
     description: "Developer portfolio for Jakob Tidemand 2024",
   });
 
@@ -70,6 +70,33 @@ export default function RootLayout({
           "Developer portfolio for Jakob Tidemand 2024",
       });
     }
+  }, [pathname]);
+
+  useEffect(() => {
+    const updateMetadata = () => {
+      if (
+        window.location.pathname === "/" &&
+        window.location.hash === "#works"
+      ) {
+        setMetadata({
+          title: "Jakob Tidemand | Frontend Developer",
+          description: "Developer portfolio for Jakob Tidemand 2024",
+        });
+      } else if (window.location.pathname === "/" && !window.location.hash) {
+        setMetadata({
+          title: "Jakob Tidemand | Frontend Developer",
+          description: "Developer portfolio for Jakob Tidemand 2024",
+        });
+      }
+    };
+
+    updateMetadata();
+
+    window.addEventListener("hashchange", updateMetadata);
+
+    return () => {
+      window.removeEventListener("hashchange", updateMetadata);
+    };
   }, [pathname]);
 
   return (

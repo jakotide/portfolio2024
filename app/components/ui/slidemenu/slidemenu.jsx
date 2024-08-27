@@ -12,6 +12,7 @@ import {
   smallTextLeftReveal,
   smallTextReveal,
 } from "./anim.jsx";
+import Link from "next/link";
 import { createNavItems } from "./data.jsx";
 
 export const SlideMenu = ({ isActive, setIsActive }) => {
@@ -40,7 +41,6 @@ export const SlideMenu = ({ isActive, setIsActive }) => {
 
     setTimeout(() => {
       if (section) {
-        // Calculate the top position of the section and apply the offset
         const sectionTop = section.offsetHeight - offset;
 
         window.scroll({
@@ -182,8 +182,21 @@ export const SlideMenu = ({ isActive, setIsActive }) => {
             </div>
           </div>
           <div className={styles.right__container}>
-            <div>LinkedIn</div>
-            <div>Github</div>
+            <Link
+              href="https://www.linkedin.com/in/jakob-tidemand-a46095307/"
+              target="blank"
+              style={{ textDecoration: "none" }}
+            >
+              LinkedIn
+            </Link>
+
+            <Link
+              href="https://github.com/jakotide"
+              target="blank"
+              style={{ textDecoration: "none" }}
+            >
+              Github
+            </Link>
           </div>
         </motion.menu>
       </div>

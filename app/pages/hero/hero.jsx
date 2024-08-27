@@ -102,7 +102,13 @@ export const Hero = ({ id }) => {
               >
                 Github
               </Link>
-              <div>CV</div>
+              <Link
+                href="https://drive.google.com/file/d/1CvTK2FKs83Y93wk1IH7T_9jOrNmpXfLZ/view?usp=sharing"
+                target="blank"
+                style={{ textDecoration: "none" }}
+              >
+                CV
+              </Link>
             </motion.div>
             <motion.div
               variants={textSlideUp}

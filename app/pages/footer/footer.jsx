@@ -1,5 +1,5 @@
 import styles from "./footer.module.scss";
-
+import Link from "next/link";
 import React from "react";
 
 export const Footer = () => {
@@ -17,9 +17,28 @@ export const Footer = () => {
           <div>tidemand.dev@gmail.com</div>
           <div>+47 47864047</div>
         </div>
-        <div>
-          <div>LinkedIn</div>
-          <div>Instagram</div>
+        <div className={styles.footer__links}>
+          <Link
+            href="https://www.linkedin.com/in/jakob-tidemand-a46095307/"
+            target="blank"
+            style={{ textDecoration: "none" }}
+          >
+            LinkedIn
+          </Link>
+          <Link
+            href="https://github.com/jakotide"
+            target="blank"
+            style={{ textDecoration: "none" }}
+          >
+            Github
+          </Link>
+          <Link
+            href="https://drive.google.com/file/d/1CvTK2FKs83Y93wk1IH7T_9jOrNmpXfLZ/view?usp=sharing"
+            target="blank"
+            style={{ textDecoration: "none" }}
+          >
+            CV
+          </Link>
         </div>
         <div className={styles.footer__left__tablet}>
           <div>Developed/Designed by:</div>
