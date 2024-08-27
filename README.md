@@ -12,5 +12,5 @@ Next.js | React | SCSS |  Typescript | Framer Motion | GSAP
 
 ## Links
 
-My portfolio: [jakob-tidemand.no](jakob-tidemand.no)
+Visit the site at jakob-tidemand.no
 
