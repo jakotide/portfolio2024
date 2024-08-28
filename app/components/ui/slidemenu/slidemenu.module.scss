@@ -45,7 +45,7 @@
         border-right: none;
         width: 100%;
         justify-self: flex-end;
-        padding: 12rem 2rem 2rem;
+        padding: 6rem 2rem 2rem;
       }
 
       & > :nth-child(2) {
@@ -109,14 +109,18 @@
       padding-bottom: 2rem;
       gap: 1rem;
 
+      @include mq.tablet {
+        padding-right: 3rem;
+      }
+
+      @include mq.tabletS {
+        display: none;
+      }
+
       div {
         padding-right: 1.5rem;
         @include mq.tabletL {
           display: none;
-        }
-        @include mq.tabletS {
-          flex-direction: row;
-          order: 3;
         }
       }
     }
@@ -132,6 +136,7 @@
         order: 1;
         align-self: center;
         gap: 2rem;
+        padding-top: 17rem;
       }
 
       .menu__header {
